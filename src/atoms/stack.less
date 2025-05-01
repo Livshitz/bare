@@ -1,0 +1,49 @@
+@import (reference) "../variables.less";
+
+.b-stack {
+  @apply flex flex-col;
+}
+
+// Gap variants
+.b-stack-gap-1 {
+  .b-stack;
+  @apply gap-1;
+}
+
+.b-stack-gap-2 {
+  .b-stack;
+  @apply gap-2;
+}
+
+.b-stack-gap-4 {
+  .b-stack;
+  @apply gap-4;
+}
+
+.b-stack-gap-8 {
+  .b-stack;
+  @apply gap-8;
+}
+
+// Responsive variants
+@media (max-width: 599px) {
+  .b-xs-stack {
+    @apply b-stack;
+  }
+  
+  .b-xs-stack-gap-1 {
+    @apply b-stack-gap-1;
+  }
+  
+  .b-xs-stack-gap-2 {
+    @apply b-stack-gap-2;
+  }
+  
+  .b-xs-stack-gap-4 {
+    @apply b-stack-gap-4;
+  }
+  
+  .b-xs-stack-gap-8 {
+    @apply b-stack-gap-8;
+  }
+} 

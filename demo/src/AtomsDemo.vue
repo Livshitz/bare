@@ -188,6 +188,79 @@ section.mb-8
 			.b-block.h-20 Item 3
 		pre.mb-4.bg-gray-800.p-4.rounded.font-mono.text-sm.text-white .b-between-x
 
+	// Grid Example
+	section
+		.b-section
+			h2.text-xl.font-bold.mb-4 Grid Layout
+			.b-grid.mb-4.bg-gray-200.p-4
+				.b-block Item 1
+				.b-block Item 2
+				.b-block Item 3
+				.b-block Item 4
+			pre.mb-4.bg-gray-800.p-4.rounded.font-mono.text-sm.text-white .b-grid
+
+			h2.text-xl.font-bold.mb-4 Grid with Fixed Columns
+			.b-grid-3.mb-4.bg-gray-200.p-4
+				.b-block Item 1
+				.b-block Item 2
+				.b-block Item 3
+			pre.mb-4.bg-gray-800.p-4.rounded.font-mono.text-sm.text-white .b-grid-3
+
+	// Stack Example
+	section
+		.b-section
+			h2.text-xl.font-bold.mb-4 Stack Layout
+			.b-stack-gap-4.mb-4.bg-gray-200.p-4
+				.b-block Item 1
+				.b-block Item 2
+				.b-block Item 3
+			pre.mb-4.bg-gray-800.p-4.rounded.font-mono.text-sm.text-white .b-stack-gap-4
+
+	// Spacer Example
+	section
+		.b-section
+			h2.text-xl.font-bold.mb-4 Spacer Examples
+			.b-row.mb-4.bg-gray-200.p-4
+				.b-block Item 1
+				.b-spacer
+				.b-block Item 2
+			pre.mb-4.bg-gray-800.p-4.rounded.font-mono.text-sm.text-white .b-spacer
+
+			.b-stack.mb-4.bg-gray-200.p-4
+				.b-block Item 1
+				.b-spacer-h-4
+				.b-block Item 2
+			pre.mb-4.bg-gray-800.p-4.rounded.font-mono.text-sm.text-white .b-spacer-h-4
+
+	// Alignment Examples
+	section
+		.b-section
+			h2.text-xl.font-bold.mb-4 Alignment Examples
+			.b-row.b-center.h-32.mb-4.bg-gray-200.p-4
+				.b-block.h-12 Item 1
+				.b-block.h-16 Item 2
+				.b-block.h-20 Item 3
+			pre.mb-4.bg-gray-800.p-4.rounded.font-mono.text-sm.text-white .b-center
+
+			.b-row.b-between.h-32.mb-4.bg-gray-200.p-4
+				.b-block.h-12 Item 1
+				.b-block.h-16 Item 2
+				.b-block.h-20 Item 3
+			pre.mb-4.bg-gray-800.p-4.rounded.font-mono.text-sm.text-white .b-between
+
+	// Responsive Examples
+	section
+		.b-section
+			h2.text-xl.font-bold.mb-4 Responsive Examples
+			.b-row.b-xs-col.mb-4.bg-gray-200.p-4
+				.b-col(class="w-full md:w-1/2 lg:w-1/3").b-block
+					p Content 1
+				.b-col(class="w-full md:w-1/2 lg:w-1/3").b-block
+					p Content 2
+				.b-col(class="w-full md:w-1/2 lg:w-1/3").b-block
+					p Content 3
+			pre.mb-4.bg-gray-800.p-4.rounded.font-mono.text-sm.text-white .b-row.b-xs-col
+
 .test test
 </template>
 
@@ -203,4 +276,7 @@ section.mb-8
 	// background-color: @primary-bg;
 }
 
+.b-block {
+	@apply bg-gray-300 p-4 rounded;
+}
 </style> 

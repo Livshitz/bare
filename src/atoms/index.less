@@ -1,5 +1,11 @@
 @import (reference) "../variables.less";
 
+@import "row.less";
+@import "col.less";
+@import "grid.less";
+@import "stack.less";
+@import "spacer.less";
+
 // @import "row.less";
 // @import "col.less";
 // @import "grid.less";
@@ -19,6 +25,7 @@
 	@apply flex-1 flex flex-col gap-4; 
 } 
 
+// Alignment utilities
 .b-center {
 	@apply flex items-center justify-center;
 }
@@ -57,7 +64,7 @@
 	@apply flex items-end;
 }
 
-// Space between
+// Space distribution
 .b-between {
 	@apply flex items-center justify-between;
 }
@@ -66,7 +73,6 @@
 	@apply flex justify-between;
 }
 
-// Space around
 .b-around {
 	@apply flex items-center justify-around;
 }
@@ -75,7 +81,6 @@
 	@apply flex justify-around;
 }
 
-// Space evenly
 .b-evenly {
 	@apply flex items-center justify-evenly;
 }

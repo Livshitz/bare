@@ -1,0 +1,20 @@
+@import (reference) "../variables.less";
+
+.b-row {
+  @apply flex flex-row flex-wrap gap-4;
+}
+
+.b-row-nowrap {
+  .b-row;
+  @apply flex-nowrap;
+}
+
+// Responsive variants
+@media (max-width: 599px) {
+  .b-xs-row {
+    @apply b-row;
+  }
+  .b-xs-row-nowrap {
+    @apply b-row-nowrap;
+  }
+} 

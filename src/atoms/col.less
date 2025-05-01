@@ -1,0 +1,12 @@
+@import (reference) "../variables.less";
+
+.b-col {
+  @apply flex-1 flex flex-col gap-4;
+}
+
+// Responsive variants
+@media (max-width: 599px) {
+  .b-xs-col {
+    @apply b-col;
+  }
+} 

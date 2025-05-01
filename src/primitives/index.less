@@ -2,6 +2,8 @@
 // src/primitives/index.less
 // Import primitive styles here 
 
+body { background-color: #eee; .dark-text; }
+
 // Add back the .b-block definition
 .b-block {
 	// Default light mode: light bg, dark text
@@ -23,6 +25,8 @@
 
 // Forced dark mode via ancestor: dark bg, light text
 .b-dark {
+	body { background-color: #111; .light-text(); }
+
 	.b-block {
 		.light-text();
 		.dark-bg();
@@ -32,4 +36,6 @@
 		.light-text();
 		.dark-bg();
 	}
+
+
 }
