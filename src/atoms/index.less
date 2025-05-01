@@ -12,6 +12,19 @@
 // @import "stack.less";
 // @import "spacer.less"; 
 
+// light mode:
+.dark-text { color: @primary-text; }
+.light-bg { background-color: @primary-bg; }
+// dark mode:
+.light-text { color: @primary-text-dark; }
+.dark-bg { background-color: @primary-bg-dark; }
+
+.b-text { .dark-text; .light-bg; }
+
+.b-dark {
+	.b-text { .light-text; .dark-bg; }
+}
+
 .b-row {
 	@apply flex flex-row flex-wrap gap-4;
 }

@@ -23,6 +23,14 @@ body { background-color: #eee; .dark-text; }
 	@apply md:p-12;
 }
 
+.b-toc {
+	@apply b-section;
+	ol { @apply list-decimal list-inside; }
+	ul { @apply list-disc list-inside; }
+	.light-bg();
+	.dark-text();
+}
+
 // Forced dark mode via ancestor: dark bg, light text
 .b-dark {
 	body { background-color: #111; .light-text(); }
