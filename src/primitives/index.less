@@ -1,0 +1,35 @@
+@import (reference) "../variables.less";
+// src/primitives/index.less
+// Import primitive styles here 
+
+// Add back the .b-block definition
+.b-block {
+	// Default light mode: light bg, dark text
+	.light-bg();
+	@apply p-4 rounded;
+	.dark-text();
+}
+
+// Section primitive with larger spacing and container-like styling
+.b-section {
+	// Default light mode: light bg, dark text
+	@apply p-8 rounded-lg mb-4;
+	.light-bg();
+	.dark-text();
+	
+	// Responsive padding
+	@apply md:p-12;
+}
+
+// Forced dark mode via ancestor: dark bg, light text
+.b-dark {
+	.b-block {
+		.light-text();
+		.dark-bg();
+	}
+
+	.b-section {
+		.light-text();
+		.dark-bg();
+	}
+}

@@ -1,0 +1,18 @@
+@gray-light: #f3f4f6; // Tailwind gray-100
+@gray-dark:  #1f2937; // Tailwind gray-800
+
+@primary: @gray-dark; // bg-gray-800
+@primary-text: @primary; // dark text
+@primary-bg: @gray-light; // light bg
+
+// dark mode:
+@primary-dark: @gray-light;
+@primary-text-dark: @primary-dark; // light text
+@primary-bg-dark: @gray-dark; // dark bg
+
+// light mode:
+.dark-text { color: @primary-text; }
+.light-bg { background-color: @primary-bg; }
+// dark mode:
+.light-text { color: @primary-text-dark; }
+.dark-bg { background-color: @primary-bg-dark; }

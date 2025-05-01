@@ -1,0 +1,63 @@
+{
+	"name": "@bod.ee/bare",
+	"version": "2.0.0",
+	"type": "module",
+	"style": "dist/bare.css",
+	"unpkg": "dist/bare.css",
+	"jsdelivr": "dist/bare.css",
+	"private": false,
+	"files": [
+		"dist",
+		"src",
+		"README.md"
+	],
+	"scripts": {
+		"dev": "vite --host",
+		"demo": "vite",
+		"build": "bunx postcss src/index.scss --parser postcss-scss --use tailwindcss autoprefixer -o dist/bare.css",
+		"build:demo": "vite build",
+		"test": "bun test",
+		"release:patch": "npm version patch -m \"chore(release): bump version to %s\" && npm publish",
+		"webify": "bun run webify.libx.js webify/index.ts -o demo/public/lib/webify.js -f umd",
+		"build-readme": "node scripts/build-readme.js",
+		"format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md,scss,css}\""
+	},
+	"dependencies": {
+		"@types/dompurify": "^3.2.0",
+		"@types/markdown-it": "^14.1.2",
+		"daisyui": "^5.0.35",
+		"dompurify": "^3.2.5",
+		"markdown-it": "^14.1.0",
+		"pug-browser": "^0.0.20",
+		"vue-router": "^4.5.0",
+		"webify.libx.js": "^1.0.7"
+	},
+	"devDependencies": {
+		"@types/node": "latest",
+		"@types/pug": "^2.0.10",
+		"@typescript-eslint/eslint-plugin": "latest",
+		"@typescript-eslint/parser": "latest",
+		"@vitejs/plugin-vue": "^5.2.3",
+		"@vue/compiler-sfc": "^3.5.13",
+		"ajv": "latest",
+		"autoprefixer": "^10.4.21",
+		"esbuild": "^0.25.3",
+		"eslint": "latest",
+		"eslint-plugin-vue": "latest",
+		"html2jade": "^0.8.6",
+		"libx.js": "^5.0.1",
+		"postcss": "^8.5.3",
+		"postcss-cli": "^11.0.1",
+		"postcss-scss": "^4.0.9",
+		"prettier": "latest",
+		"pug": "^3.0.3",
+		"sass": "^1.87.0",
+		"tailwindcss": "^3.4.1",
+		"typescript": "latest",
+		"vite": "^6.3.4",
+		"vue": "^3.5.13"
+	},
+	"publishConfig": {
+		"access": "public"
+	}
+}

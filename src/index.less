@@ -1,0 +1,18 @@
+// @bod.ee/bare - Main Entry Point
+
+// Use @tailwind directives for Tailwind's layers
+// These are processed by the Tailwind PostCSS plugin
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+// Import Layers
+@import "atoms/index.less";
+@import "primitives/index.less";
+// @import "patterns/index.less";
+// @import "theme/index.less"; 
+
+
+// @media (prefers-color-scheme: dark) {
+// 	@apply @dark-bg; // Use variable from imported file
+// }

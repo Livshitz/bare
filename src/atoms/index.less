@@ -1,0 +1,163 @@
+@import (reference) "../variables.less";
+
+// @import "row.less";
+// @import "col.less";
+// @import "grid.less";
+// @import "stack.less";
+// @import "spacer.less"; 
+
+.b-row {
+	@apply flex flex-row flex-wrap gap-4;
+}
+
+.b-row-nowrap {
+	.b-row;
+	@apply flex-nowrap;
+}
+
+.b-col {
+	@apply flex-1 flex flex-col gap-4; 
+} 
+
+.b-center {
+	@apply flex items-center justify-center;
+}
+
+.b-center-x {
+	@apply flex justify-center;
+}
+
+.b-center-y {
+	@apply flex items-center;
+}
+
+// Start alignments
+.b-start {
+	@apply flex items-start justify-start;
+}
+
+.b-start-x {
+	@apply flex justify-start;
+}
+
+.b-start-y {
+	@apply flex items-start;
+}
+
+// End alignments
+.b-end {
+	@apply flex items-end justify-end;
+}
+
+.b-end-x {
+	@apply flex justify-end;
+}
+
+.b-end-y {
+	@apply flex items-end;
+}
+
+// Space between
+.b-between {
+	@apply flex items-center justify-between;
+}
+
+.b-between-x {
+	@apply flex justify-between;
+}
+
+// Space around
+.b-around {
+	@apply flex items-center justify-around;
+}
+
+.b-around-x {
+	@apply flex justify-around;
+}
+
+// Space evenly
+.b-evenly {
+	@apply flex items-center justify-evenly;
+}
+
+.b-evenly-x {
+	@apply flex justify-evenly;
+}
+
+@media (max-width: 599px) {
+	.b-xs-row {
+		@apply b-row;
+	}
+	.b-xs-row-nowrap {
+		@apply b-row-nowrap;
+	}
+
+	.b-xs-col {
+		@apply b-col;
+	}
+
+	.b-xs-center {
+		@apply b-center;
+	}
+	
+	.b-xs-center-x {
+		@apply b-center-x;
+	}
+	
+	.b-xs-center-y {
+		@apply b-center-y;
+	}
+
+	// Start alignments
+	.b-xs-start {
+		@apply b-start;
+	}
+
+	.b-xs-start-x {
+		@apply b-start-x;
+	}
+
+	.b-xs-start-y {
+		@apply b-start-y;
+	}
+
+	// End alignments
+	.b-xs-end {
+		@apply b-end;
+	}
+
+	.b-xs-end-x {
+		@apply b-end-x;
+	}
+
+	.b-xs-end-y {
+		@apply b-end-y;
+	}
+
+	// Space between
+	.b-xs-between {
+		@apply b-between;
+	}
+
+	.b-xs-between-x {
+		@apply b-between-x;
+	}
+
+	// Space around
+	.b-xs-around {
+		@apply b-around;
+	}
+
+	.b-xs-around-x {
+		@apply b-around-x;
+	}
+
+	// Space evenly
+	.b-xs-evenly {
+		@apply b-evenly;
+	}
+
+	.b-xs-evenly-x {
+		@apply b-evenly-x;
+	}
+}
