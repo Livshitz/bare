@@ -1,19 +1,75 @@
 @import (reference) "../variables.less";
 
-// Base centered layout - takes full width by default
-.b-layout-centered {
-  @apply min-h-screen flex items-center justify-center;
+// Base layout component
+.b-layout {
+  @apply min-h-screen flex flex-col;
 }
 
-// Width constraint utility that can be used with any layout
-// Uses max-w-7xl (1280px) as the standard narrow width for comfortable reading
+// Layout components
+.b-layout-header {
+  @apply w-full;
+}
+
+.b-layout-main {
+  @apply flex-1;
+}
+
+.b-layout-footer {
+  @apply w-full;
+}
+
+.b-layout-sidebar {
+  @apply w-64 flex-shrink-0;
+}
+
+.b-layout-nav {
+  @apply w-full;
+}
+
+// Layout modifiers
+.b-layout--centered {
+  @apply items-center justify-center;
+}
+
+.b-layout--fullscreen {
+  @apply min-h-screen;
+}
+
+.b-layout--fixed-header {
+  > .b-layout-header {
+    @apply fixed top-0 left-0 right-0 z-10;
+  }
+  
+  > .b-layout-main {
+    @apply pt-16; // Adjust based on header height
+  }
+}
+
+.b-layout--sidebar-left {
+  @apply flex-row;
+}
+
+.b-layout--sidebar-right {
+  @apply flex-row-reverse;
+}
+
 .b-narrow {
   @apply max-w-7xl w-full mx-auto;
 }
 
-// Responsive variants
+// Responsive modifiers
 @media (max-width: 599px) {
-  .b-xs-layout-centered {
-    @apply b-layout-centered;
+  .b-layout--stack {
+    @apply flex-col;
+    
+    > .b-layout-sidebar {
+      @apply w-full;
+    }
+  }
+  
+  .b-layout--hide-sidebar {
+    > .b-layout-sidebar {
+      @apply hidden;
+    }
   }
 } 
