@@ -1,4 +1,6 @@
 @import (reference) "../variables.less";
+@import (reference) "./badge.less";
+@import (reference) "../atoms/index.less";
 // src/primitives/index.less
 // Import primitive styles here 
 
@@ -10,8 +12,8 @@ body { background-color: #eee; .b-text-dark; }
 // Add back the .b-block definition
 .b-block {
 	// Default light mode: light bg, dark text
-	.b-bg-light;
-	@apply p-4 rounded;
+	.b-bg;
+	@apply p-4 rounded b-bg b-stack gap-2;
 	.b-text-dark;
 }
 

@@ -23,7 +23,7 @@ section.mb-8
     .b-section
       h2.text-xl.font-bold.mb-4 Fixed Header Layout
       .b-layout.b-layout--fixed-header.bg-gray-200.min-h-screen
-        header.b-layout-header.bg-gray-100.p-2.b-xs-hide.opacity-70.pointer-events-none
+        header.bg-gray-100.p-2.b-xs-hide.opacity-70.pointer-events-none
           .b-col.gap-1.b-text-dark
             h3.font-semibold Fixed Header (4rem/64px height)
             p.text-sm This header stays fixed at the top
@@ -84,7 +84,7 @@ section.mb-8
     .b-section
       h2.text-xl.font-bold.mb-4 Fullscreen Layout
       .b-layout.b-layout--fullscreen.bg-gray-200.border.b-text-dark
-        header.b-layout-header.bg-gray-100.p-4.border
+        header.bg-gray-100.p-4.border
           h3.font-semibold Header
           p.text-sm This header takes its natural height
         main.b-layout-main.bg-gray-100.p-4

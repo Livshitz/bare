@@ -1,0 +1,85 @@
+@import (reference) "../variables.less";
+
+// Base text styles
+.b-text {
+  @apply text-base leading-normal;
+}
+
+// Text sizes with semantic meaning
+.b-text-xs {
+  @apply text-xs leading-tight;
+}
+
+.b-text-sm {
+  @apply text-sm leading-snug;
+}
+
+.b-text-lg {
+  @apply text-lg leading-relaxed;
+}
+
+.b-text-xl {
+  @apply text-xl leading-loose;
+}
+
+// Semantic text variants
+.b-title {
+  @apply text-2xl font-bold leading-tight;
+}
+
+.b-subtitle {
+  @apply text-xl font-semibold leading-snug;
+}
+
+.b-heading {
+  @apply text-3xl font-bold leading-tight;
+}
+
+.b-caption {
+  @apply text-lg font-semibold leading-snug;
+}
+
+.b-label {
+  @apply text-sm font-medium text-gray-700 leading-snug;
+}
+
+// Text emphasis variants
+.b-text-muted {
+  @apply text-gray-500;
+}
+
+.b-text-emphasis {
+  @apply font-medium;
+}
+
+.b-text-strong {
+  @apply font-bold;
+}
+
+// Text truncation
+.b-truncate {
+  @apply truncate;
+}
+
+.b-text-clamp-2 {
+  @apply line-clamp-2;
+}
+
+.b-text-clamp-3 {
+  @apply line-clamp-3;
+}
+
+// Responsive text sizing
+@media (max-width: @breakpoint-sm) {
+  .b-title {
+    @apply text-xl;
+  }
+  
+  .b-heading {
+    @apply text-2xl;
+  }
+  
+  .b-subtitle {
+    @apply text-lg;
+  }
+} 

@@ -38,12 +38,12 @@
 }
 
 .b-layout--fixed-header {
-  > .b-layout-header {
-    @apply fixed top-0 left-0 right-0 z-10;
+  > header {
+    @apply fixed top-0 left-0 right-0 z-10 w-full;
   }
   
-  > .b-layout-main {
-    @apply pt-16; // Adjust based on header height
+  > main {
+    @apply pt-16 flex-1; // Adjust based on header height
   }
 }
 

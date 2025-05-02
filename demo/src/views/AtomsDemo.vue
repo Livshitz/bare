@@ -39,7 +39,7 @@ section.b-toc.mb-8
 	// Basic Row Example
 	section#basic-row
 		.b-section
-			h2.text-xl.font-bold.mb-4 Basic Row - default wrap
+			.b-title Basic Row - default wrap
 			.b-row.mb-4.bg-gray-200.p-4
 				.b-block(class="w-[500px]") Item 1
 				.b-block(class="w-[500px]") Item 2
@@ -49,7 +49,7 @@ section.b-toc.mb-8
 			pre.mb-4.bg-gray-800.p-4.rounded.font-mono.text-sm.text-white .b-row
 		
 		.b-section
-			h2.text-xl.font-bold.mb-4 Basic Row - no wrap
+			.b-title Basic Row - no wrap
 			.b-row-nowrap.mb-4.bg-gray-200.p-4
 				.b-block(class="w-[500px]") Item 1
 				.b-block(class="w-[500px]") Item 2
@@ -61,7 +61,7 @@ section.b-toc.mb-8
 	// Row with Different Alignments
 	section#row-alignments
 		.b-section
-			h2.text-xl.font-bold.mb-4 Row Alignments
+			.b-title Row Alignments
 			.b-row.items-center.mb-4.bg-gray-200.p-4
 				.b-block.h-20 Item 1
 				.b-block.h-32 Item 2
@@ -78,7 +78,7 @@ section.b-toc.mb-8
 	// Nested Rows and Columns
 	section#nested-structure
 		.b-section
-			h2.text-xl.font-bold.mb-4 Nested Structure
+			.b-title Nested Structure
 			.b-row.mb-4.bg-gray-200.p-4
 				.b-col.b-block
 					.b-stack.gap-2
@@ -94,7 +94,7 @@ section.b-toc.mb-8
 	// Responsive Example
 	section#responsive-layout
 		.b-section
-			h2.text-xl.font-bold.mb-4 Responsive Layout
+			.b-title Responsive Layout
 			.b-row.b-xs-col.mb-4.bg-gray-200.p-4
 				.b-col(class="w-full md:w-1\/2 lg:w-1\/3").b-block
 					p Content 1
@@ -108,7 +108,7 @@ section.b-toc.mb-8
 	// Center Alignment Examples
 	section#row-centering
 		.b-section
-			h2.text-xl.font-bold.mb-4 Row Centering
+			.b-title Row Centering
 		
 		// Vertically Centered Row
 		.b-row.b-center-y.h-32.bg-gray-200.p-4.mb-4
@@ -141,7 +141,7 @@ section.b-toc.mb-8
 	// Start Alignment Examples
 	section#start-alignments
 		.b-section
-			h2.text-xl.font-bold.mb-4 Start Alignments
+			.b-title Start Alignments
 		
 		// Vertically Start Aligned Row
 		.b-row.b-start-y.h-32.bg-gray-200.p-4.mb-4
@@ -167,7 +167,7 @@ section.b-toc.mb-8
 	// End Alignment Examples
 	section#end-alignments
 		.b-section
-			h2.text-xl.font-bold.mb-4 End Alignments
+			.b-title End Alignments
 		
 		// Vertically End Aligned Row
 		.b-row.b-end-y.h-32.bg-gray-200.p-4.mb-4
@@ -193,7 +193,7 @@ section.b-toc.mb-8
 	// Space Distribution Examples
 	section#space-distribution
 		.b-section
-			h2.text-xl.font-bold.mb-4 Space Distribution
+			.b-title Space Distribution
 		
 		// Space Between
 		.b-row.b-between.h-32.bg-gray-200.p-4.mb-4
@@ -226,7 +226,7 @@ section.b-toc.mb-8
 	// Grid Example
 	section#grid-layout
 		.b-section
-			h2.text-xl.font-bold.mb-4 Grid Layout
+			.b-title Grid Layout
 			.b-grid.mb-4.bg-gray-200.p-4
 				.b-block Item 1
 				.b-block Item 2
@@ -244,7 +244,7 @@ section.b-toc.mb-8
 	// Stack Example
 	section#stack-layout
 		.b-section
-			h2.text-xl.font-bold.mb-4 Stack Layout
+			.b-title Stack Layout
 			.b-stack.gap-2.mb-4.bg-gray-200.p-4
 				.b-block Item 1
 				.b-block Item 2
@@ -261,7 +261,7 @@ section.b-toc.mb-8
 	// Spacer Example
 	section#spacer-examples
 		.b-section
-			h2.text-xl.font-bold.mb-4 Spacer Examples
+			.b-title Spacer Examples
 			.b-row.mb-4.bg-gray-200.p-4
 				.b-block Item 1
 				.b-spacer
@@ -277,7 +277,7 @@ section.b-toc.mb-8
 	// Alignment Examples
 	section#alignment-examples
 		.b-section
-			h2.text-xl.font-bold.mb-4 Alignment Examples
+			.b-title Alignment Examples
 			.b-row.b-center.h-32.mb-4.bg-gray-200.p-4
 				.b-block.h-12 Item 1
 				.b-block.h-16 Item 2
@@ -293,7 +293,7 @@ section.b-toc.mb-8
 	// Responsive Examples
 	section#responsive-examples
 		.b-section
-			h2.text-xl.font-bold.mb-4 Responsive Examples
+			.b-title Responsive Examples
 			.b-row.b-xs-col.mb-4.bg-gray-200.p-4
 				.b-col(class="w-full md:w-1/2 lg:w-1/3").b-block
 					p Content 1
@@ -302,6 +302,63 @@ section.b-toc.mb-8
 				.b-col(class="w-full md:w-1/2 lg:w-1/3").b-block
 					p Content 3
 			pre.mb-4.bg-gray-800.p-4.rounded.font-mono.text-sm.text-white .b-row.b-xs-col
+
+	// Typography Examples
+	section#typography-examples
+		.b-section
+			.b-title Typography Examples
+			
+			// Text Sizes
+			.b-stack.gap-2.mb-8
+				.b-title Text Sizes
+				.b-text-xs This is extra small text
+				.b-text-sm This is small text
+				.b-text This is base text
+				.b-text-lg This is large text
+				.b-text-xl This is extra large text
+			pre.b-text-sm.bg-gray-800.p-4.rounded.font-mono.text-white .b-text-xs, .b-text-sm, .b-text, .b-text-lg, .b-text-xl
+
+		.b-section
+			.b-title Semantic Text
+
+			// Semantic Text
+			.b-stack.gap-2.mb-8
+				.b-heading This is a heading
+				.b-title This is a title
+				.b-subtitle This is a subtitle
+				.b-caption This is a caption
+				.b-label This is a label
+			pre.b-text-sm.bg-gray-800.p-4.rounded.font-mono.text-white .b-heading, .b-title, .b-subtitle, .b-caption, .b-label
+
+		.b-section
+			.b-title Text Emphasis
+
+			// Text Emphasis
+			.b-stack.gap-2.mb-8
+				.b-text This is normal text
+				.b-text-emphasis This is emphasized text
+				.b-text-strong This is strong text
+				.b-text-muted This is muted text
+			pre.b-text-sm.bg-gray-800.p-4.rounded.font-mono.text-white .b-text-emphasis, .b-text-strong, .b-text-muted
+
+		.b-section
+			.b-title Text Truncation
+
+			// Text Truncation
+			.b-stack.gap-2.mb-8
+				.b-truncate(class="w-64") This is a very long text that will be truncated with an ellipsis at the end
+				.b-text-clamp-2(class="w-64") This is a very long text that will be clamped to two lines with an ellipsis at the end. This is a very long text that will be clamped to two lines with an ellipsis at the end.
+			pre.b-text-sm.bg-gray-800.p-4.rounded.font-mono.text-white .b-truncate, .b-text-clamp-2
+
+		.b-section
+			.b-title Block text utilization
+
+			// Card Example
+			.b-stack.gap-2.mb-8
+				.bg-gray-300.p-4
+					.b-block.w-48
+						.b-caption Left Column
+						.b-text Some content here
 
 </template>
 
@@ -313,11 +370,12 @@ section.b-toc.mb-8
 /* Component-specific styles can be added here */
 @import (reference) '../../../src/variables.less';
 
+.b-section > .b-title {
+	@apply mb-4;
+}
+
 .b-section {
 	// background-color: @primary-bg;
 }
 
-.b-block {
-	@apply bg-gray-300 p-4 rounded;
-}
 </style> 
