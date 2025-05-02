@@ -1,6 +1,6 @@
 <template lang="pug">
 .b-stack.gap-8.p-8
-  .flex.justify-between.items-center
+  .b-row.b-xs-col.b-between
     h1.text-4xl.font-bold @bod.ee/bare Demo
     .flex.gap-4
       router-link.btn.btn-ghost(to="/demo/atoms") Atoms

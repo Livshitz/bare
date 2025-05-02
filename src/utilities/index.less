@@ -1,0 +1,49 @@
+// Display utilities
+.b-xs-hide {
+  @media (max-width: @breakpoint-xs) {
+    display: none !important;
+  }
+}
+
+.b-sm-hide {
+  @media (min-width: @breakpoint-sm) and (max-width: @breakpoint-md) {
+    display: none !important;
+  }
+}
+
+.b-md-hide {
+  @media (min-width: @breakpoint-md) and (max-width: @breakpoint-lg) {
+    display: none !important;
+  }
+}
+
+.b-lg-hide {
+  @media (min-width: @breakpoint-lg) {
+    display: none !important;
+  }
+}
+
+// Show utilities
+.b-xs-show {
+  @media (max-width: @breakpoint-xs) {
+    display: block !important;
+  }
+}
+
+.b-sm-show {
+  @media (min-width: @breakpoint-sm) and (max-width: @breakpoint-md) {
+    display: block !important;
+  }
+}
+
+.b-md-show {
+  @media (min-width: @breakpoint-md) and (max-width: @breakpoint-lg) {
+    display: block !important;
+  }
+}
+
+.b-lg-show {
+  @media (min-width: @breakpoint-lg) {
+    display: block !important;
+  }
+} 

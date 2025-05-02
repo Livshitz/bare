@@ -1,0 +1,34 @@
+@import (reference) "../variables.less";
+
+// Fullscreen layout with header and footer
+// Uses CSS Grid for the main structure
+.b-layout-fullscreen {
+  @apply min-h-screen grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+
+  // Header area
+  > header {
+    grid-area: header;
+  }
+
+  // Main content area
+  > main {
+    grid-area: main;
+  }
+
+  // Footer area
+  > footer {
+    grid-area: footer;
+  }
+}
+
+// Responsive variants
+@media (max-width: 599px) {
+  .b-xs-layout-fullscreen {
+    @apply b-layout-fullscreen;
+  }
+} 

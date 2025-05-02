@@ -245,11 +245,18 @@ section.b-toc.mb-8
 	section#stack-layout
 		.b-section
 			h2.text-xl.font-bold.mb-4 Stack Layout
-			.b-stack-gap-4.mb-4.bg-gray-200.p-4
+			.b-stack.gap-2.mb-4.bg-gray-200.p-4
 				.b-block Item 1
 				.b-block Item 2
 				.b-block Item 3
 			pre.mb-4.bg-gray-800.p-4.rounded.font-mono.text-sm.text-white .b-stack-gap-4
+
+			h2.text-xl.font-bold.mb-4 Stack Only on Larger Screens
+			.b-gt-xs-stack.gap-2.mb-4.bg-gray-200.p-4
+				.b-block Item 1 (stacks only on screens > 600px)
+				.b-block Item 2 (stacks only on screens > 600px)
+				.b-block Item 3 (stacks only on screens > 600px)
+			pre.mb-4.bg-gray-800.p-4.rounded.font-mono.text-sm.text-white .b-gt-xs-stack.gap-4
 
 	// Spacer Example
 	section#spacer-examples
