@@ -1,0 +1,88 @@
+@import (reference) "../variables.less";
+
+.x-layout-holy-grail {
+  @apply min-h-screen grid;
+  grid-template-areas:
+    "header header header"
+    "nav main aside"
+    "footer footer footer";
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: auto 1fr auto;
+  
+  // Header
+  > header {
+    @apply col-span-3;
+    grid-area: header;
+  }
+  
+  // Navigation
+  > nav {
+    @apply w-64;
+    grid-area: nav;
+  }
+  
+  // Main content
+  > main {
+    grid-area: main;
+  }
+  
+  // Sidebar
+  > aside {
+    @apply w-64;
+    grid-area: aside;
+  }
+  
+  // Footer
+  > footer {
+    @apply col-span-3;
+    grid-area: footer;
+  }
+  
+  // Variant without sidebars
+  &-no-sidebars {
+    grid-template-areas:
+      "header header header"
+      "nav main main"
+      "footer footer footer";
+    grid-template-columns: auto 1fr;
+    
+    > aside {
+      @apply hidden;
+    }
+  }
+}
+
+// Responsive variants
+@media (max-width: 599px) {
+  .x-xs-layout-holy-grail {
+    @apply flex flex-col;
+    
+    > header {
+      @apply order-1;
+    }
+    
+    > nav {
+      @apply order-2 w-full;
+    }
+    
+    > main {
+      @apply order-3;
+    }
+    
+    > aside {
+      @apply order-4 w-full;
+    }
+    
+    > footer {
+      @apply order-5;
+    }
+    
+    &-no-sidebars {
+      @apply flex flex-col;
+      
+      > aside {
+        @apply hidden;
+      }
+    }
+  }
+} 

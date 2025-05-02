@@ -19,5 +19,10 @@
 			"@/*": ["src/*"]
 		}
 	},
-	"include": ["./**/*.ts", "./**/*.d.ts", "./**/*.tsx", "./**/*.vue"]
+	"include": ["./**/*.ts", "./**/*.d.ts", "./**/*.tsx", "./**/*.vue"],
+	"vueCompilerOptions": {
+		"plugins": [
+		"@vue/language-plugin-pug"
+		]
+	}
 }

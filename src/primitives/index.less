@@ -2,22 +2,25 @@
 // src/primitives/index.less
 // Import primitive styles here 
 
-body { background-color: #eee; .dark-text; }
+body { background-color: #eee; .b-text-dark; }
+
+.b-text { .b-text-dark; }
+.b-bg { .b-bg-light; }
 
 // Add back the .b-block definition
 .b-block {
 	// Default light mode: light bg, dark text
-	.light-bg();
+	.b-bg-light;
 	@apply p-4 rounded;
-	.dark-text();
+	.b-text-dark;
 }
 
 // Section primitive with larger spacing and container-like styling
 .b-section {
 	// Default light mode: light bg, dark text
 	@apply p-8 rounded-lg mb-4;
-	.light-bg();
-	.dark-text();
+	.b-bg-light;
+	.b-text-dark;
 	
 	// Responsive padding
 	@apply md:p-12;
@@ -27,22 +30,25 @@ body { background-color: #eee; .dark-text; }
 	@apply b-section;
 	ol { @apply list-decimal list-inside; }
 	ul { @apply list-disc list-inside; }
-	.light-bg();
-	.dark-text();
+	.b-bg-light;
+	.b-text-dark;
 }
 
 // Forced dark mode via ancestor: dark bg, light text
 .b-dark {
-	body { background-color: #111; .light-text(); }
+	body { background-color: #111; .b-text-light; }
+	
+	.b-text { .b-text-light; }
+	.b-bg { .b-bg-dark; }
 
 	.b-block {
-		.light-text();
-		.dark-bg();
+		.b-text-light;
+		.b-bg-dark;
 	}
 
 	.b-section {
-		.light-text();
-		.dark-bg();
+		.b-text-light;
+		.b-bg-dark;
 	}
 
 

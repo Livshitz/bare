@@ -13,17 +13,11 @@
 // @import "spacer.less"; 
 
 // light mode:
-.dark-text { color: @primary-text; }
-.light-bg { background-color: @primary-bg; }
+.b-text-dark { color: @primary-text; }
+.b-bg-light { background-color: @primary-bg; }
 // dark mode:
-.light-text { color: @primary-text-dark; }
-.dark-bg { background-color: @primary-bg-dark; }
-
-.b-text { .dark-text; .light-bg; }
-
-.b-dark {
-	.b-text { .light-text; .dark-bg; }
-}
+.b-text-light { color: @primary-text-dark; }
+.b-bg-dark { background-color: @primary-bg-dark; }
 
 .b-row {
 	@apply flex flex-row flex-wrap gap-4;

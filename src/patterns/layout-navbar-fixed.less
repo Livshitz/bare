@@ -1,0 +1,31 @@
+@import (reference) "../variables.less";
+
+.x-layout-navbar-fixed {
+  @apply min-h-screen flex flex-col;
+  
+  // Header styles
+  > header {
+    @apply fixed top-0 left-0 right-0 z-10;
+  }
+  
+  // Main content area
+  > main {
+    @apply flex-1 mt-16; // Adjust mt-16 based on header height
+  }
+  
+  // Optional footer
+  > footer {
+    @apply mt-auto;
+  }
+}
+
+// Responsive variants
+@media (max-width: 599px) {
+  .x-xs-layout-navbar-fixed {
+    @apply x-layout-navbar-fixed;
+    
+    > main {
+      @apply mt-12; // Smaller margin on mobile
+    }
+  }
+} 

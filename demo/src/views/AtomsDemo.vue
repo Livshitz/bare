@@ -304,7 +304,7 @@ section.b-toc.mb-8
 
 <style lang="less" scoped>
 /* Component-specific styles can be added here */
-@import (reference) '../../src/variables.less';
+@import (reference) '../../../src/variables.less';
 
 .b-section {
 	// background-color: @primary-bg;
