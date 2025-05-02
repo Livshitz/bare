@@ -1,8 +1,10 @@
 @import (reference) "../variables.less";
+@import (reference) "../atoms/index.less";
 
-// Base layout component
+// Base layout component - uses stack for vertical layout
 .b-layout {
-  @apply min-h-screen flex flex-col;
+  @apply min-h-screen;
+  .b-stack;
 }
 
 // Layout components
@@ -28,7 +30,7 @@
 
 // Layout modifiers
 .b-layout--centered {
-  @apply items-center justify-center;
+  .b-center;
 }
 
 .b-layout--fullscreen {
@@ -46,11 +48,11 @@
 }
 
 .b-layout--sidebar-left {
-  @apply flex-row;
+  .b-row;
 }
 
 .b-layout--sidebar-right {
-  @apply flex-row-reverse;
+  @apply b-row-reverse;
 }
 
 .b-narrow {
@@ -60,7 +62,7 @@
 // Responsive modifiers
 @media (max-width: 599px) {
   .b-layout--stack {
-    @apply flex-col;
+    .b-stack;
     
     > .b-layout-sidebar {
       @apply w-full;
