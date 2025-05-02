@@ -35,7 +35,7 @@ section.b-toc.mb-8
 		li
 			a(class="text-blue-600 hover:text-blue-800" href="#responsive-examples") Responsive Examples
 
-.x-stack.gap-8
+.b-stack.gap-8
 	// Basic Row Example
 	section#basic-row
 		.b-section

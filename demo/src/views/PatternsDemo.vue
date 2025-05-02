@@ -9,38 +9,32 @@ section.mb-8
   section
     .b-section
       h2.text-xl.font-bold.mb-4 Centered Layout
-      .x-layout-centered.bg-gray-200.p-4.h-64
+      .b-layout-centered.bg-gray-200.p-4.h-64
         .b-block Centered Content
-      pre.xx-snippet .x-layout-centered
+      pre.xx-snippet .b-layout-centered
 
       h2.text-xl.font-bold.mb-4 Centered Layout with Width Constraints
       .bg-gray-200.p-4.h-64
-        .b-block.x-layout-centered-narrow Narrow Content (max-w-md)
-      pre.xx-snippet .x-layout-centered-narrow
+        .b-block.b-narrow Narrow Content (max-w-7xl)
+      pre.xx-snippet .b-layout-centered-narrow
 
-      .bg-gray-200.p-4.h-64
-        .b-block.x-layout-centered-medium Medium Content (max-w-lg)
-      pre.xx-snippet .x-layout-centered-medium
-
-      .bg-gray-200.p-4.h-64
-        .b-block.x-layout-centered-wide Wide Content (max-w-4xl)
-      pre.xx-snippet .x-layout-centered-wide
+      
 
   // Fixed Navbar Layout Example
   section
     .b-section
       h2.text-xl.font-bold.mb-4 Fixed Navbar Layout
-      .x-layout-navbar-fixed.bg-gray-200.min-h-96
+      .b-layout-navbar-fixed.bg-gray-200.min-h-96
         header.b-block.bg-gray-100 Fixed Header
         main.bg-gray-100.p-4 Main Content
         footer.bg-gray-300.p-4 Footer
-      pre.xx-snippet .x-layout-navbar-fixed
+      pre.xx-snippet .b-layout-navbar-fixed
 
   // Sidebar Layout Example
   section
     .b-section
       h2.text-xl.font-bold.mb-4 Sidebar Layout - Left
-      .x-layout-sidebar-left.bg-gray-200.min-h-96
+      .b-layout-sidebar-left.bg-gray-200.min-h-96
         aside.p-4
           h3.font-semibold.mb-2 Sidebar
           .b-stack.gap-2
@@ -55,10 +49,10 @@ section.mb-8
             .b-block Content Block 2
             .b-block Content Block 3
             .b-block Content Block 4
-      pre.xx-snippet .x-layout-sidebar-left
+      pre.xx-snippet .b-layout-sidebar-left
 
       h2.text-xl.font-bold.mb-4 Sidebar Layout - Right
-      .x-layout-sidebar-right.bg-gray-200.h-96
+      .b-layout-sidebar-right.bg-gray-200.h-96
         aside.p-4
           h3.font-semibold.mb-2 Sidebar
           .b-stack.gap-2
@@ -73,13 +67,13 @@ section.mb-8
             .b-block Content Block 2
             .b-block Content Block 3
             .b-block Content Block 4
-      pre.xx-snippet .x-layout-sidebar-right
+      pre.xx-snippet .b-layout-sidebar-right
 
   // Holy Grail Layout Example
   section
     .b-section
       h2.text-xl.font-bold.mb-4 Holy Grail Layout
-      .x-layout-holy-grail.bg-gray-200.h-96
+      .b-layout-holy-grail.bg-gray-200.h-96
         header.bg-gray-300.p-4 
           h3.font-semibold Header
         nav.bg-gray-100.p-4
@@ -102,10 +96,10 @@ section.mb-8
             .b-block Side Item 2
         footer.bg-gray-300.p-4
           h3.font-semibold Footer
-      pre.xx-snippet .x-layout-holy-grail
+      pre.xx-snippet .b-layout-holy-grail
 
       h2.text-xl.font-bold.mb-4 Holy Grail Layout - No Sidebars
-      .x-layout-holy-grail-no-sidebars.bg-gray-200.min-h-96
+      .b-layout-holy-grail-no-sidebars.bg-gray-200.min-h-96
         header.bg-gray-300.p-4
           h3.font-semibold Header
         nav.bg-gray-100.p-4
@@ -123,14 +117,14 @@ section.mb-8
             .b-block Content Block 4
         footer.bg-gray-300.p-4
           h3.font-semibold Footer
-      pre.xx-snippet .x-layout-holy-grail-no-sidebars
+      pre.xx-snippet .b-layout-holy-grail-no-sidebars
 
   // Responsive Examples
   section
     .b-section
       h2.text-xl.font-bold.mb-4 Responsive Examples
       p.mb-4 Resize your browser window below 600px to see how these layouts adapt to smaller screens.
-      .x-xs-layout-sidebar-left.x-layout-sidebar-left.bg-gray-200.h-96
+      .b-xs-layout-sidebar-left.b-layout-sidebar-left.bg-gray-200.h-96
         aside.p-4
           h3.font-semibold.mb-2 Sidebar (stacks on mobile)
           .b-stack.gap-2
@@ -145,7 +139,7 @@ section.mb-8
             .b-block Content Block 2
             .b-block Content Block 3
             .b-block Content Block 4
-      pre.xx-snippet .x-xs-layout-sidebar-left
+      pre.xx-snippet .b-xs-layout-sidebar-left
 </template>
 
 <script setup lang="ts">

@@ -1,5 +1,5 @@
 <template lang="pug">
-.x-stack.gap-8.p-8
+.b-stack.gap-8.p-8
   .flex.justify-between.items-center
     h1.text-4xl.font-bold @bod.ee/bare Demo
     .flex.gap-4

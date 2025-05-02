@@ -1,0 +1,19 @@
+@import (reference) "../variables.less";
+
+// Base centered layout - takes full width by default
+.b-layout-centered {
+  @apply min-h-screen flex items-center justify-center;
+}
+
+// Width constraint utility that can be used with any layout
+// Uses max-w-7xl (1280px) as the standard narrow width for comfortable reading
+.b-narrow {
+  @apply max-w-7xl w-full mx-auto;
+}
+
+// Responsive variants
+@media (max-width: 599px) {
+  .b-xs-layout-centered {
+    @apply b-layout-centered;
+  }
+} 
