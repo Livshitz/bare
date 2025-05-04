@@ -5,11 +5,11 @@ div.b-layout.b-layout--sidebar-left.b-layout--fullscreen.b
 	aside.b-layout-sidebar.b-bg.b-text
 		.b-col.b-start.b-full
 			//- “New Chat” button
-			button.b-block(type="button") New Chat
+			button.b-block.b-caption(type="button") New Chat
 
 			//- Recent Threads
 			nav.b-col
-				h2.b-block Recent Threads
+				.b-block.b-label Recent Threads
 				ul.b-col
 					li.b-row.b-between
 						span Welcome to T3 Chat

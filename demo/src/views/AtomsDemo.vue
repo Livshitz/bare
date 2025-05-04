@@ -328,6 +328,7 @@ section.b-section
 				.b-subtitle This is a subtitle
 				.b-caption This is a caption
 				.b-label This is a label
+				.b-text This text
 			pre.b-text-sm.bg-gray-800.p-4.rounded.font-mono.text-white .b-heading, .b-title, .b-subtitle, .b-caption, .b-label
 
 		.b-section
