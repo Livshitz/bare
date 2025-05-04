@@ -15,3 +15,250 @@
 @breakpoint-sm: 640px;
 @breakpoint-md: 768px;
 @breakpoint-lg: 1024px;
+
+
+// ------
+
+// x-css variables
+// Based on scientific principles of perception, cognition, and design
+
+// CSS Variables for configuration
+@x-primary-hue: 220;  // Default primary color hue (blue)
+
+// Base units and ratios
+@baseline-grid: 8px;  // Base-8 system for cognitive efficiency
+@ratio-golden: 1.618; // Golden ratio for natural proportions
+@ratio-minor-third: 1.2;
+@ratio-major-third: 1.25;
+
+// Mathematical bases
+@layout-gutter-width: (@baseline-grid * 2);
+@content-width-optimal: 66ch; // Optimal reading width
+
+// Breakpoints - aligned with perceptual significance
+@breakpoint-xs: 480px;  // Mobile
+@breakpoint-sm: 768px;  // Tablet/small laptop
+@breakpoint-md: 1024px; // Desktop
+@breakpoint-lg: 1280px; // Large desktop
+@breakpoint-xl: 1440px; // Extra large desktop
+
+// Spacing Scale (rem) - Base-8 system
+@space-unit: 0.25rem;  // 4px - base unit
+
+// Core spacing scale
+@space-xxs: @space-unit;        // 4px  (also @space-fib-1)
+@space-xs: (@space-unit * 2);   // 8px  (also @space-fib-2)
+@space-sm: (@space-unit * 4);   // 16px
+@space-md: (@space-unit * 8);   // 32px (also @space-fib-8)
+@space-lg: (@space-unit * 16);  // 64px
+@space-xl: (@space-unit * 32);  // 128px
+
+// Additional spacing scales - specialized use cases
+// Fibonacci-based spacing
+@space-fib-1: @space-unit;           // 4px
+@space-fib-2: (@space-unit * 2);     // 8px
+@space-fib-3: (@space-unit * 3);     // 12px
+@space-fib-5: (@space-unit * 5);     // 20px
+@space-fib-8: (@space-unit * 8);     // 32px
+@space-fib-13: (@space-unit * 13);   // 52px (same as @space-golden-md)
+
+// Golden ratio spacing
+@space-golden-sm: (@space-sm * @ratio-golden); // ~26px
+@space-golden-md: @space-fib-13; // 52px
+
+// Size Scale (rem) - for width and height utilities
+@size-xs: 2rem;    // 32px
+@size-sm: 3rem;    // 48px
+@size-md: 4rem;    // 64px
+@size-lg: 6rem;    // 96px
+@size-xl: 8rem;    // 128px
+@size-2xl: 12rem;  // 192px
+
+// Z-index layers based on mental model
+@z-below: -1;
+@z-base: 0;
+@z-lifted: 1;
+@z-dropdown: 10;
+@z-sticky: 100;
+@z-overlay: 300;
+@z-modal: 1000;
+@z-toast: 1030;
+@z-tooltip: 1020;
+@z-top: 9999;
+
+// Layout
+@layout-margin: @layout-gutter-width;
+@layout-padding: @layout-gutter-width;
+@flow-rhythm-primary: @space-md; // Primary rhythm for content flow
+
+// Flexbox
+@flex-grow: 1;
+@flex-shrink: 1;
+@flex-basis: auto;
+
+// Typography
+@font-size-base: 1rem;  // 16px
+@line-height-tight: 1.2;  // Headings
+@line-height-normal: 1.5; // Body text
+@line-height-loose: 1.7;  // Body text for larger sizes
+
+// Type scale based on major second (1.2) ratio for better readability
+@font-size-xs: (@font-size-base * 0.75);     // 12px
+@font-size-sm: (@font-size-base * 0.875);    // 14px
+@font-size-md: @font-size-base;              // 16px
+@font-size-lg: (@font-size-base * 1.2);      // 19.2px
+@font-size-xl: (@font-size-base * 1.44);     // 23.04px
+@font-size-2xl: (@font-size-base * 1.728);   // 27.65px
+@font-size-3xl: (@font-size-base * 2.074);   // 33.18px
+@font-size-4xl: (@font-size-base * 2.488);   // 39.81px
+
+// Border radii
+@radius-none: 0;
+@radius-xs: 0.125rem;
+@radius-sm: 0.25rem;
+@radius-md: 0.5rem;
+@radius-lg: 1rem;
+@radius-xl: 2rem;
+@radius-pill: 9999px;
+
+// Shadows for perceived elevation
+@shadow-sm: 0 1px 4px 0 rgba(0, 0, 0, 0.1);
+@shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+@shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+@shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+
+// Perception-based transition times
+@time-instant: 50ms;
+@time-quick: 500ms;
+@time-moderate: 800ms;
+@time-expressive: 1000ms;
+
+// Cognitive and perceptual variables
+@cognitive-load-light: @space-md;   // Spacing for low complexity content
+@cognitive-load-moderate: @space-sm; // Spacing for moderate complexity
+@cognitive-load-heavy: @space-xs;   // Tighter spacing for related complex info
+
+// Directional cues for subliminal influence
+@directional-cue-primary: 8px 12px 8px 8px; // Right-pointing asymmetric padding
+@directional-shadow: 2px 0 3px rgba(0, 0, 0, 0.1); // Rightward shadow
+
+// Basic Colors (Tailwind Palette)
+@color-slate: #64748b;
+@color-gray: #6b7280;
+@color-zinc: #71717a;
+@color-neutral: #737373;
+@color-stone: #78716c;
+@color-red: #ef4444;
+@color-orange: #f97316;
+@color-amber: #f59e0b;
+@color-yellow: #eab308;
+@color-lime: #84cc16;
+@color-green: #22c55e;
+@color-emerald: #10b981;
+@color-teal: #14b8a6;
+@color-cyan: #06b6d4;
+@color-sky: #0ea5e9;
+@color-blue: #3b82f6;
+@color-indigo: #6366f1;
+@color-violet: #8b5cf6;
+@color-purple: #a855f7;
+@color-fuchsia: #d946ef;
+@color-pink: #ec4899;
+@color-rose: #f43f5e;
+@color-white: #ffffff;
+@color-black: #000000; 
+
+// Working memory optimization (7±2 principle)
+@memory-chunk-optimal: 5;
+@memory-chunk-gap: @space-md;
+@memory-chunk-internal-gap: @space-xs;
+
+// Cross-cultural variables
+@start-spacing: @space-md; // Logical 'start' spacing
+@end-spacing: @space-sm;   // Logical 'end' spacing
+
+// Color system with perceptual uniformity
+// Neutral colors (base for text and backgrounds)
+@color-neutral-100: hsl(220, 10%, 98%);
+@color-neutral-200: hsl(220, 10%, 90%);
+@color-neutral-300: hsl(220, 10%, 80%);
+@color-neutral-400: hsl(220, 10%, 70%);
+@color-neutral-500: hsl(220, 10%, 60%);
+@color-neutral-600: hsl(220, 10%, 50%);
+@color-neutral-700: hsl(220, 10%, 40%);
+@color-neutral-800: hsl(220, 10%, 30%);
+@color-neutral-900: hsl(220, 10%, 20%);
+@color-neutral-1000: hsl(220, 10%, 10%);
+
+// Text colors (using neutral scale)
+@color-text-primary: @color-neutral-1000;
+@color-text-secondary: @color-neutral-800;
+@color-text-disabled: @color-neutral-500;
+
+// Primary palette - configurable via CSS variables
+@color-primary-100: hsl(@x-primary-hue, 100%, 95%);
+@color-primary-200: hsl(@x-primary-hue, 100%, 85%);
+@color-primary-300: hsl(@x-primary-hue, 100%, 75%);
+@color-primary-400: hsl(@x-primary-hue, 100%, 65%);
+@color-primary-500: hsl(@x-primary-hue, 100%, 55%);
+@color-primary-600: hsl(@x-primary-hue, 100%, 45%);
+@color-primary-700: hsl(@x-primary-hue, 100%, 35%);
+@color-primary-800: hsl(@x-primary-hue, 100%, 25%);
+@color-primary-900: hsl(@x-primary-hue, 100%, 15%);
+
+// Semantic colors
+@color-success: hsl(145, 63%, 42%);
+@color-warning: hsl(45, 100%, 51%);
+@color-error: hsl(355, 70%, 50%);
+@color-info: hsl(200, 65%, 45%);
+
+// Button (based on existing implementation with adaptations)
+@btn-font-size: 14px;
+@btn-line-height: @line-height-normal;
+@btn-font-weight: 500;
+@btn-padding-y: @space-xs;
+@btn-padding-x: @space-sm;
+@btn-border-radius: @radius-sm;
+@btn-transition-speed: @time-quick;
+@btn-border-width: 1px;
+@btn-gap: @space-xxs;
+
+// Button Colors (preserving existing values)
+@btn-default-bg: #fff;
+@btn-default-text: #0f172a;     // slate-900
+@btn-default-border: #e2e8f0;   // slate-200
+@btn-default-hover-bg: #f8fafc; // slate-50
+@btn-default-hover-border: #cbd5e1; // slate-300
+
+@btn-primary-bg: #18181b;
+@btn-primary-text: #fff;
+@btn-primary-border: #18181b;
+@btn-primary-hover-bg: #18181be6;
+@btn-primary-hover-border: #18181be6;
+
+@btn-disabled-opacity: 0.5;
+@btn-focus-ring-color: rgba(24, 24, 27, 0.1);
+
+// Button Sizes
+@btn-sm-font: 12px;
+@btn-sm-padding-y: @space-xxs;
+@btn-sm-padding-x: @space-xs;
+@btn-sm-radius: @radius-xs;
+@btn-sm-gap: @space-xxs;
+
+@btn-lg-font: 16px;
+@btn-lg-padding-y: @space-sm;
+@btn-lg-padding-x: @space-md;
+@btn-lg-radius: @radius-md;
+@btn-lg-gap: @space-xs;
+
+// Easing curves tuned for cognitive processing
+@ease-standard: cubic-bezier(0.4, 0.0, 0.2, 1); // Standard, balanced
+@ease-emphasized: cubic-bezier(0.0, 0.0, 0.2, 1); // Deceleration, for elements entering the screen
+@ease-decelerated: cubic-bezier(0.0, 0.0, 0.2, 1); // Same as emphasized
+@ease-accelerated: cubic-bezier(0.4, 0.0, 1, 1); // For elements leaving the screen
+
+// Preattentive processing variables
+// These are used to create visual elements that capture attention subconsciously
+@preattentive-size-delta: 1.1;
+@preattentive-position-delta: 2px; 

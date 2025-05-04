@@ -39,11 +39,21 @@
 
 .b-layout--fixed-header {
   > header {
-    @apply fixed top-0 left-0 right-0 z-10 w-full;
+    @apply ~"fixed top-0 left-0 right-0 z-10 w-full h-[4.5rem]";
   }
   
   > main {
-    @apply pt-16 flex-1; // Adjust based on header height
+    @apply ~"pt-[4.5rem] flex-1"; // Adjust based on header height
+  }
+}
+
+.b-layout--fixed-header.b-layout--no-header {
+  > header {
+    @apply hidden;
+  }
+
+  > main {
+    @apply ~"pt-0 !important";
   }
 }
 
@@ -52,7 +62,7 @@
 }
 
 .b-layout--sidebar-right {
-  @apply b-row-reverse;
+  .b-row-reverse;
 }
 
 .b-narrow {

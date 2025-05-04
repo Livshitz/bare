@@ -1,0 +1,90 @@
+@import '../variables.less';
+
+// Input primitive
+.b-input,
+.b-textarea {
+  display: block;
+  width: 100%;
+  font-size: @font-size-base;
+  line-height: @line-height-normal;
+  color: @color-text-primary;
+  background-color: @color-neutral-100;
+  border: 1px solid @color-neutral-300;
+  border-radius: @radius-sm;
+  padding: @space-xs @space-xs;
+  transition: border-color @time-quick @ease-standard, box-shadow @time-quick @ease-standard;
+  box-shadow: none;
+  outline: none;
+  appearance: none;
+  margin: 0;
+  min-height: 2.5rem;
+
+  &::placeholder {
+    color: @color-text-disabled;
+    opacity: 1;
+  }
+
+  &:focus {
+    border-color: @color-primary-500;
+    box-shadow: 0 0 0 2px fade(@color-primary-500, 20%);
+    background-color: @color-neutral-100;
+  }
+
+  &:disabled,
+  &[readonly] {
+    background-color: @color-neutral-200;
+    color: @color-text-disabled;
+    border-color: @color-neutral-200;
+    cursor: not-allowed;
+    opacity: 0.7;
+  }
+}
+
+// Textarea specific
+.b-textarea {
+  min-height: 4rem;
+  resize: vertical;
+}
+
+// Size variants
+.b-input-sm,
+.b-textarea-sm {
+  font-size: @font-size-sm;
+  padding: @space-xxs @space-xs;
+  min-height: 2rem;
+}
+
+.b-input-lg,
+.b-textarea-lg {
+  font-size: @font-size-lg;
+  padding: @space-sm @space-md;
+  min-height: 3rem;
+}
+
+// Dark mode support
+html[data-theme="dark"],
+.b-dark {
+  .b-input,
+  .b-textarea {
+    background-color: @color-neutral-900;
+    color: @color-neutral-100;
+    border-color: @color-neutral-700;
+
+    &::placeholder {
+      color: @color-neutral-500;
+    }
+
+    &:focus {
+      border-color: @color-primary-400;
+      box-shadow: 0 0 0 2px fade(@color-primary-400, 20%);
+      background-color: @color-neutral-900;
+    }
+
+    &:disabled,
+    &[readonly] {
+      background-color: @color-neutral-800;
+      color: @color-neutral-600;
+      border-color: @color-neutral-800;
+    }
+  }
+} 

@@ -1,11 +1,26 @@
 @import (reference) "../variables.less";
 
 .b-row {
-  @apply flex flex-row flex-wrap gap-4;
+  @apply flex flex-row gap-4 w-full;
+  
+  &.b-center-x { @apply justify-center; }
+  &.b-center-y { @apply items-center; }
+  &.b-start-x { @apply justify-start; }
+  &.b-start-y { @apply items-start; }
+  &.b-end-x { @apply justify-end; }
+  &.b-end-y { @apply items-end; }
+  &.b-between-x { @apply justify-between; }
+  &.b-around-x { @apply justify-around; }
+  &.b-evenly-x { @apply justify-evenly; }
 }
 
 .b-row-reverse {
   @apply b-row flex-row-reverse !important;
+}
+
+.b-row-wrap {
+  .b-row;
+  @apply flex-wrap;
 }
 
 .b-row-nowrap {

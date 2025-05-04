@@ -1,44 +1,44 @@
 <template lang="pug">
 // Documentation Header
-section.mb-8
+section.b-section
 	h1.text-2xl.font-bold.mb-4 Layout Atoms Demo
 	p.mb-4 This demo showcases the layout atoms available in the design system.
 
-// Table of Contents
-section.b-toc.mb-8
-	h2.text-xl.font-bold.mb-4 Table of Contents
-	ol.b-stack.gap-2
-		li
-			a(class="text-blue-600 hover:text-blue-800" href="#basic-row") Basic Row Examples
-		li
-			a(class="text-blue-600 hover:text-blue-800" href="#row-alignments") Row Alignments
-		li
-			a(class="text-blue-600 hover:text-blue-800" href="#nested-structure") Nested Structure
-		li
-			a(class="text-blue-600 hover:text-blue-800" href="#responsive-layout") Responsive Layout
-		li
-			a(class="text-blue-600 hover:text-blue-800" href="#row-centering") Row Centering
-		li
-			a(class="text-blue-600 hover:text-blue-800" href="#start-alignments") Start Alignments
-		li
-			a(class="text-blue-600 hover:text-blue-800" href="#end-alignments") End Alignments
-		li
-			a(class="text-blue-600 hover:text-blue-800" href="#space-distribution") Space Distribution
-		li
-			a(class="text-blue-600 hover:text-blue-800" href="#grid-layout") Grid Layout
-		li
-			a(class="text-blue-600 hover:text-blue-800" href="#stack-layout") Stack Layout
-		li
-			a(class="text-blue-600 hover:text-blue-800" href="#spacer-examples") Spacer Examples
-		li
-			a(class="text-blue-600 hover:text-blue-800" href="#alignment-examples") Alignment Examples
-		li
-			a(class="text-blue-600 hover:text-blue-800" href="#responsive-examples") Responsive Examples
+	// Table of Contents
+	.b-toc.mb-8
+		h2.text-xl.font-bold.mb-4 Table of Contents
+		ol.b-stack.gap-2
+			li
+				a(class="text-blue-600 hover:text-blue-800" href="#basic-row") Basic Row Examples
+			li
+				a(class="text-blue-600 hover:text-blue-800" href="#row-alignments") Row Alignments
+			li
+				a(class="text-blue-600 hover:text-blue-800" href="#nested-structure") Nested Structure
+			li
+				a(class="text-blue-600 hover:text-blue-800" href="#responsive-layout") Responsive Layout
+			li
+				a(class="text-blue-600 hover:text-blue-800" href="#row-centering") Row Centering
+			li
+				a(class="text-blue-600 hover:text-blue-800" href="#start-alignments") Start Alignments
+			li
+				a(class="text-blue-600 hover:text-blue-800" href="#end-alignments") End Alignments
+			li
+				a(class="text-blue-600 hover:text-blue-800" href="#space-distribution") Space Distribution
+			li
+				a(class="text-blue-600 hover:text-blue-800" href="#grid-layout") Grid Layout
+			li
+				a(class="text-blue-600 hover:text-blue-800" href="#stack-layout") Stack Layout
+			li
+				a(class="text-blue-600 hover:text-blue-800" href="#spacer-examples") Spacer Examples
+			li
+				a(class="text-blue-600 hover:text-blue-800" href="#alignment-examples") Alignment Examples
+			li
+				a(class="text-blue-600 hover:text-blue-800" href="#responsive-examples") Responsive Examples
 
 .b-stack.gap-8
 	// Basic Row Example
 	section#basic-row
-		.b-section
+		.b-section.overflow-x-auto
 			.b-title Basic Row - default wrap
 			.b-row.mb-4.bg-gray-200.p-4
 				.b-block(class="w-[500px]") Item 1
@@ -48,15 +48,15 @@ section.b-toc.mb-8
 				.b-block(class="w-[100px]") Item 5
 			pre.mb-4.bg-gray-800.p-4.rounded.font-mono.text-sm.text-white .b-row
 		
-		.b-section
-			.b-title Basic Row - no wrap
-			.b-row-nowrap.mb-4.bg-gray-200.p-4
+		.b-section.overflow-x-auto
+			.b-title Basic Row - wrap
+			.b-row-wrap.mb-4.bg-gray-200.p-4
 				.b-block(class="w-[500px]") Item 1
 				.b-block(class="w-[500px]") Item 2
 				.b-block(class="w-[100px]") Item 3
 				.b-block(class="w-[100px]") Item 4
 				.b-block(class="w-[100px]") Item 5
-			pre.mb-4.bg-gray-800.p-4.rounded.font-mono.text-sm.text-white .b-row-nowrap
+			pre.mb-4.bg-gray-800.p-4.rounded.font-mono.text-sm.text-white .b-row-wrap
 
 	// Row with Different Alignments
 	section#row-alignments
@@ -376,6 +376,10 @@ section.b-toc.mb-8
 
 .b-section {
 	// background-color: @primary-bg;
+}
+
+pre { 
+  @apply break-words whitespace-pre-wrap overflow-x-auto;
 }
 
 </style> 

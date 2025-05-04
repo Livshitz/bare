@@ -1,6 +1,8 @@
 @import (reference) "../variables.less";
-@import (reference) "./badge.less";
 @import (reference) "../atoms/index.less";
+@import "./badge.less";
+@import "./button.less";
+@import "./input.less";
 // src/primitives/index.less
 // Import primitive styles here 
 
@@ -13,8 +15,9 @@ body { background-color: #eee; .b-text-dark; }
 .b-block {
 	// Default light mode: light bg, dark text
 	.b-bg;
-	@apply p-4 rounded b-bg b-stack gap-2;
+	.b-stack;
 	.b-text-dark;
+	@apply p-4 rounded b-bg gap-2;
 }
 
 // Section primitive with larger spacing and container-like styling

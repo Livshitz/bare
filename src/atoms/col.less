@@ -8,6 +8,19 @@
   @apply b-col flex-col-reverse;
 }
 
+.b-col {
+  @apply flex-1 flex flex-col gap-4;
+  &.b-center-x { @apply items-center; }
+  &.b-center-y { @apply justify-center; }
+  &.b-start-x { @apply items-start; }
+  &.b-start-y { @apply justify-start; }
+  &.b-end-x { @apply items-end; }
+  &.b-end-y { @apply justify-end; }
+  &.b-between-x { @apply items-start; }
+  &.b-around-x { @apply items-start; }
+  &.b-evenly-x { @apply items-start; }
+} 
+
 // Responsive variants
 @media (max-width: 599px) {
   .b-xs-col {

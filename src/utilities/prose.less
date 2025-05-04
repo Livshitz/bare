@@ -1,0 +1,234 @@
+// Typography Utilities
+// Based on scientific principles of perception and reading research
+@import '../variables';
+
+// Main prose container with optimal typography settings
+.b-prose {
+  // Set optimal line length for readability
+  max-width: @content-width-optimal;
+  line-height: @line-height-normal;
+  
+  // Typography with mathematical ratio scale
+  h1 {
+    font-size: @font-size-4xl;
+    font-weight: bold;
+    line-height: @line-height-tight;
+    margin-bottom: @space-md;
+    margin-top: @space-lg;
+  }
+  
+  h2 {
+    font-size: @font-size-xl;
+    font-weight: 600;
+    line-height: @line-height-tight;
+    margin-bottom: @space-sm;
+    margin-top: @space-lg;
+  }
+  
+  h3 {
+    font-size: @font-size-lg;
+    font-weight: 600;
+    line-height: @line-height-tight;
+    margin-bottom: @space-sm;
+    margin-top: @space-md;
+  }
+  
+  h4 {
+    font-size: @font-size-md;
+    font-weight: 600;
+    margin-bottom: @space-xs;
+    margin-top: @space-md;
+  }
+  
+  h5, h6 {
+    font-size: @font-size-md;
+    font-weight: 500;
+    margin-bottom: @space-xs;
+    margin-top: @space-sm;
+  }
+  
+  p {
+    margin-bottom: @space-md;
+    
+    // Optimize typography with proper paragraph spacing
+    + p {
+      margin-top: -@space-xs; // Tighter spacing between paragraphs
+    }
+  }
+  
+  ul, ol {
+    margin-bottom: @space-md;
+    padding-left: @space-md;
+  }
+  
+  li {
+    margin-bottom: @space-xs;
+    
+    // Proper nesting for lists
+    ul, ol {
+      margin-top: @space-xs;
+      margin-bottom: @space-xs;
+    }
+  }
+  
+  // Maintain vertical rhythm with block elements
+  blockquote {
+    border-left: 4px solid @color-neutral-300;
+    padding-left: @space-sm;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: @space-md;
+    font-style: italic;
+    color: @color-text-secondary;
+  }
+  
+  // Code formatting with cognitive considerations
+  code {
+    background-color: @color-neutral-100;
+    color: @color-error;
+    padding: @space-xxs @space-xs;
+    border-radius: @radius-sm;
+    font-size: 0.875em;
+    font-family: monospace;
+  }
+  
+  pre {
+    margin-bottom: @space-md;
+    code {
+      display: block;
+      background-color: @color-neutral-900;
+      color: @color-neutral-100;
+      padding: @space-md;
+      border-radius: @radius-md;
+      overflow-x: auto;
+      font-size: 0.875em;
+      tab-size: 2;
+    }
+  }
+  
+  // Visual hierarchy and rhythm for horizontal rules
+  hr {
+    border: 0;
+    height: 1px;
+    background-color: @color-neutral-300;
+    margin: @space-lg 0;
+  }
+  
+  // Table formatting for better readability
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: @space-md;
+    
+    th {
+      border-bottom: 2px solid @color-neutral-300;
+      padding: @space-xs @space-sm;
+      text-align: start;
+      font-weight: 600;
+    }
+    
+    td {
+      border-bottom: 1px solid @color-neutral-200;
+      padding: @space-xs @space-sm;
+    }
+    
+    tr:last-child td {
+      border-bottom: none;
+    }
+  }
+  
+  // Anchor styling with perceptual cues
+  a {
+    color: @color-primary-600;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.15em;
+    transition: color @time-instant @ease-standard;
+    
+    &:hover {
+      color: @color-primary-700;
+    }
+    
+    &:active {
+      color: @color-primary-800;
+    }
+  }
+  
+  // Images with proper spacing
+  img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: @space-md;
+    border-radius: @radius-sm;
+  }
+  
+  // Figure and caption styling
+  figure {
+    margin: 0 0 @space-md 0;
+    
+    figcaption {
+      font-size: @font-size-sm;
+      color: @color-text-secondary;
+      margin-top: @space-xs;
+      text-align: center;
+    }
+  }
+}
+
+// Cross-cultural typography adaptations
+html[dir="rtl"] .b-prose {
+  // RTL-specific adjustments
+  blockquote {
+    border-left: none;
+    border-right: 4px solid @color-neutral-300;
+    padding-left: 0;
+    padding-right: @space-sm;
+  }
+  
+  ul, ol {
+    padding-left: 0;
+    padding-right: @space-md;
+  }
+}
+
+// Language-specific typography optimizations
+.b-prose[lang|="ja"], 
+.b-prose[lang|="zh"], 
+.b-prose[lang|="ko"] {
+  // CJK language optimizations
+  line-height: 1.8; // Higher line height for ideographic languages
+  
+  h1, h2, h3, h4, h5, h6 {
+    line-height: 1.5; // Increased heading line height for CJK
+  }
+}
+
+.b-prose[lang|="ar"],
+.b-prose[lang|="he"] {
+  // Arabic/Hebrew optimizations
+  line-height: 1.6; // Slightly higher than Latin but lower than CJK
+}
+
+// Typography variants
+.b-prose-sm {
+  font-size: @font-size-sm;
+  
+  h1 { font-size: @font-size-xl; }
+  h2 { font-size: @font-size-lg; }
+  h3 { font-size: @font-size-md; }
+}
+
+.b-prose-lg {
+  font-size: @font-size-lg;
+  
+  h1 { 
+    font-size: @font-size-4xl * 1.1; 
+    margin-bottom: @space-md * 1.2;
+  }
+  h2 { font-size: @font-size-xl * 1.1; }
+  h3 { font-size: @font-size-lg * 1.1; }
+  
+  p, ul, ol, blockquote {
+    margin-bottom: @space-md * 1.2;
+  }
+} 
