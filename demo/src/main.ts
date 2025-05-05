@@ -2,6 +2,7 @@ import { createApp } from 'vue';
 import App from './App.vue';
 import router from './router';
 import '../../src/index.less';
+import './main.less';
 import { Helpers } from './helpers';
 
 const app = createApp(App);

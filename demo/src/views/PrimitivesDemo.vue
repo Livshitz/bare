@@ -15,15 +15,15 @@ section.section
 					span.font-semibold Variants
 					.row.gap-2
 						button.btn Default
-						button.btn.btn-primary Primary
-						button.btn.btn-secondary Secondary
-						button.btn.btn-ghost Ghost
+						button.btn-primary Primary
+						button.btn-secondary Secondary
+						button.btn-ghost Ghost
 						button.btn(disabled) Disabled
-					pre.bg-gray-800.p-2.rounded.text-white.font-mono
+					pre
 						| button.btn
-						| button.btn.btn-primary
-						| button.btn.btn-secondary
-						| button.btn.btn-ghost
+						| button.btn-primary
+						| button.btn-secondary
+						| button.btn-ghost
 						| button.btn(disabled)
 				// Sizes Grouped
 				.stack.gap-2
@@ -32,7 +32,7 @@ section.section
 						button.btn.btn-sm Small
 						button.btn Medium
 						button.btn.btn-lg Large
-					pre.bg-gray-800.p-2.rounded.text-white.font-mono
+					pre
 						| button.btn.btn-sm
 						| button.btn
 						| button.btn.btn-lg
@@ -40,8 +40,54 @@ section.section
 				.row.gap-4
 					.stack.gap-2
 						span.font-semibold Block
-						button.btn.btn-block(style="width:100%") Block Button
-						pre.bg-gray-800.p-2.rounded.text-white.font-mono button.btn.btn-block
+						button.btn-block(style="width:100%") Block Button
+						pre button.btn-block
+				// Icon Support
+				.stack.gap-2
+					span.font-semibold Icon Support
+					.row.gap-2
+						button.btn
+							span.btn-icon-left 🎨
+							| Icon Left
+						button.btn
+							| Icon Right
+							span.btn-icon-right 🎨
+						button.btn
+							span.btn-icon-left 🎨
+							| Both Sides
+							span.btn-icon-right 🎨
+						button.btn-icon 🎨
+						button.btn-icon.btn-sm 🎨
+						button.btn-icon.btn-lg 🎨
+					pre
+						| button.btn
+						|   span.btn-icon-left 🎨
+						|   | Icon Left
+						| button.btn
+						|   | Icon Right
+						|   span.btn-icon-right 🎨
+						| button.btn-icon 🎨
+						| button.btn-icon.btn-sm 🎨
+						| button.btn-icon.btn-lg 🎨
+				
+				// Special Variants
+				.stack.gap-2
+					span.font-semibold Special Variants
+					.row.gap-2
+						button.btn.btn-golden Golden Ratio
+						button.btn.btn-attention Attention
+						button.btn.btn-attention-violet Attention violet
+						button.btn.btn-attention-red Attention red
+						button.btn Not Attention
+					pre
+						| button.btn.btn-golden
+						| button.btn.btn-attention
+				// Dark Theme Toggle
+				.stack.gap-2
+					span.font-semibold Dark Theme
+					.row.gap-2
+						button.btn(@click="toggleDarkMode") Toggle Dark Mode
+					pre button.btn(@click="toggleDarkMode")
 
 	// Badge Primitive Demo
 	section#badge-demo
@@ -51,8 +97,9 @@ section.section
 				// Default
 				.stack.gap-2
 					span.font-semibold Default
-					span.badge Default
-					pre.bg-gray-800.p-2.rounded.text-white.font-mono span.badge
+					div
+						span.badge Default
+					pre span.badge
 				// Color Variants
 				.stack.gap-2
 					span.font-semibold Color Variants
@@ -61,7 +108,7 @@ section.section
 						span.badge.badge-success Success
 						span.badge.badge-warning Warning
 						span.badge.badge-danger Danger
-					pre.bg-gray-800.p-2.rounded.text-white.font-mono
+					pre
 						| .badge.badge-primary
 						| .badge.badge-success
 						| .badge.badge-warning
@@ -73,7 +120,7 @@ section.section
 						span.badge.badge-sm Small
 						span.badge Medium
 						span.badge.badge-lg Large
-					pre.bg-gray-800.p-2.rounded.text-white.font-mono
+					pre
 						| .badge.badge-sm
 						| .badge
 						| .badge.badge-lg
@@ -87,13 +134,13 @@ section.section
 				.stack.gap-2
 					span.font-semibold Default Input
 					input.input(type="text" placeholder="Default input")
-					pre.bg-gray-800.p-2.rounded.text-white.font-mono input.input
+					pre input.input
 				// Input States
 				.stack.gap-2
 					span.font-semibold Input States
 					.stack.gap-2
 						input.input(type="text" placeholder="Disabled state" disabled)
-					pre.bg-gray-800.p-2.rounded.text-white.font-mono
+					pre
 						| input.input(:hover)
 						| input.input(:focus)
 						| input.input(disabled)
@@ -104,7 +151,7 @@ section.section
 						input.input.input-sm(type="text" placeholder="Small input")
 						input.input(type="text" placeholder="Medium input")
 						input.input.input-lg(type="text" placeholder="Large input")
-					pre.bg-gray-800.p-2.rounded.text-white.font-mono
+					pre
 						| input.input.input-sm
 						| input.input
 						| input.input.input-lg
@@ -112,13 +159,13 @@ section.section
 				.stack.gap-2
 					span.font-semibold Textarea
 					textarea.textarea(placeholder="Default textarea")
-					pre.bg-gray-800.p-2.rounded.text-white.font-mono textarea.textarea
+					pre textarea.textarea
 				// Textarea States
 				.stack.gap-2
 					span.font-semibold Textarea States
 					.stack.gap-2
 						textarea.textarea(placeholder="Disabled state" disabled)
-					pre.bg-gray-800.p-2.rounded.text-white.font-mono
+					pre
 						| textarea.textarea(:hover)
 						| textarea.textarea(:focus)
 						| textarea.textarea(disabled)
@@ -128,7 +175,11 @@ section.section
 import { ref } from 'vue';
 import { app, helpers } from '../main';
 
-// helpers.toggleDarkMode();
+const toggleDarkMode = () => {
+	document.documentElement.setAttribute('data-theme', 
+		document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark'
+	);
+};
 </script>
 
 <style lang="less" scoped>

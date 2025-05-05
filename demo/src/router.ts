@@ -22,7 +22,8 @@ const router = createRouter({
 			path: '/demo/test',
 			name: 'test',
 			component: Test,
-			meta: { hideHeader: true },
+			meta: { hideHeader: true, isWide: true },
+
 		},
 		{
 			path: '/demo/primitives',

@@ -2,27 +2,29 @@
 //- Page wrapper, full‑screen dark layout with left sidebar
 div.layout.layout--sidebar-left.layout--fullscreen.b
 	//- Sidebar (thread list + “New Chat” + login)
-	aside.layout-sidebar.bg.text
+	aside.layout-sidebar
 		.col.start.full
 			//- “New Chat” button
-			button.block.caption(type="button") New Chat
+			.block
+				.btn-ghost.caption(type="button") New Chat
 
 			//- Recent Threads
-			nav.col
-				.block.label Recent Threads
+			nav.block.col.bg
+				.label.t-mb-2 Recent Threads
 				ul.col
 					li.row.between
 						span Welcome to T3 Chat
 					li.row Why T3 Chat?
 					li.row FAQ
 
-			a.btn(href="#") Login
+			.block
+				a.btn(href="#") Login
 
 	//- Main content area
-	main.layout-main.col.between.bg.text
+	main.layout-main.col.between.layout-max-sm
 		//- Header for current thread
-		header.row.between.center-y.full-x
-			a.btn(href="#").center-y
+		//- header.row.between.center-y.full-x
+			//- a.btn(href="#").center-y
 				span &larr;  
 
 		//- Chat messages container
@@ -52,7 +54,7 @@ div.layout.layout--sidebar-left.layout--fullscreen.b
 </script>
 
 <style lang="less" scoped>
-.block { @apply t-border; }
+// .block { @apply t-border; }
 .test-view {
 	padding: 20px;
 }

@@ -3,378 +3,371 @@
 
 // Common mixins for repeated patterns
 .btn-active-state() {
-  transform: translateY(0.5px);
-  transition-duration: @time-instant;
+	transform: translateY(0.5px);
+	transition-duration: @time-instant;
 }
 
 .btn-focus-ring() {
-  outline: none;
-  box-shadow: 0 0 0 2px @btn-focus-ring-color;
+	outline: none;
+	box-shadow: 0 0 0 2px @btn-focus-ring-color;
 }
 
-// Button
+// Base button styles - now only used for mixin
+.btn-base() {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: @btn-gap;
+	font-size: @btn-font-size;
+	font-weight: @btn-font-weight;
+	line-height: @btn-line-height;
+	padding: @btn-padding-y @btn-padding-x;
+	border-radius: @btn-border-radius;
+	cursor: pointer;
+	transition: background-color @time-quick @ease-standard,
+		border-color @time-quick @ease-standard,
+		transform @time-instant @ease-standard,
+		box-shadow @time-quick @ease-standard;
+	text-decoration: none;
+	white-space: nowrap;
+	position: relative;
+	min-height: 2.5rem; // Base height for consistency
+	transform: translateY(0);
+
+	// Icon support
+	>* {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	// Icon alignment
+	.btn-icon-left {
+		margin-right: @btn-gap;
+	}
+
+	.btn-icon-right {
+		margin-left: @btn-gap;
+	}
+
+	&:disabled {
+		cursor: not-allowed;
+		opacity: @btn-disabled-opacity;
+		pointer-events: none;
+	}
+}
+
+// Default button
 .btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: @btn-gap;
-  font-size: @btn-font-size;
-  font-weight: @btn-font-weight;
-  line-height: @btn-line-height;
-  padding: @btn-padding-y @btn-padding-x;
-  border-radius: @btn-border-radius;
-  border: @btn-border-width solid @btn-default-border;
-  background-color: @btn-default-bg;
-  color: @btn-default-text;
-  cursor: pointer;
-  transition: background-color @time-quick @ease-standard,
-              border-color @time-quick @ease-standard,
-              transform @time-instant @ease-standard,
-              box-shadow @time-quick @ease-standard;
-  text-decoration: none;
-  white-space: nowrap;
-  position: relative;
-  min-height: 2.5rem; // Base height for consistency
-  transform: translateY(0);
-  box-shadow: @shadow-sm;
+	.btn-base();
+	border: @btn-border-width solid @btn-default-border;
+	background-color: @btn-default-bg;
+	color: @btn-default-text;
+	box-shadow: @shadow-sm;
 
-  // Default hover state
-  &:hover:not(:disabled) {
-    background-color: @btn-default-hover-bg;
-    border-color: @btn-default-hover-border;
-  }
+	&:hover:not(:disabled) {
+		background-color: @btn-default-hover-bg;
+		border-color: @btn-default-hover-border;
+	}
 
-  // Pressed state
-  &:active:not(:disabled) {
-    .btn-active-state();
-    box-shadow: none, inset 0 1px 2px rgba(0, 0, 0, 0.1);
-    background-color: darken(@btn-default-bg, 5%);
-    border-color: darken(@btn-default-border, 7%);
-  }
+	&:active:not(:disabled) {
+		.btn-active-state();
+		box-shadow: none, inset 0 1px 2px rgba(0, 0, 0, 0.1);
+		background-color: darken(@btn-default-bg, 5%);
+		border-color: darken(@btn-default-border, 7%);
+	}
 
-  // Focus state with ring
-  &:focus-visible {
-    .btn-focus-ring();
-  }
-
-  &:disabled {
-    cursor: not-allowed;
-    opacity: @btn-disabled-opacity;
-    pointer-events: none;
-  }
-
-  // Icon support
-  > * {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  // Icon alignment
-  .btn-icon-left {
-    margin-right: @btn-gap;
-  }
-
-  .btn-icon-right {
-    margin-left: @btn-gap;
-  }
+	&:focus-visible {
+		.btn-focus-ring();
+	}
 }
 
 // Size variants
 .btn-sm {
-  font-size: @btn-sm-font;
-  padding: @btn-sm-padding-y @btn-sm-padding-x;
-  border-radius: @btn-sm-radius;
-  gap: @btn-sm-gap;
-  min-height: 2rem;
+	font-size: @btn-sm-font;
+	padding: @btn-sm-padding-y @btn-sm-padding-x;
+	border-radius: @btn-sm-radius;
+	gap: @btn-sm-gap;
+	min-height: 2rem;
 }
 
 .btn-lg {
-  font-size: @btn-lg-font;
-  padding: @btn-lg-padding-y @btn-lg-padding-x;
-  border-radius: @btn-lg-radius;
-  gap: @btn-lg-gap;
-  min-height: 3rem;
+	font-size: @btn-lg-font;
+	padding: @btn-lg-padding-y @btn-lg-padding-x;
+	border-radius: @btn-lg-radius;
+	gap: @btn-lg-gap;
+	min-height: 3rem;
 }
 
 // Style variants
 .btn-primary {
-  background-color: @btn-primary-bg;
-  color: @btn-primary-text;
-  border-color: @btn-primary-border;
-  box-shadow: @shadow-md;
+	.btn-base();
+	background-color: @btn-primary-bg;
+	color: @btn-primary-text;
+	border: @btn-border-width solid @btn-primary-border;
+	box-shadow: @shadow-md;
 
-  &:hover:not(:disabled) {
-    background-color: @btn-primary-hover-bg;
-    border-color: @btn-primary-hover-border;
-  }
+	&:hover:not(:disabled) {
+		background-color: @btn-primary-hover-bg;
+		border-color: @btn-primary-hover-border;
+	}
 
-  &:active:not(:disabled) {
-    .btn-active-state();
-    box-shadow: none, inset 0 2px 4px rgba(0, 0, 0, 0.2);
-    background-color: darken(@btn-primary-bg, 7%);
-    border-color: darken(@btn-primary-border, 10%);
-  }
+	&:active:not(:disabled) {
+		.btn-active-state();
+		box-shadow: none, inset 0 2px 4px rgba(0, 0, 0, 0.2);
+		background-color: darken(@btn-primary-bg, 7%);
+		border-color: darken(@btn-primary-border, 10%);
+	}
 
-  &:focus-visible {
-    box-shadow: 0 0 0 2px fade(@btn-primary-bg, 30%);
-  }
+	&:focus-visible {
+		box-shadow: 0 0 0 2px fade(@btn-primary-bg, 30%);
+	}
 }
 
 .btn-secondary {
-  background-color: @btn-default-bg;
-  color: @btn-default-text;
-  border-color: @btn-default-border;
-  box-shadow: @shadow-sm;
+	.btn-base();
+	background-color: @btn-default-bg;
+	color: @btn-default-text;
+	border: @btn-border-width solid @btn-default-border;
+	box-shadow: @shadow-sm;
 
-  &:hover:not(:disabled) {
-    background-color: @btn-default-hover-bg;
-    border-color: @btn-default-hover-border;
-  }
+	&:hover:not(:disabled) {
+		background-color: @btn-default-hover-bg;
+		border-color: @btn-default-hover-border;
+	}
 
-  &:active:not(:disabled) {
-    .btn-active-state();
-    box-shadow: none, inset 0 1px 2px rgba(0, 0, 0, 0.1);
-    background-color: darken(@btn-default-bg, 5%);
-    border-color: darken(@btn-default-border, 7%);
-  }
+	&:active:not(:disabled) {
+		.btn-active-state();
+		box-shadow: none, inset 0 1px 2px rgba(0, 0, 0, 0.1);
+		background-color: darken(@btn-default-bg, 5%);
+		border-color: darken(@btn-default-border, 7%);
+	}
 }
 
 .btn-ghost {
-  background-color: transparent;
-  color: @btn-default-text;
-  border-color: transparent;
+	.btn-base();
+	background-color: transparent;
+	color: @btn-default-text;
+	border: @btn-border-width solid transparent;
 
-  &:hover:not(:disabled) {
-    background-color: @btn-default-hover-bg;
-  }
+	&:hover:not(:disabled) {
+		background-color: @btn-default-hover-bg;
+	}
 
-  &:active:not(:disabled) {
-    .btn-active-state();
-    background-color: darken(@btn-default-hover-bg, 5%);
-    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
-  }
+	&:active:not(:disabled) {
+		.btn-active-state();
+		background-color: darken(@btn-default-hover-bg, 5%);
+		box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+	}
 }
 
 // Additional modifiers
 .btn-block {
-  display: flex;
-  width: 100%;
+	.btn;
+	display: flex;
+	width: 100%;
 }
 
 // Icon-only button - enforcing square aspect ratio
 .btn-icon {
-  aspect-ratio: 1;
-  padding: 0;
-  width: 2.5rem; // Base size matching min-height
-  
-  &.btn-sm {
-    width: 2rem;
-  }
+	.btn;
+	aspect-ratio: 1;
+	padding: 0;
+	width: 2.5rem; // Base size matching min-height
 
-  &.btn-lg {
-    width: 3rem;
-  }
+	&.btn-sm {
+		width: 2rem;
+	}
 
-  // Center icon perfectly
-  > * {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
+	&.btn-lg {
+		width: 3rem;
+	}
+
+	// Center icon perfectly
+	>* {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
 }
 
 // Dark theme support
 html[data-theme="dark"],
 .dark {
-  .btn {
-    // Default button in dark mode
-    background-color: rgba(255, 255, 255, 0.1);
-    color: #fff;
-    border-color: rgba(255, 255, 255, 0.2);
-    box-shadow: @shadow-sm;
 
-    &:hover:not(:disabled) {
-      background-color: rgba(255, 255, 255, 0.15);
-      border-color: rgba(255, 255, 255, 0.25);
-    }
+	.btn,
+	.btn-sm,
+	.btn-lg,
+	.btn-block, 
+	.btn-icon {
+		background-color: rgba(255, 255, 255, 0.1);
+		color: #fff;
+		border-color: rgba(255, 255, 255, 0.2);
+		box-shadow: @shadow-sm;
 
-    &:active:not(:disabled) {
-      .btn-active-state();
-      box-shadow: none, inset 0 1px 2px rgba(0, 0, 0, 0.3);
-      background-color: rgba(255, 255, 255, 0.08);
-      border-color: rgba(255, 255, 255, 0.15);
-    }
+		&:hover:not(:disabled) {
+			background-color: rgba(255, 255, 255, 0.15);
+			border-color: rgba(255, 255, 255, 0.25);
+		}
 
-    &:focus-visible {
-      box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.3);
-    }
-  }
+		&:active:not(:disabled) {
+			.btn-active-state();
+			box-shadow: none, inset 0 1px 2px rgba(0, 0, 0, 0.3);
+			background-color: rgba(255, 255, 255, 0.08);
+			border-color: rgba(255, 255, 255, 0.15);
+		}
 
-  .btn-primary {
-    background-color: #fff;
-    color: @btn-primary-bg;
-    border-color: #fff;
-    box-shadow: @shadow-md;
+		&:focus-visible {
+			box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.3);
+		}
+	}
 
-    &:hover:not(:disabled) {
-      background-color: rgba(255, 255, 255, 0.9);
-      border-color: rgba(255, 255, 255, 0.9);
-    }
+	.btn-primary {
+		background-color: #fff;
+		color: @btn-primary-bg;
+		border-color: #fff;
+		box-shadow: @shadow-md;
 
-    &:active:not(:disabled) {
-      .btn-active-state();
-      box-shadow: none, inset 0 2px 4px rgba(0, 0, 0, 0.2);
-      background-color: rgba(255, 255, 255, 0.8);
-      border-color: rgba(255, 255, 255, 0.8);
-    }
+		&:hover:not(:disabled) {
+			background-color: rgba(255, 255, 255, 0.9);
+			border-color: rgba(255, 255, 255, 0.9);
+		}
 
-    &:focus-visible {
-      box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.3);
-    }
-  }
+		&:active:not(:disabled) {
+			.btn-active-state();
+			box-shadow: none, inset 0 2px 4px rgba(0, 0, 0, 0.2);
+			background-color: rgba(255, 255, 255, 0.8);
+			border-color: rgba(255, 255, 255, 0.8);
+		}
 
-  .btn-ghost {
-    background-color: transparent;
-    color: rgba(255, 255, 255, 0.9);
-    border-color: transparent;
+		&:focus-visible {
+			box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.3);
+		}
+	}
 
-    &:hover:not(:disabled) {
-      background-color: rgba(255, 255, 255, 0.1);
-    }
+	.btn-secondary {
+		background-color: @color-black;
+		color: @color-white;
+		border: @btn-border-width solid @color-black;
+		box-shadow: @shadow-sm;
 
-    &:active:not(:disabled) {
-      .btn-active-state();
-      background-color: rgba(255, 255, 255, 0.05);
-      box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.2);
-    }
-  }
+		&:hover:not(:disabled) {
+			background-color: lighten(@color-black, 10%);
+			border-color: lighten(@color-black, 10%);
+		}
+
+		&:active:not(:disabled) {
+			.btn-active-state();
+			box-shadow: none, inset 0 1px 2px rgba(255, 255, 255, 0.1);
+			background-color: lighten(@color-black, 20%);
+			border-color: lighten(@color-black, 20%);
+		}
+	}
+
+	.btn-ghost {
+		background-color: transparent;
+		color: rgba(255, 255, 255, 0.9);
+		border-color: transparent;
+
+		&:hover:not(:disabled) {
+			background-color: rgba(255, 255, 255, 0.1);
+		}
+
+		&:active:not(:disabled) {
+			.btn-active-state();
+			background-color: rgba(255, 255, 255, 0.05);
+			box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.2);
+		}
+	}
 }
 
 // Scientific button variants
 
 // Golden ratio button - using golden ratio for padding
 .btn-golden {
-  padding: @space-xs @space-golden-sm;
-  
-  &.btn-sm {
-    padding: @space-xxs @space-fib-3;
-  }
-  
-  &.btn-lg {
-    padding: @space-sm @space-golden-md;
-  }
+	padding: @space-xs @space-golden-sm;
+
+	&.btn-sm {
+		padding: @space-xxs @space-fib-3;
+	}
+
+	&.btn-lg {
+		padding: @space-sm @space-golden-md;
+	}
 }
 
-// Attention-directing button with subliminal directional cues
+// Mixin for attention button with customizable color
+.btn-attention-variant(@color) {
+	background: linear-gradient(90deg, lighten(@color, 10%), @color 80%);
+	color: @color-black;
+	border: 2px solid @color;
+	font-weight: 600;
+	letter-spacing: 0.02em;
+	box-shadow: 0 2px 8px 0 fade(@color, 40%);
+	position: relative;
+	z-index: @z-lifted;
+	animation: none;
+
+	&:hover:not(:disabled) {
+		background: linear-gradient(90deg, lighten(@color, 20%), lighten(@color, 10%) 80%);
+		box-shadow: 0 4px 16px 2px fade(@color, 60%);
+		border-color: darken(@color, 10%);
+		transition:
+			background @time-quick @ease-standard,
+			transform @time-quick @ease-emphasized,
+			box-shadow @time-moderate @ease-decelerated,
+			border-color @time-quick @ease-standard;
+	}
+
+	&:active:not(:disabled) {
+		transform: scale(0.98) translateY(0);
+		box-shadow: 0 1px 4px 0 fade(@color, 30%);
+		transition-duration: @time-instant;
+	}
+
+	&:focus-visible {
+		outline: none;
+		box-shadow: 0 0 0 3px fade(@color, 40%);
+	}
+}
+
+// Pulse animation (keep as is)
+@keyframes btn-attention-pulse-warning {
+	0%, 100% {
+		box-shadow: 0 2px 8px 0 fade(@color-warning, 40%);
+	}
+	50% {
+		box-shadow: 0 4px 24px 4px fade(@color-warning, 70%);
+	}
+}
+@keyframes btn-attention-pulse-amber {
+	0%, 100% { box-shadow: 0 2px 8px 0 fade(@color-amber, 40%); }
+	50%      { box-shadow: 0 4px 24px 4px fade(@color-amber, 70%); }
+}
+@keyframes btn-attention-pulse-red {
+	0%, 100% { box-shadow: 0 2px 8px 0 fade(@color-red, 40%); }
+	50%      { box-shadow: 0 4px 24px 4px fade(@color-red, 70%); }
+}
+@keyframes btn-attention-pulse-violet {
+	0%, 100% { box-shadow: 0 2px 8px 0 fade(@color-violet, 40%); }
+	50%      { box-shadow: 0 4px 24px 4px fade(@color-violet, 70%); }
+}
+
+// Usage examples:
 .btn-attention {
-  padding: @directional-cue-primary;
-  box-shadow: @directional-shadow;
-  transition: transform @time-quick @ease-standard,
-              box-shadow @time-moderate @ease-decelerated,
-              background-color @time-quick @ease-standard;
-  
-  &:hover:not(:disabled) {
-    transform: translateX(@space-xxs / 2);
-    box-shadow: @shadow-md;
-  }
-  
-  &:active:not(:disabled) {
-    transform: translateX(0);
-    transition-duration: @time-instant;
-  }
+	.btn-attention-variant(@color-warning);
+	animation: btn-attention-pulse-warning 2s infinite cubic-bezier(0.4,0,0.2,1);
 }
-
-// Button using perceptually uniform color scale
-.btn-uniform {
-  background-color: @color-primary-500;
-  color: white;
-  border-color: @color-primary-600;
-  box-shadow: @shadow-sm;
-  
-  &:hover:not(:disabled) {
-    background-color: @color-primary-600;
-    border-color: @color-primary-700;
-    box-shadow: @shadow-md;
-  }
-  
-  &:active:not(:disabled) {
-    .btn-active-state();
-    background-color: @color-primary-700;
-    border-color: @color-primary-800;
-    box-shadow: none;
-  }
-  
-  &:focus-visible {
-    box-shadow: 0 0 0 2px fade(@color-primary-500, 30%);
-  }
-  
-  &:disabled {
-    background-color: @color-neutral-300;
-    color: @color-text-disabled;
-    border-color: @color-neutral-400;
-  }
-  
-  // Semantic color variants
-  &.btn-success {
-    background-color: @color-success;
-    border-color: darken(@color-success, 5%);
-    
-    &:hover:not(:disabled) {
-      background-color: darken(@color-success, 5%);
-      border-color: darken(@color-success, 10%);
-    }
-    
-    &:focus-visible {
-      box-shadow: 0 0 0 2px fade(@color-success, 30%);
-    }
-  }
-  
-  &.btn-warning {
-    background-color: @color-warning;
-    color: darken(@color-warning, 35%);
-    border-color: darken(@color-warning, 5%);
-    
-    &:hover:not(:disabled) {
-      background-color: darken(@color-warning, 5%);
-      border-color: darken(@color-warning, 10%);
-    }
-    
-    &:focus-visible {
-      box-shadow: 0 0 0 2px fade(@color-warning, 30%);
-    }
-  }
-  
-  &.btn-error {
-    background-color: @color-error;
-    border-color: darken(@color-error, 5%);
-    
-    &:hover:not(:disabled) {
-      background-color: darken(@color-error, 5%);
-      border-color: darken(@color-error, 10%);
-    }
-    
-    &:focus-visible {
-      box-shadow: 0 0 0 2px fade(@color-error, 30%);
-    }
-  }
+.btn-attention-amber {
+	.btn-attention-variant(@color-amber);
+	animation: btn-attention-pulse-amber 2s infinite cubic-bezier(0.4,0,0.2,1);
 }
-
-// Cognitive load optimized button
-.btn-cognitive {
-  padding: @cognitive-load-moderate;
-  border-radius: @radius-md;
-  box-shadow: @shadow-sm;
-  transition: all @time-moderate @ease-standard;
-  
-  &.btn-light {
-    padding: @cognitive-load-light;
-    line-height: @line-height-loose;
-  }
-  
-  &.btn-heavy {
-    padding: @cognitive-load-heavy;
-    line-height: @line-height-tight;
-  }
-} 
+.btn-attention-red {
+	.btn-attention-variant(@color-red);
+	animation: btn-attention-pulse-red 2s infinite cubic-bezier(0.4,0,0.2,1);
+}
+.btn-attention-violet {
+	.btn-attention-variant(@color-violet);
+	animation: btn-attention-pulse-violet 2s infinite cubic-bezier(0.4,0,0.2,1);
+}

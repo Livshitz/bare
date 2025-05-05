@@ -46,7 +46,7 @@ section.section
 				.block(class="t-w-[100px]") Item 3
 				.block(class="t-w-[100px]") Item 4
 				.block(class="t-w-[100px]") Item 5
-			pre.t-mb-4.t-bg-gray-800.t-p-4.t-rounded.t-font-mono.t-text-sm.t-text-white .row
+			pre .row
 		
 		.section.t-overflow-x-auto
 			.title Basic Row - wrap
@@ -56,7 +56,7 @@ section.section
 				.block(class="t-w-[100px]") Item 3
 				.block(class="t-w-[100px]") Item 4
 				.block(class="t-w-[100px]") Item 5
-			pre.t-mb-4.t-bg-gray-800.t-p-4.t-rounded.t-font-mono.t-text-sm.t-text-white .row-wrap
+			pre .row-wrap
 
 	// Row with Different Alignments
 	section#row-alignments
@@ -66,14 +66,14 @@ section.section
 				.block.t-h-20 Item 1
 				.block.t-h-32 Item 2
 				.block.t-h-16 Item 3
-			pre.t-mb-4.t-bg-gray-800.t-p-4.t-rounded.t-font-mono.t-text-sm.t-text-white .row.items-center
+			pre .row.items-center
 
 		.section
 			.row.t-justify-between.t-mb-4.t-bg-gray-200.t-p-4
 				.block Item 1
 				.block Item 2
 				.block Item 3
-			pre.t-mb-4.t-bg-gray-800.t-p-4.t-rounded.t-font-mono.t-text-sm.t-text-white .row.justify-between
+			pre .row.justify-between
 
 	// Nested Rows and Columns
 	section#nested-structure
@@ -88,8 +88,8 @@ section.section
 					.stack.t-gap-2
 						h3.t-text-lg.t-font-semibold Right Column
 						p More content here
-			pre.t-mb-4.t-bg-gray-800.t-p-4.t-rounded.t-font-mono.t-text-sm.t-text-white .col
-			pre.t-mb-4.t-bg-gray-800.t-p-4.t-rounded.t-font-mono.t-text-sm.t-text-white .stack.gap-2
+			pre .col
+			pre .stack.gap-2
 
 	// Responsive Example
 	section#responsive-layout
@@ -102,8 +102,8 @@ section.section
 					p Content 2
 				.col(class="t-w-full md:t-w-1/2 lg:t-w-1/3").block
 					p Content 3
-			pre.t-mb-4.t-bg-gray-800.t-p-4.t-rounded.t-font-mono.t-text-sm.t-text-white .row.xs-col
-			pre.t-mb-4.t-bg-gray-800.t-p-4.t-rounded.t-font-mono.t-text-sm.t-text-white .w-full.md:w-1/2.lg:w-1/3
+			pre .row.xs-col
+			pre .w-full.md:w-1/2.lg:w-1/3
 
 	// Center Alignment Examples
 	section.section#row-centering
@@ -114,28 +114,28 @@ section.section
 			.block.t-h-12 Item 1
 			.block.t-h-16 Item 2
 			.block.t-h-20 Item 3
-		pre.t-mb-4.t-bg-gray-800.t-p-4.t-rounded.t-font-mono.t-text-sm.t-text-white .center-y
+		pre .center-y
 
 		// Horizontally Centered Row
 		.row.center-x.t-h-32.t-bg-gray-200.t-p-4.t-mb-4
 			.block.t-h-12 Item 1
 			.block.t-h-16 Item 2
 			.block.t-h-20 Item 3
-		pre.t-mb-4.t-bg-gray-800.t-p-4.t-rounded.t-font-mono.t-text-sm.t-text-white .center-x
+		pre .center-x
 
 		// Fully Centered Row
 		.row.center.t-h-32.t-bg-gray-200.t-p-4.t-mb-4
 			.block.t-h-12 Item 1
 			.block.t-h-16 Item 2
 			.block.t-h-20 Item 3
-		pre.t-mb-4.t-bg-gray-800.t-p-4.t-rounded.t-font-mono.t-text-sm.t-text-white .center
+		pre .center
 
 		// Responsive Centering
 		.row.xs-center-x.t-h-32.t-bg-gray-200.t-p-4.t-mb-4
 			.block.t-h-12 Item 1
 			.block.t-h-16 Item 2
 			.block.t-h-20 Item 3
-		pre.t-mb-4.t-bg-gray-800.t-p-4.t-rounded.t-font-mono.t-text-sm.t-text-white .xs-center-x
+		pre .xs-center-x
 
 	// Start Alignment Examples
 	section#start-alignments.section
@@ -146,21 +146,21 @@ section.section
 			.block.t-h-12 Item 1
 			.block.t-h-16 Item 2
 			.block.t-h-20 Item 3
-		pre.t-mb-4.t-bg-gray-800.t-p-4.t-rounded.t-font-mono.t-text-sm.t-text-white .start-y
+		pre .start-y
 
 		// Horizontally Start Aligned Row
 		.row.start-x.t-h-32.t-bg-gray-200.t-p-4.t-mb-4
 			.block.t-h-12 Item 1
 			.block.t-h-16 Item 2
 			.block.t-h-20 Item 3
-		pre.t-mb-4.t-bg-gray-800.t-p-4.t-rounded.t-font-mono.t-text-sm.t-text-white .start-x
+		pre .start-x
 
 		// Fully Start Aligned Row
 		.row.start.t-h-32.t-bg-gray-200.t-p-4.t-mb-4
 			.block.t-h-12 Item 1
 			.block.t-h-16 Item 2
 			.block.t-h-20 Item 3
-		pre.t-mb-4.t-bg-gray-800.t-p-4.t-rounded.t-font-mono.t-text-sm.t-text-white .start
+		pre .start
 
 	// End Alignment Examples
 	section#end-alignments.section
@@ -171,21 +171,21 @@ section.section
 			.block.t-h-12 Item 1
 			.block.t-h-16 Item 2
 			.block.t-h-20 Item 3
-		pre.t-mb-4.t-bg-gray-800.t-p-4.t-rounded.t-font-mono.t-text-sm.t-text-white .end-y
+		pre .end-y
 
 		// Horizontally End Aligned Row
 		.row.end-x.t-h-32.t-bg-gray-200.t-p-4.t-mb-4
 			.block.t-h-12 Item 1
 			.block.t-h-16 Item 2
 			.block.t-h-20 Item 3
-		pre.t-mb-4.t-bg-gray-800.t-p-4.t-rounded.t-font-mono.t-text-sm.t-text-white .end-x
+		pre .end-x
 
 		// Fully End Aligned Row
 		.row.end.t-h-32.t-bg-gray-200.t-p-4.t-mb-4
 			.block.t-h-12 Item 1
 			.block.t-h-16 Item 2
 			.block.t-h-20 Item 3
-		pre.t-mb-4.t-bg-gray-800.t-p-4.t-rounded.t-font-mono.t-text-sm.t-text-white .end
+		pre .end
 
 	// Space Distribution Examples
 	section#space-distribution.section
@@ -196,28 +196,28 @@ section.section
 			.block.t-h-12 Item 1
 			.block.t-h-16 Item 2
 			.block.t-h-20 Item 3
-		pre.t-mb-4.t-bg-gray-800.t-p-4.t-rounded.t-font-mono.t-text-sm.t-text-white .between
+		pre .between
 
 		// Space Around
 		.row.around.t-h-32.t-bg-gray-200.t-p-4.t-mb-4
 			.block.t-h-12 Item 1
 			.block.t-h-16 Item 2
 			.block.t-h-20 Item 3
-		pre.t-mb-4.t-bg-gray-800.t-p-4.t-rounded.t-font-mono.t-text-sm.t-text-white .around
+		pre .around
 
 		// Space Evenly
 		.row.evenly.t-h-32.t-bg-gray-200.t-p-4.t-mb-4
 			.block.t-h-12 Item 1
 			.block.t-h-16 Item 2
 			.block.t-h-20 Item 3
-		pre.t-mb-4.t-bg-gray-800.t-p-4.t-rounded.t-font-mono.t-text-sm.t-text-white .evenly
+		pre .evenly
 
 		// Horizontal Space Between
 		.row.between-x.t-h-32.t-bg-gray-200.t-p-4.t-mb-4
 			.block.t-h-12 Item 1
 			.block.t-h-16 Item 2
 			.block.t-h-20 Item 3
-		pre.t-mb-4.t-bg-gray-800.t-p-4.t-rounded.t-font-mono.t-text-sm.t-text-white .between-x
+		pre .between-x
 
 	// Grid Example
 	section#grid-layout.section
@@ -227,14 +227,14 @@ section.section
 			.block Item 2
 			.block Item 3
 			.block Item 4
-		pre.t-mb-4.t-bg-gray-800.t-p-4.t-rounded.t-font-mono.t-text-sm.t-text-white .grid
+		pre .grid
 
 		h2.t-text-xl.t-font-bold.t-mb-4 Grid with Fixed Columns
 		.grid-3.t-mb-4.t-bg-gray-200.t-p-4
 			.block Item 1
 			.block Item 2
 			.block Item 3
-		pre.t-mb-4.t-bg-gray-800.t-p-4.t-rounded.t-font-mono.t-text-sm.t-text-white .grid-3
+		pre .grid-3
 
 	// Stack Example
 	section#stack-layout.section
@@ -243,14 +243,14 @@ section.section
 			.block Item 1
 			.block Item 2
 			.block Item 3
-		pre.t-mb-4.t-bg-gray-800.t-p-4.t-rounded.t-font-mono.t-text-sm.t-text-white .stack-gap-4
+		pre .stack-gap-4
 
 		h2.t-text-xl.t-font-bold.t-mb-4 Stack Only on Larger Screens
 		.gt-xs-stack.t-gap-2.t-mb-4.t-bg-gray-200.t-p-4
 			.block Item 1 (stacks only on screens > 600px)
 			.block Item 2 (stacks only on screens > 600px)
 			.block Item 3 (stacks only on screens > 600px)
-		pre.t-mb-4.t-bg-gray-800.t-p-4.t-rounded.t-font-mono.t-text-sm.t-text-white .gt-xs-stack.gap-4
+		pre .gt-xs-stack.gap-4
 
 	// Spacer Example
 	section#spacer-examples.section
@@ -259,13 +259,13 @@ section.section
 			.block Item 1
 			.spacer
 			.block Item 2
-		pre.t-mb-4.t-bg-gray-800.t-p-4.t-rounded.t-font-mono.t-text-sm.t-text-white .spacer
+		pre .spacer
 
 		.stack.t-mb-4.t-bg-gray-200.t-p-4
 			.block Item 1
 			.spacer-h-4
 			.block Item 2
-		pre.t-mb-4.t-bg-gray-800.t-p-4.t-rounded.t-font-mono.t-text-sm.t-text-white .spacer-h-4
+		pre .spacer-h-4
 
 	// Alignment Examples
 	section#alignment-examples.section
@@ -274,13 +274,13 @@ section.section
 			.block.t-h-12 Item 1
 			.block.t-h-16 Item 2
 			.block.t-h-20 Item 3
-		pre.t-mb-4.t-bg-gray-800.t-p-4.t-rounded.t-font-mono.t-text-sm.t-text-white .center
+		pre .center
 
 		.row.between.t-h-32.t-mb-4.t-bg-gray-200.t-p-4
 			.block.t-h-12 Item 1
 			.block.t-h-16 Item 2
 			.block.t-h-20 Item 3
-		pre.t-mb-4.t-bg-gray-800.t-p-4.t-rounded.t-font-mono.t-text-sm.t-text-white .between
+		pre .between
 
 	// Responsive Examples
 	section#responsive-examples.section
@@ -292,7 +292,7 @@ section.section
 				p Content 2
 			.col(class="t-w-full md:t-w-1/2 lg:t-w-1/3").block
 				p Content 3
-		pre.t-mb-4.t-bg-gray-800.t-p-4.t-rounded.t-font-mono.t-text-sm.t-text-white .row.xs-col
+		pre .row.xs-col
 
 	// Typography Examples
 	section#typography-examples
@@ -307,7 +307,7 @@ section.section
 				.text This is base text
 				.text-lg This is large text
 				.text-xl This is extra large text
-			pre.t-text-sm.t-bg-gray-800.t-p-4.t-rounded.t-font-mono.t-text-white .text-xs, .text-sm, .text, .text-lg, .text-xl
+			pre .text-xs, .text-sm, .text, .text-lg, .text-xl
 
 		.section
 			.title Semantic Text
@@ -320,7 +320,7 @@ section.section
 				.caption This is a caption
 				.label This is a label
 				.text This text
-			pre.t-text-sm.t-bg-gray-800.t-p-4.t-rounded.t-font-mono.t-text-white .heading, .title, .subtitle, .caption, .label
+			pre .heading, .title, .subtitle, .caption, .label
 
 		.section
 			.title Text Emphasis
@@ -331,7 +331,7 @@ section.section
 				.text-emphasis This is emphasized text
 				.text-strong This is strong text
 				.text-muted This is muted text
-			pre.t-text-sm.t-bg-gray-800.t-p-4.t-rounded.t-font-mono.t-text-white .text-emphasis, .text-strong, .text-muted
+			pre .text-emphasis, .text-strong, .text-muted
 
 		.section
 			.title Text Truncation
@@ -340,7 +340,7 @@ section.section
 			.stack.t-gap-2.t-mb-8
 				.truncate(class="t-w-64") This is a very long text that will be truncated with an ellipsis at the end
 				.text-clamp-2(class="t-w-64") This is a very long text that will be clamped to two lines with an ellipsis at the end. This is a very long text that will be clamped to two lines with an ellipsis at the end.
-			pre.t-text-sm.t-bg-gray-800.t-p-4.t-rounded.t-font-mono.t-text-white .truncate, .text-clamp-2
+			pre .truncate, .text-clamp-2
 
 		.section
 			.title Block text utilization
@@ -368,10 +368,6 @@ section.section
 
 .section {
 	// background-color: @primary-bg;
-}
-
-pre { 
-  @apply t-break-words t-whitespace-pre-wrap t-overflow-x-auto;
 }
 
 </style> 
