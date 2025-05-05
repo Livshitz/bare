@@ -1,126 +1,126 @@
 <template lang="pug">
 // Documentation Header
-section.b-section
-  h1.text-2xl.font-bold.mb-4 Layout Patterns Demo
-  p.mb-4 This demo showcases the composable layout patterns available in the design system.
+section.section
+  h1.t-text-2xl.t-font-bold.t-mb-4 Layout Patterns Demo
+  p.t-mb-4 This demo showcases the composable layout patterns available in the design system.
 
-.b-stack.gap-8.xx-demo-sections
+.stack.t-gap-8.xx-demo-sections
   // Centered Layout Example
   section
-    .b-section
-      h2.text-xl.font-bold.mb-4 Centered Layout
-      .b-layout.b-layout--centered.bg-gray-200.p-4.h-64
-        .b-block Centered Content
-      pre.xx-snippet .b-layout.b-layout--centered
+    .section
+      h2.t-text-xl.t-font-bold.t-mb-4 Centered Layout
+      .layout.layout--centered.t-bg-gray-200.t-p-4.t-h-64
+        .block Centered Content
+      pre.xx-snippet .layout.layout--centered
 
-      h2.text-xl.font-bold.mb-4 Centered Layout with Width Constraints
-      .b-narrow.bg-gray-200.p-4.h-64
-        .b-block Narrow Content (max-w-7xl)
-      pre.xx-snippet .b-narrow
+      h2.t-text-xl.t-font-bold.t-mb-4 Centered Layout with Width Constraints
+      .narrow.t-bg-gray-200.t-p-4.t-h-64
+        .block Narrow Content (max-w-7xl)
+      pre.xx-snippet .narrow
 
   // Fixed Header Layout Example
   section
-    .b-section
-      h2.text-xl.font-bold.mb-4 Fixed Header Layout
-      .b-layout.b-layout--fixed-header.bg-gray-200.min-h-screen
-        header.bg-gray-100.p-4.b-xs-hide.opacity-70.pointer-events-none
-          .b-col.gap-1.b-text-dark
-            h3.font-semibold Fixed Header (4.5rem/72px height)
-            p.text-sm This header stays fixed at the top
-        main.b-layout-main.bg-gray-100.p-4.b-text-dark.border
-          h3.font-semibold.mb-2 Main Content
-          p.mb-4 This content area fills the remaining viewport height
-          .grid.grid-cols-2.gap-4
-            .b-block Content Block 1
-            .b-block Content Block 2
-            .b-block Content Block 3
-            .b-block Content Block 4
-        footer.b-layout-footer.bg-gray-300.p-4.b-text-dark
-          h3.font-semibold Footer
-          p.text-sm Optional footer that stays at the bottom
-      pre.xx-snippet .b-layout.b-layout--fixed-header
+    .section
+      h2.t-text-xl.t-font-bold.t-mb-4 Fixed Header Layout
+      .layout.layout--fixed-header.t-bg-gray-200.t-min-h-screen
+        header.t-bg-gray-100.t-p-4.t-xs-hide.t-opacity-70.t-pointer-events-none
+          .col.t-gap-1.text-dark
+            h3.t-font-semibold Fixed Header (4.5rem/72px height)
+            p.t-text-sm This header stays fixed at the top
+        main.layout-main.t-bg-gray-100.t-p-4.text-dark.t-border
+          h3.t-font-semibold.t-mb-2 Main Content
+          p.t-mb-4 This content area fills the remaining viewport height
+          .grid.t-grid-cols-2.t-gap-4
+            .block Content Block 1
+            .block Content Block 2
+            .block Content Block 3
+            .block Content Block 4
+        footer.layout-footer.t-bg-gray-300.t-p-4.text-dark
+          h3.t-font-semibold Footer
+          p.t-text-sm Optional footer that stays at the bottom
+      pre.xx-snippet .layout.layout--fixed-header
 
   // Sidebar Layout Example
   section
-    .b-section
-      h2.text-xl.font-bold.mb-4 Sidebar Layout - Left
-      .b-layout.b-layout--sidebar-left.bg-gray-200.min-h-96.b-text-dark
-        aside.b-layout-sidebar.p-4.bg-gray-300
-          h3.font-semibold.mb-2 Sidebar
-          .b-stack.gap-2
-            .b-block Item 1
-            .b-block Item 2
-            .b-block Item 3
-        main.b-layout-main.p-4.b-text-dark
-          h3.font-semibold.mb-2 Main Content
-          p.mb-4 This is the main content area. It should take up all remaining space and handle overflow properly.
-          .grid.grid-cols-2.gap-4
-            .b-block Content Block 1
-            .b-block Content Block 2
-            .b-block Content Block 3
-            .b-block Content Block 4
-      pre.xx-snippet .b-layout.b-layout--sidebar-left
+    .section
+      h2.t-text-xl.t-font-bold.t-mb-4 Sidebar Layout - Left
+      .layout.layout--sidebar-left.t-bg-gray-200.t-min-h-96.text-dark
+        aside.layout-sidebar.t-p-4.t-bg-gray-400
+          h3.t-font-semibold.t-mb-2 Sidebar
+          .stack.t-gap-2
+            .block Item 1
+            .block Item 2
+            .block Item 3
+        main.layout-main.t-p-4.text-dark
+          h3.t-font-semibold.t-mb-2 Main Content
+          p.t-mb-4 This is the main content area. It should take up all remaining space and handle overflow properly.
+          .grid.t-grid-cols-2.t-gap-4
+            .block Content Block 1
+            .block Content Block 2
+            .block Content Block 3
+            .block Content Block 4
+      pre.xx-snippet .layout.layout--sidebar-left
 
-      h2.text-xl.font-bold.mb-4 Sidebar Layout - Right
-      .b-layout.b-layout--sidebar-right.bg-gray-200.h-96.b-text-dark
-        aside.b-layout-sidebar.p-4.bg-gray-300
-          h3.font-semibold.mb-2 Sidebar
-          .b-stack.gap-2
-            .b-block Item 1
-            .b-block Item 2
-            .b-block Item 3
-        main.b-layout-main.p-4.b-text-dark
-          h3.font-semibold.mb-2 Main Content
-          p.mb-4 This is the main content area. It should take up all remaining space and handle overflow properly.
-          .grid.grid-cols-2.gap-4
-            .b-block Content Block 1
-            .b-block Content Block 2
-            .b-block Content Block 3
-            .b-block Content Block 4
-      pre.xx-snippet .b-layout.b-layout--sidebar-right
+      h2.t-text-xl.t-font-bold.t-mb-4 Sidebar Layout - Right
+      .layout.layout--sidebar-right.t-bg-gray-200.t-h-96.text-dark
+        aside.layout-sidebar.t-p-4.t-bg-gray-400
+          h3.t-font-semibold.t-mb-2 Sidebar
+          .stack.t-gap-2
+            .block Item 1
+            .block Item 2
+            .block Item 3
+        main.layout-main.t-p-4.text-dark
+          h3.t-font-semibold.t-mb-2 Main Content
+          p.t-mb-4 This is the main content area. It should take up all remaining space and handle overflow properly.
+          .grid.t-grid-cols-2.t-gap-4
+            .block Content Block 1
+            .block Content Block 2
+            .block Content Block 3
+            .block Content Block 4
+      pre.xx-snippet .layout.layout--sidebar-right
 
   // Fullscreen Layout Example
   section
-    .b-section
-      h2.text-xl.font-bold.mb-4 Fullscreen Layout
-      .b-layout.b-layout--fullscreen.bg-gray-200.border.b-text-dark
-        header.bg-gray-100.p-4.border
-          h3.font-semibold Header
-          p.text-sm This header takes its natural height
-        main.b-layout-main.bg-gray-100.p-4
-          h3.font-semibold.mb-2 Main Content
-          p.mb-4 This content area fills all remaining space between header and footer
-          .grid.grid-cols-2.gap-4
-            .b-block Content Block 1
-            .b-block Content Block 2
-            .b-block Content Block 3
-            .b-block Content Block 4
-        footer.b-layout-footer.bg-gray-300.p-4
-          h3.font-semibold Footer
-          p.text-sm This footer takes its natural height
-      pre.xx-snippet .b-layout.b-layout--fullscreen
+    .section
+      h2.t-text-xl.t-font-bold.t-mb-4 Fullscreen Layout
+      .layout.layout--fullscreen.t-bg-gray-200.t-border.text-dark
+        header.t-bg-gray-100.t-p-4.t-border
+          h3.t-font-semibold Header
+          p.t-text-sm This header takes its natural height
+        main.layout-main.t-bg-gray-100.t-p-4
+          h3.t-font-semibold.t-mb-2 Main Content
+          p.t-mb-4 This content area fills all remaining space between header and footer
+          .grid.t-grid-cols-2.t-gap-4
+            .block Content Block 1
+            .block Content Block 2
+            .block Content Block 3
+            .block Content Block 4
+        footer.layout-footer.t-bg-gray-300.t-p-4
+          h3.t-font-semibold Footer
+          p.t-text-sm This footer takes its natural height
+      pre.xx-snippet .layout.layout--fullscreen
 
   // Responsive Examples
   section
-    .b-section
-      h2.text-xl.font-bold.mb-4 Responsive Examples
-      p.mb-4 Resize your browser window below 600px to see how these layouts adapt to smaller screens.
-      .b-layout.b-layout--sidebar-left.b-layout--stack.bg-gray-200.h-96.b-text-dark
-        aside.b-layout-sidebar.p-4.bg-gray-300
-          h3.font-semibold.mb-2 Sidebar (stacks on mobile)
-          .b-stack.gap-2
-            .b-block Item 1
-            .b-block Item 2
-            .b-block Item 3
-        main.b-layout-main.p-4.b-text-dark
-          h3.font-semibold.mb-2 Main Content
-          p.mb-4 This layout will stack vertically on screens smaller than 600px.
-          .grid.grid-cols-2.gap-4(class="sm:grid-cols-1")
-            .b-block Content Block 1
-            .b-block Content Block 2
-            .b-block Content Block 3
-            .b-block Content Block 4
-      pre.xx-snippet .b-layout.b-layout--sidebar-left.b-layout--stack
+    .section
+      h2.t-text-xl.t-font-bold.t-mb-4 Responsive Examples
+      p.t-mb-4 Resize your browser window below 600px to see how these layouts adapt to smaller screens.
+      .layout.layout--sidebar-left.layout--stack.t-bg-gray-200.t-h-96.text-dark
+        aside.layout-sidebar.t-p-4.t-bg-gray-400
+          h3.t-font-semibold.t-mb-2 Sidebar (stacks on mobile)
+          .stack.t-gap-2
+            .block Item 1
+            .block Item 2
+            .block Item 3
+        main.layout-main.t-p-4.text-dark
+          h3.t-font-semibold.t-mb-2 Main Content
+          p.t-mb-4 This layout will stack vertically on screens smaller than 600px.
+          .grid.t-grid-cols-2.t-gap-4(class="sm:t-grid-cols-1")
+            .block Content Block 1
+            .block Content Block 2
+            .block Content Block 3
+            .block Content Block 4
+      pre.xx-snippet .layout.layout--sidebar-left.layout--stack
 </template>
 
 <script setup lang="ts">
@@ -133,16 +133,16 @@ section.b-section
 @import (reference) '../../../src/index.less';
 @import (reference) '../../../src/atoms/index.less';
 
-.b-section {
+.section {
   // background-color: @primary-bg;
 }
 
 .xx-demo-sections {
   h1, h2, h3, h4, h5, h6 {
-    // @apply b-text-dark;
+    // @apply text-dark;
   }
 }
 
-.b-block { @apply bg-gray-300 p-4 rounded; }
-.xx-snippet { @apply mb-4 bg-gray-800 p-4 rounded-br rounded-bl font-mono text-sm border; .b-text-light }
+.block { @apply t-bg-gray-300 t-p-4 t-rounded; }
+.xx-snippet { @apply t-mb-4 t-bg-gray-800 t-p-4 t-rounded-br t-rounded-bl t-font-mono t-text-sm t-border; .text-light }
 </style> 

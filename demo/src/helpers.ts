@@ -24,9 +24,9 @@ export class Helpers {
 	private setupDarkMode() {
 		watch(this.isDark, (newValue) => {
 			if (newValue) {
-				document.documentElement.classList.add('b-dark')
+				document.documentElement.classList.add('dark')
 			} else {
-				document.documentElement.classList.remove('b-dark')
+				document.documentElement.classList.remove('dark')
 			}
 		}, { immediate: true })
 	}

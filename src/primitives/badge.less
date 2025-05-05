@@ -1,42 +1,42 @@
 // Badge component
-.b-badge {
-	@apply ~"inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium";
+.badge {
+	@apply ~"t-inline-flex t-items-center t-px-2.5 t-py-0.5 t-rounded-full t-text-xs t-font-medium";
 
 	// Default variant
 	& {
-		@apply bg-gray-200 text-gray-700; //bg-gray-100 text-gray-800;
+		@apply t-bg-gray-200 t-text-gray-700; //bg-gray-100 text-gray-800;
 	}
 
 	// Color variants
 	&-primary {
-		@apply bg-blue-100 text-blue-800;
+		@apply t-bg-blue-100 t-text-blue-800;
 	}
 
 	&-success {
-		@apply bg-green-100 text-green-800;
+		@apply t-bg-green-100 t-text-green-800;
 	}
 
 	&-warning {
-		@apply bg-yellow-100 text-yellow-800;
+		@apply t-bg-yellow-100 t-text-yellow-800;
 	}
 
 	&-danger {
-		@apply bg-red-100 text-red-800;
+		@apply t-bg-red-100 t-text-red-800;
 	}
 
 	// Size variants
 	&-sm {
-		@apply ~"px-1 py-0 text-[10px] rounded";
+		@apply ~"t-px-1 t-py-0 t-text-[10px] t-rounded";
 	}
 
 	&-lg {
-		@apply ~"px-3 py-1 text-sm";
+		@apply ~"t-px-3 t-py-1 t-text-sm";
 	}
 }
 
 html[data-theme="dark"],
-.b-dark {
-	.b-badge {
+.dark {
+	.badge {
 		background-color: rgba(255, 255, 255, 0.08);
 		color: #fff;
 

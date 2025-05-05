@@ -1,39 +1,39 @@
 @import (reference) "../variables.less";
 
-.b-row {
-  @apply flex flex-row gap-4 w-full;
+.row {
+  @apply t-flex t-flex-row t-gap-4 t-w-full;
   
-  &.b-center-x { @apply justify-center; }
-  &.b-center-y { @apply items-center; }
-  &.b-start-x { @apply justify-start; }
-  &.b-start-y { @apply items-start; }
-  &.b-end-x { @apply justify-end; }
-  &.b-end-y { @apply items-end; }
-  &.b-between-x { @apply justify-between; }
-  &.b-around-x { @apply justify-around; }
-  &.b-evenly-x { @apply justify-evenly; }
+  &.center-x { @apply t-justify-center; }
+  &.center-y { @apply t-items-center; }
+  &.start-x { @apply t-justify-start; }
+  &.start-y { @apply t-items-start; }
+  &.end-x { @apply t-justify-end; }
+  &.end-y { @apply t-items-end; }
+  &.between-x { @apply t-justify-between; }
+  &.around-x { @apply t-justify-around; }
+  &.evenly-x { @apply t-justify-evenly; }
 }
 
-.b-row-reverse {
-  @apply b-row flex-row-reverse !important;
+.row-reverse {
+  @apply row t-flex-row-reverse !important;
 }
 
-.b-row-wrap {
-  .b-row;
-  @apply flex-wrap;
+.row-wrap {
+  .row;
+  @apply t-flex-wrap;
 }
 
-.b-row-nowrap {
-  .b-row;
-  @apply flex-nowrap;
+.row-nowrap {
+  .row;
+  @apply t-flex-nowrap;
 }
 
 // Responsive variants
 @media (max-width: 599px) {
-  .b-xs-row {
-    @apply b-row;
+  .xs-row {
+    @apply row;
   }
-  .b-xs-row-nowrap {
-    @apply b-row-nowrap;
+  .xs-row-nowrap {
+    @apply row-nowrap;
   }
 } 

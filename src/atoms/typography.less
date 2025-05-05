@@ -1,85 +1,85 @@
 @import (reference) "../variables.less";
 
 // Base text styles
-.b-text {
-  @apply text-base leading-normal;
+.text {
+  @apply t-text-base t-leading-normal;
 }
 
 // Text sizes with semantic meaning
-.b-text-xs {
-  @apply text-xs leading-tight;
+.text-xs {
+  @apply t-text-xs t-leading-tight;
 }
 
-.b-text-sm {
-  @apply text-sm leading-snug;
+.text-sm {
+  @apply t-text-sm t-leading-snug;
 }
 
-.b-text-lg {
-  @apply text-lg leading-relaxed;
+.text-lg {
+  @apply t-text-lg t-leading-relaxed;
 }
 
-.b-text-xl {
-  @apply text-xl leading-loose;
+.text-xl {
+  @apply t-text-xl t-leading-loose;
 }
 
 // Semantic text variants
-.b-title {
-  @apply text-2xl font-bold leading-tight;
+.title {
+  @apply t-text-2xl t-font-bold t-leading-tight;
 }
 
-.b-subtitle {
-  @apply text-xl font-semibold leading-snug;
+.subtitle {
+  @apply t-text-xl t-font-semibold t-leading-snug;
 }
 
-.b-heading {
-  @apply text-3xl font-bold leading-tight;
+.heading {
+  @apply t-text-3xl t-font-bold t-leading-tight;
 }
 
-.b-caption {
-  @apply text-lg font-semibold leading-snug;
+.caption {
+  @apply t-text-lg t-font-semibold t-leading-snug;
 }
 
-.b-label {
-  @apply text-sm font-medium text-gray-700 leading-snug;
+.label {
+  @apply t-text-sm t-font-medium t-text-gray-700 t-leading-snug;
 }
 
 // Text emphasis variants
-.b-text-muted {
-  @apply text-gray-500;
+.text-muted {
+  @apply t-text-gray-500;
 }
 
-.b-text-emphasis {
-  @apply font-medium;
+.text-emphasis {
+  @apply t-font-medium;
 }
 
-.b-text-strong {
-  @apply font-bold;
+.text-strong {
+  @apply t-font-bold;
 }
 
 // Text truncation
-.b-truncate {
-  @apply truncate;
+.truncate {
+  @apply t-truncate;
 }
 
-.b-text-clamp-2 {
-  @apply line-clamp-2;
+.text-clamp-2 {
+  @apply t-line-clamp-2;
 }
 
-.b-text-clamp-3 {
-  @apply line-clamp-3;
+.text-clamp-3 {
+  @apply t-line-clamp-3;
 }
 
 // Responsive text sizing
 @media (max-width: @breakpoint-sm) {
-  .b-title {
-    @apply text-xl;
+  .title {
+    @apply t-text-xl;
   }
   
-  .b-heading {
-    @apply text-2xl;
+  .heading {
+    @apply t-text-2xl;
   }
   
-  .b-subtitle {
-    @apply text-lg;
+  .subtitle {
+    @apply t-text-lg;
   }
 } 

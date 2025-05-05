@@ -6,54 +6,54 @@
 // src/primitives/index.less
 // Import primitive styles here 
 
-body { background-color: #eee; .b-text-dark; }
+body { background-color: #eee; .text-dark; }
 
-.b-text { .b-text-dark; }
-.b-bg { .b-bg-light; }
+.text { .text-dark; }
+.bg { .bg-light; }
 
-// Add back the .b-block definition
-.b-block {
+// Add back the .block definition
+.block {
 	// Default light mode: light bg, dark text
-	.b-bg;
-	.b-stack;
-	.b-text-dark;
-	@apply p-4 rounded b-bg gap-2;
+	.bg;
+	.stack;
+	.text-dark;
+	@apply t-p-4 t-rounded bg t-gap-2;
 }
 
 // Section primitive with larger spacing and container-like styling
-.b-section {
+.section {
 	// Default light mode: light bg, dark text
-	@apply p-8 rounded-lg mb-4;
-	.b-bg-light;
-	.b-text-dark;
+	@apply t-p-8 t-rounded-lg t-mb-4;
+	.bg-light;
+	.text-dark;
 	
 	// Responsive padding
-	@apply md:p-12;
+	@apply t-p-12 md:t-p-12;
 }
 
-.b-toc {
-	@apply b-section;
-	ol { @apply list-decimal list-inside; }
-	ul { @apply list-disc list-inside; }
-	.b-bg-light;
-	.b-text-dark;
+.toc {
+	@apply section;
+	ol { @apply t-list-decimal t-list-inside; }
+	ul { @apply t-list-disc t-list-inside; }
+	.bg-light;
+	.text-dark;
 }
 
 // Forced dark mode via ancestor: dark bg, light text
-.b-dark {
-	body { background-color: #111; .b-text-light; }
+.dark {
+	body { background-color: #111; .text-light; }
 	
-	.b-text { .b-text-light; }
-	.b-bg { .b-bg-dark; }
+	.text { .text-light; }
+	.bg { .bg-dark; }
 
-	.b-block {
-		.b-text-light;
-		.b-bg-dark;
+	.block {
+		.text-light;
+		.bg-dark;
 	}
 
-	.b-section {
-		.b-text-light;
-		.b-bg-dark;
+	.section {
+		.text-light;
+		.bg-dark;
 	}
 
 

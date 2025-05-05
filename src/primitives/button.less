@@ -2,18 +2,18 @@
 @import '../variables.less';
 
 // Common mixins for repeated patterns
-.b-btn-active-state() {
+.btn-active-state() {
   transform: translateY(0.5px);
   transition-duration: @time-instant;
 }
 
-.b-btn-focus-ring() {
+.btn-focus-ring() {
   outline: none;
   box-shadow: 0 0 0 2px @btn-focus-ring-color;
 }
 
 // Button
-.b-btn {
+.btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -46,7 +46,7 @@
 
   // Pressed state
   &:active:not(:disabled) {
-    .b-btn-active-state();
+    .btn-active-state();
     box-shadow: none, inset 0 1px 2px rgba(0, 0, 0, 0.1);
     background-color: darken(@btn-default-bg, 5%);
     border-color: darken(@btn-default-border, 7%);
@@ -54,7 +54,7 @@
 
   // Focus state with ring
   &:focus-visible {
-    .b-btn-focus-ring();
+    .btn-focus-ring();
   }
 
   &:disabled {
@@ -71,17 +71,17 @@
   }
 
   // Icon alignment
-  .b-btn-icon-left {
+  .btn-icon-left {
     margin-right: @btn-gap;
   }
 
-  .b-btn-icon-right {
+  .btn-icon-right {
     margin-left: @btn-gap;
   }
 }
 
 // Size variants
-.b-btn-sm {
+.btn-sm {
   font-size: @btn-sm-font;
   padding: @btn-sm-padding-y @btn-sm-padding-x;
   border-radius: @btn-sm-radius;
@@ -89,7 +89,7 @@
   min-height: 2rem;
 }
 
-.b-btn-lg {
+.btn-lg {
   font-size: @btn-lg-font;
   padding: @btn-lg-padding-y @btn-lg-padding-x;
   border-radius: @btn-lg-radius;
@@ -98,7 +98,7 @@
 }
 
 // Style variants
-.b-btn-primary {
+.btn-primary {
   background-color: @btn-primary-bg;
   color: @btn-primary-text;
   border-color: @btn-primary-border;
@@ -110,7 +110,7 @@
   }
 
   &:active:not(:disabled) {
-    .b-btn-active-state();
+    .btn-active-state();
     box-shadow: none, inset 0 2px 4px rgba(0, 0, 0, 0.2);
     background-color: darken(@btn-primary-bg, 7%);
     border-color: darken(@btn-primary-border, 10%);
@@ -121,7 +121,7 @@
   }
 }
 
-.b-btn-secondary {
+.btn-secondary {
   background-color: @btn-default-bg;
   color: @btn-default-text;
   border-color: @btn-default-border;
@@ -133,14 +133,14 @@
   }
 
   &:active:not(:disabled) {
-    .b-btn-active-state();
+    .btn-active-state();
     box-shadow: none, inset 0 1px 2px rgba(0, 0, 0, 0.1);
     background-color: darken(@btn-default-bg, 5%);
     border-color: darken(@btn-default-border, 7%);
   }
 }
 
-.b-btn-ghost {
+.btn-ghost {
   background-color: transparent;
   color: @btn-default-text;
   border-color: transparent;
@@ -150,29 +150,29 @@
   }
 
   &:active:not(:disabled) {
-    .b-btn-active-state();
+    .btn-active-state();
     background-color: darken(@btn-default-hover-bg, 5%);
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
   }
 }
 
 // Additional modifiers
-.b-btn-block {
+.btn-block {
   display: flex;
   width: 100%;
 }
 
 // Icon-only button - enforcing square aspect ratio
-.b-btn-icon {
+.btn-icon {
   aspect-ratio: 1;
   padding: 0;
   width: 2.5rem; // Base size matching min-height
   
-  &.b-btn-sm {
+  &.btn-sm {
     width: 2rem;
   }
 
-  &.b-btn-lg {
+  &.btn-lg {
     width: 3rem;
   }
 
@@ -187,8 +187,8 @@
 
 // Dark theme support
 html[data-theme="dark"],
-.b-dark {
-  .b-btn {
+.dark {
+  .btn {
     // Default button in dark mode
     background-color: rgba(255, 255, 255, 0.1);
     color: #fff;
@@ -201,7 +201,7 @@ html[data-theme="dark"],
     }
 
     &:active:not(:disabled) {
-      .b-btn-active-state();
+      .btn-active-state();
       box-shadow: none, inset 0 1px 2px rgba(0, 0, 0, 0.3);
       background-color: rgba(255, 255, 255, 0.08);
       border-color: rgba(255, 255, 255, 0.15);
@@ -212,7 +212,7 @@ html[data-theme="dark"],
     }
   }
 
-  .b-btn-primary {
+  .btn-primary {
     background-color: #fff;
     color: @btn-primary-bg;
     border-color: #fff;
@@ -224,7 +224,7 @@ html[data-theme="dark"],
     }
 
     &:active:not(:disabled) {
-      .b-btn-active-state();
+      .btn-active-state();
       box-shadow: none, inset 0 2px 4px rgba(0, 0, 0, 0.2);
       background-color: rgba(255, 255, 255, 0.8);
       border-color: rgba(255, 255, 255, 0.8);
@@ -235,7 +235,7 @@ html[data-theme="dark"],
     }
   }
 
-  .b-btn-ghost {
+  .btn-ghost {
     background-color: transparent;
     color: rgba(255, 255, 255, 0.9);
     border-color: transparent;
@@ -245,7 +245,7 @@ html[data-theme="dark"],
     }
 
     &:active:not(:disabled) {
-      .b-btn-active-state();
+      .btn-active-state();
       background-color: rgba(255, 255, 255, 0.05);
       box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.2);
     }
@@ -255,20 +255,20 @@ html[data-theme="dark"],
 // Scientific button variants
 
 // Golden ratio button - using golden ratio for padding
-.b-btn-golden {
+.btn-golden {
   padding: @space-xs @space-golden-sm;
   
-  &.b-btn-sm {
+  &.btn-sm {
     padding: @space-xxs @space-fib-3;
   }
   
-  &.b-btn-lg {
+  &.btn-lg {
     padding: @space-sm @space-golden-md;
   }
 }
 
 // Attention-directing button with subliminal directional cues
-.b-btn-attention {
+.btn-attention {
   padding: @directional-cue-primary;
   box-shadow: @directional-shadow;
   transition: transform @time-quick @ease-standard,
@@ -287,7 +287,7 @@ html[data-theme="dark"],
 }
 
 // Button using perceptually uniform color scale
-.b-btn-uniform {
+.btn-uniform {
   background-color: @color-primary-500;
   color: white;
   border-color: @color-primary-600;
@@ -300,7 +300,7 @@ html[data-theme="dark"],
   }
   
   &:active:not(:disabled) {
-    .b-btn-active-state();
+    .btn-active-state();
     background-color: @color-primary-700;
     border-color: @color-primary-800;
     box-shadow: none;
@@ -317,7 +317,7 @@ html[data-theme="dark"],
   }
   
   // Semantic color variants
-  &.b-btn-success {
+  &.btn-success {
     background-color: @color-success;
     border-color: darken(@color-success, 5%);
     
@@ -331,7 +331,7 @@ html[data-theme="dark"],
     }
   }
   
-  &.b-btn-warning {
+  &.btn-warning {
     background-color: @color-warning;
     color: darken(@color-warning, 35%);
     border-color: darken(@color-warning, 5%);
@@ -346,7 +346,7 @@ html[data-theme="dark"],
     }
   }
   
-  &.b-btn-error {
+  &.btn-error {
     background-color: @color-error;
     border-color: darken(@color-error, 5%);
     
@@ -362,18 +362,18 @@ html[data-theme="dark"],
 }
 
 // Cognitive load optimized button
-.b-btn-cognitive {
+.btn-cognitive {
   padding: @cognitive-load-moderate;
   border-radius: @radius-md;
   box-shadow: @shadow-sm;
   transition: all @time-moderate @ease-standard;
   
-  &.b-btn-light {
+  &.btn-light {
     padding: @cognitive-load-light;
     line-height: @line-height-loose;
   }
   
-  &.b-btn-heavy {
+  &.btn-heavy {
     padding: @cognitive-load-heavy;
     line-height: @line-height-tight;
   }

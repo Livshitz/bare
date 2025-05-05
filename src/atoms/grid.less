@@ -1,42 +1,42 @@
 @import (reference) "../variables.less";
 
-.b-grid {
-  @apply grid;
+.grid {
+  @apply t-grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1rem;
 }
 
 // Grid column count variants
-.b-grid-2 {
+.grid-2 {
   @apply grid;
   grid-template-columns: repeat(2, 1fr);
 }
 
-.b-grid-3 {
+.grid-3 {
   @apply grid;
   grid-template-columns: repeat(3, 1fr);
 }
 
-.b-grid-4 {
+.grid-4 {
   @apply grid;
   grid-template-columns: repeat(4, 1fr);
 }
 
 // Responsive variants
 @media (max-width: 599px) {
-  .b-xs-grid {
-    @apply b-grid;
+  .xs-grid {
+    @apply grid;
   }
   
-  .b-xs-grid-2 {
-    @apply b-grid-2;
+  .xs-grid-2 {
+    @apply grid-2;
   }
   
-  .b-xs-grid-3 {
-    @apply b-grid-3;
+  .xs-grid-3 {
+    @apply grid-3;
   }
   
-  .b-xs-grid-4 {
-    @apply b-grid-4;
+  .xs-grid-4 {
+    @apply grid-4;
   }
 } 

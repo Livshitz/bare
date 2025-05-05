@@ -1,19 +1,19 @@
 @import (reference) "../variables.less";
 
-.b-stack {
-  @apply flex flex-col gap-2;
+.stack {
+  @apply t-flex t-flex-col t-gap-2;
 }
 
 // Not xs variants
 @media (min-width: 600px) {
-  .b-gt-xs-stack {
-    .b-stack;
+  .gt-xs-stack {
+    .stack;
   }
 }
 
 // Responsive variants
 @media (max-width: 599px) {
-  .b-xs-stack {
-    .b-stack;
+  .xs-stack {
+    .stack;
   }
 } 

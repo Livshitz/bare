@@ -14,70 +14,70 @@
 // @import "spacer.less"; 
 
 // light mode:
-.b-text-dark { color: @primary-text; }
-.b-bg-light { background-color: @primary-bg; }
+.text-dark { color: @primary-text; }
+.bg-light { background-color: @primary-bg; }
 // dark mode:
-.b-text-light { color: @primary-text-dark; }
-.b-bg-dark { background-color: @primary-bg-dark; }
+.text-light { color: @primary-text-dark; }
+.bg-dark { background-color: @primary-bg-dark; }
 
 // Alignment utilities
-.b-center {
-	@apply flex items-center justify-center;
+.center {
+	@apply t-flex t-items-center t-justify-center;
 }
 
 // End alignments
-.b-end {
-	@apply flex items-end justify-end;
+.end {
+	@apply t-flex t-items-end t-justify-end;
 }
 
 // Space distribution
-.b-between {
-	@apply flex items-center justify-between;
+.between {
+	@apply t-flex t-items-center t-justify-between;
 }
 
-.b-around {
-	@apply flex items-center justify-around;
+.around {
+	@apply t-flex t-items-center t-justify-around;
 }
 
-.b-evenly {
-	@apply flex items-center justify-evenly;
+.evenly {
+	@apply t-flex t-items-center t-justify-evenly;
 }
 
-.b-full-x {
-	@apply w-full;
+.full-x {
+	@apply t-w-full;
 }
 
-.b-full-y {
-	@apply h-full;
+.full-y {
+	@apply t-h-full;
 }
 
-.b-full {
-	.b-full-x;
-	.b-full-y;
+.full {
+	.full-x;
+	.full-y;
 }
 
 @media (max-width: 599px) {
-	.b-xs-center {
-		@apply b-center;
+	.xs-center {
+		@apply center;
 	}
 	
 	// End alignments
-	.b-xs-end {
-		@apply b-end;
+	.xs-end {
+		@apply end;
 	}
 
 	// Space between
-	.b-xs-between {
-		@apply b-between;
+	.xs-between {
+		@apply between;
 	}
 
 	// Space around
-	.b-xs-around {
-		@apply b-around;
+	.xs-around {
+		@apply around;
 	}
 
 	// Space evenly
-	.b-xs-evenly {
-		@apply b-evenly;
+	.xs-evenly {
+		@apply evenly;
 	}
 }

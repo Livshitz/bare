@@ -3,7 +3,7 @@
 @import '../variables';
 
 // Main prose container with optimal typography settings
-.b-prose {
+.prose {
   // Set optimal line length for readability
   max-width: @content-width-optimal;
   line-height: @line-height-normal;
@@ -176,7 +176,7 @@
 }
 
 // Cross-cultural typography adaptations
-html[dir="rtl"] .b-prose {
+html[dir="rtl"] .prose {
   // RTL-specific adjustments
   blockquote {
     border-left: none;
@@ -192,9 +192,9 @@ html[dir="rtl"] .b-prose {
 }
 
 // Language-specific typography optimizations
-.b-prose[lang|="ja"], 
-.b-prose[lang|="zh"], 
-.b-prose[lang|="ko"] {
+.prose[lang|="ja"], 
+.prose[lang|="zh"], 
+.prose[lang|="ko"] {
   // CJK language optimizations
   line-height: 1.8; // Higher line height for ideographic languages
   
@@ -203,14 +203,14 @@ html[dir="rtl"] .b-prose {
   }
 }
 
-.b-prose[lang|="ar"],
-.b-prose[lang|="he"] {
+.prose[lang|="ar"],
+.prose[lang|="he"] {
   // Arabic/Hebrew optimizations
   line-height: 1.6; // Slightly higher than Latin but lower than CJK
 }
 
 // Typography variants
-.b-prose-sm {
+.prose-sm {
   font-size: @font-size-sm;
   
   h1 { font-size: @font-size-xl; }
@@ -218,7 +218,7 @@ html[dir="rtl"] .b-prose {
   h3 { font-size: @font-size-md; }
 }
 
-.b-prose-lg {
+.prose-lg {
   font-size: @font-size-lg;
   
   h1 { 

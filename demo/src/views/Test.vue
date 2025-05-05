@@ -1,49 +1,49 @@
 <template lang="pug">
 //- Page wrapper, full‑screen dark layout with left sidebar
-div.b-layout.b-layout--sidebar-left.b-layout--fullscreen.b
+div.layout.layout--sidebar-left.layout--fullscreen.b
 	//- Sidebar (thread list + “New Chat” + login)
-	aside.b-layout-sidebar.b-bg.b-text
-		.b-col.b-start.b-full
+	aside.layout-sidebar.bg.text
+		.col.start.full
 			//- “New Chat” button
-			button.b-block.b-caption(type="button") New Chat
+			button.block.caption(type="button") New Chat
 
 			//- Recent Threads
-			nav.b-col
-				.b-block.b-label Recent Threads
-				ul.b-col
-					li.b-row.b-between
+			nav.col
+				.block.label Recent Threads
+				ul.col
+					li.row.between
 						span Welcome to T3 Chat
-					li.b-row Why T3 Chat?
-					li.b-row FAQ
+					li.row Why T3 Chat?
+					li.row FAQ
 
-			a.b-btn(href="#") Login
+			a.btn(href="#") Login
 
 	//- Main content area
-	main.b-layout-main.b-col.b-between.b-bg.b-text
+	main.layout-main.col.between.bg.text
 		//- Header for current thread
-		header.b-row.b-between.b-center-y.b-full-x
-			a.b-btn(href="#").b-center-y
+		header.row.between.center-y.full-x
+			a.btn(href="#").center-y
 				span &larr;  
 
 		//- Chat messages container
-		section.b-col.b-gap.b-full-x
-			.b-block.b-end
+		section.col.gap.full-x
+			.block.end
 				h1 What is T3 Chat?
 			//- System / intro messages
-			.b-block.b-prose
+			.block.prose
 				h2 T3 Chat is the best AI Chat ever made.
-				h3.b-text LLMs have gotten great. Their apps have not.
+				h3.text LLMs have gotten great. Their apps have not.
 				p It’s hard to overstate how powerful…
 				p That’s why we built T3 Chat.
 				h4 Every AI chat app felt like Slack. This one feels like Linear.
 				p You’ve never used a faster, more reliable chat app than T3 Chat…
 
 		//- Input area
-		footer.b-col.b-gap.b-block.b-end-y.b-full-x.b-center-x
-			p.b-text.b-center Make sure you agree to our Terms and our Privacy Policy
-			form.b-row.b-between
-				textarea.b-textarea(placeholder="Type your message here…")
-				button.b-btn.b-btn-primary(type="submit") Send
+		footer.col.gap.block.end-y.full-x.center-x
+			p.text.center Make sure you agree to our Terms and our Privacy Policy
+			form.row.between
+				textarea.textarea(placeholder="Type your message here…")
+				button.btn.btn-primary(type="submit") Send
 
 </template>
 
@@ -52,7 +52,7 @@ div.b-layout.b-layout--sidebar-left.b-layout--fullscreen.b
 </script>
 
 <style lang="less" scoped>
-.b-block { @apply border; }
+.block { @apply t-border; }
 .test-view {
 	padding: 20px;
 }

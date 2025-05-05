@@ -2,86 +2,86 @@
 @import (reference) "../atoms/index.less";
 
 // Base layout component - uses stack for vertical layout
-.b-layout {
-  @apply min-h-screen;
-  .b-stack;
+.layout {
+  .stack;
+  @apply t-min-h-screen t-gap-0;
 }
 
 // Layout components
-.b-layout-header {
-  @apply w-full;
+.layout-header {
+  @apply t-w-full;
 }
 
-.b-layout-main {
-  @apply flex-1;
+.layout-main {
+  @apply t-flex-1;
 }
 
-.b-layout-footer {
-  @apply w-full;
+.layout-footer {
+  @apply t-w-full;
 }
 
-.b-layout-sidebar {
-  @apply w-64 flex-shrink-0;
+.layout-sidebar {
+  @apply t-w-64 t-flex-shrink-0;
 }
 
-.b-layout-nav {
-  @apply w-full;
+.layout-nav {
+  @apply t-w-full;
 }
 
 // Layout modifiers
-.b-layout--centered {
-  .b-center;
+.layout--centered {
+  .center;
 }
 
-.b-layout--fullscreen {
-  @apply min-h-screen;
+.layout--fullscreen {
+  @apply t-min-h-screen;
 }
 
-.b-layout--fixed-header {
+.layout--fixed-header {
   > header {
-    @apply ~"fixed top-0 left-0 right-0 z-10 w-full h-[4.5rem]";
+    @apply ~"t-fixed t-top-0 t-left-0 t-right-0 t-z-10 t-w-full t-h-[4.5rem]";
   }
   
   > main {
-    @apply ~"pt-[4.5rem] flex-1"; // Adjust based on header height
+    @apply ~"t-pt-[4.5rem] t-flex-1"; // Adjust based on header height
   }
 }
 
-.b-layout--fixed-header.b-layout--no-header {
+.layout--fixed-header.layout--no-header {
   > header {
-    @apply hidden;
+    @apply t-hidden;
   }
 
   > main {
-    @apply ~"pt-0 !important";
+    @apply ~"t-pt-0 !important";
   }
 }
 
-.b-layout--sidebar-left {
-  .b-row;
+.layout--sidebar-left {
+  .row;
 }
 
-.b-layout--sidebar-right {
-  .b-row-reverse;
+.layout--sidebar-right {
+  .row-reverse;
 }
 
-.b-narrow {
-  @apply max-w-7xl w-full mx-auto;
+.narrow {
+  @apply t-max-w-7xl t-w-full t-mx-auto;
 }
 
 // Responsive modifiers
 @media (max-width: 599px) {
-  .b-layout--stack {
-    .b-stack;
+  .layout--stack {
+    .stack;
     
-    > .b-layout-sidebar {
-      @apply w-full;
+    > .layout-sidebar {
+      @apply t-w-full;
     }
   }
   
-  .b-layout--hide-sidebar {
-    > .b-layout-sidebar {
-      @apply hidden;
+  .layout--hide-sidebar {
+    > .layout-sidebar {
+      @apply t-hidden;
     }
   }
 } 

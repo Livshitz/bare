@@ -1,127 +1,127 @@
 <template lang="pug">
 // Documentation Header
-section.b-section
+section.section
 	h1.text-2xl.font-bold.mb-4 Primitives Demo
 	p.mb-4 This demo showcases the core primitives (Button, Badge) available in the design system.
 
-.b-stack.gap-8
+.stack.gap-8
 	// Button Primitive Demo
 	section#button-demo
-		.b-section
+		.section
 			h2.text-xl.font-bold.mb-4 Button Primitives
-			.b-stack.gap-4
+			.stack.gap-4
 				// Variants Grouped
-				.b-stack.gap-2
+				.stack.gap-2
 					span.font-semibold Variants
-					.b-row.gap-2
-						button.b-btn Default
-						button.b-btn.b-btn-primary Primary
-						button.b-btn.b-btn-secondary Secondary
-						button.b-btn.b-btn-ghost Ghost
-						button.b-btn(disabled) Disabled
+					.row.gap-2
+						button.btn Default
+						button.btn.btn-primary Primary
+						button.btn.btn-secondary Secondary
+						button.btn.btn-ghost Ghost
+						button.btn(disabled) Disabled
 					pre.bg-gray-800.p-2.rounded.text-white.font-mono
-						| button.b-btn
-						| button.b-btn.b-btn-primary
-						| button.b-btn.b-btn-secondary
-						| button.b-btn.b-btn-ghost
-						| button.b-btn(disabled)
+						| button.btn
+						| button.btn.btn-primary
+						| button.btn.btn-secondary
+						| button.btn.btn-ghost
+						| button.btn(disabled)
 				// Sizes Grouped
-				.b-stack.gap-2
+				.stack.gap-2
 					span.font-semibold Sizes
-					.b-row.gap-2
-						button.b-btn.b-btn-sm Small
-						button.b-btn Medium
-						button.b-btn.b-btn-lg Large
+					.row.gap-2
+						button.btn.btn-sm Small
+						button.btn Medium
+						button.btn.btn-lg Large
 					pre.bg-gray-800.p-2.rounded.text-white.font-mono
-						| button.b-btn.b-btn-sm
-						| button.b-btn
-						| button.b-btn.b-btn-lg
+						| button.btn.btn-sm
+						| button.btn
+						| button.btn.btn-lg
 				// Block & Disabled
-				.b-row.gap-4
-					.b-stack.gap-2
+				.row.gap-4
+					.stack.gap-2
 						span.font-semibold Block
-						button.b-btn.b-btn-block(style="width:100%") Block Button
-						pre.bg-gray-800.p-2.rounded.text-white.font-mono button.b-btn.b-btn-block
+						button.btn.btn-block(style="width:100%") Block Button
+						pre.bg-gray-800.p-2.rounded.text-white.font-mono button.btn.btn-block
 
 	// Badge Primitive Demo
 	section#badge-demo
-		.b-section
+		.section
 			h2.text-xl.font-bold.mb-4 Badge Primitives
-			.b-stack.gap-4
+			.stack.gap-4
 				// Default
-				.b-stack.gap-2
+				.stack.gap-2
 					span.font-semibold Default
-					span.b-badge Default
-					pre.bg-gray-800.p-2.rounded.text-white.font-mono span.b-badge
+					span.badge Default
+					pre.bg-gray-800.p-2.rounded.text-white.font-mono span.badge
 				// Color Variants
-				.b-stack.gap-2
+				.stack.gap-2
 					span.font-semibold Color Variants
-					.b-row.gap-2
-						span.b-badge.b-badge-primary Primary
-						span.b-badge.b-badge-success Success
-						span.b-badge.b-badge-warning Warning
-						span.b-badge.b-badge-danger Danger
+					.row.gap-2
+						span.badge.badge-primary Primary
+						span.badge.badge-success Success
+						span.badge.badge-warning Warning
+						span.badge.badge-danger Danger
 					pre.bg-gray-800.p-2.rounded.text-white.font-mono
-						| .b-badge.b-badge-primary
-						| .b-badge.b-badge-success
-						| .b-badge.b-badge-warning
-						| .b-badge.b-badge-danger
+						| .badge.badge-primary
+						| .badge.badge-success
+						| .badge.badge-warning
+						| .badge.badge-danger
 				// Sizes
-				.b-stack.gap-2
+				.stack.gap-2
 					span.font-semibold Sizes
-					.b-row.gap-2
-						span.b-badge.b-badge-sm Small
-						span.b-badge Medium
-						span.b-badge.b-badge-lg Large
+					.row.gap-2
+						span.badge.badge-sm Small
+						span.badge Medium
+						span.badge.badge-lg Large
 					pre.bg-gray-800.p-2.rounded.text-white.font-mono
-						| .b-badge.b-badge-sm
-						| .b-badge
-						| .b-badge.b-badge-lg
+						| .badge.badge-sm
+						| .badge
+						| .badge.badge-lg
 
 	// Input Primitive Demo
 	section#input-demo
-		.b-section
+		.section
 			h2.text-xl.font-bold.mb-4 Input Primitives
-			.b-stack.gap-4
+			.stack.gap-4
 				// Input Default
-				.b-stack.gap-2
+				.stack.gap-2
 					span.font-semibold Default Input
-					input.b-input(type="text" placeholder="Default input")
-					pre.bg-gray-800.p-2.rounded.text-white.font-mono input.b-input
+					input.input(type="text" placeholder="Default input")
+					pre.bg-gray-800.p-2.rounded.text-white.font-mono input.input
 				// Input States
-				.b-stack.gap-2
+				.stack.gap-2
 					span.font-semibold Input States
-					.b-stack.gap-2
-						input.b-input(type="text" placeholder="Disabled state" disabled)
+					.stack.gap-2
+						input.input(type="text" placeholder="Disabled state" disabled)
 					pre.bg-gray-800.p-2.rounded.text-white.font-mono
-						| input.b-input(:hover)
-						| input.b-input(:focus)
-						| input.b-input(disabled)
+						| input.input(:hover)
+						| input.input(:focus)
+						| input.input(disabled)
 				// Input Sizes
-				.b-stack.gap-2
+				.stack.gap-2
 					span.font-semibold Input Sizes
-					.b-stack.gap-2
-						input.b-input.b-input-sm(type="text" placeholder="Small input")
-						input.b-input(type="text" placeholder="Medium input")
-						input.b-input.b-input-lg(type="text" placeholder="Large input")
+					.stack.gap-2
+						input.input.input-sm(type="text" placeholder="Small input")
+						input.input(type="text" placeholder="Medium input")
+						input.input.input-lg(type="text" placeholder="Large input")
 					pre.bg-gray-800.p-2.rounded.text-white.font-mono
-						| input.b-input.b-input-sm
-						| input.b-input
-						| input.b-input.b-input-lg
+						| input.input.input-sm
+						| input.input
+						| input.input.input-lg
 				// Textarea
-				.b-stack.gap-2
+				.stack.gap-2
 					span.font-semibold Textarea
-					textarea.b-textarea(placeholder="Default textarea")
-					pre.bg-gray-800.p-2.rounded.text-white.font-mono textarea.b-textarea
+					textarea.textarea(placeholder="Default textarea")
+					pre.bg-gray-800.p-2.rounded.text-white.font-mono textarea.textarea
 				// Textarea States
-				.b-stack.gap-2
+				.stack.gap-2
 					span.font-semibold Textarea States
-					.b-stack.gap-2
-						textarea.b-textarea(placeholder="Disabled state" disabled)
+					.stack.gap-2
+						textarea.textarea(placeholder="Disabled state" disabled)
 					pre.bg-gray-800.p-2.rounded.text-white.font-mono
-						| textarea.b-textarea(:hover)
-						| textarea.b-textarea(:focus)
-						| textarea.b-textarea(disabled)
+						| textarea.textarea(:hover)
+						| textarea.textarea(:focus)
+						| textarea.textarea(disabled)
 </template>
 
 <script setup lang="ts">
@@ -137,18 +137,18 @@ import { app, helpers } from '../main';
 @import (reference) '../../../src/primitives/badge.less';
 @import (reference) '../../../src/primitives/input.less';
 
-.b-section>.b-title {
+.section>.title {
 	margin-bottom: 1rem;
 }
 
-.b-row.gap-2 {
+.row.gap-2 {
 	display: flex;
 	flex-direction: row;
 	gap: 0.5rem;
 	align-items: center;
 }
 
-.b-row.gap-4 {
+.row.gap-4 {
 	display: flex;
 	flex-direction: row;
 	gap: 1rem;

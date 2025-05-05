@@ -1,8 +1,8 @@
 @import '../variables.less';
 
 // Input primitive
-.b-input,
-.b-textarea {
+.input,
+.textarea {
   display: block;
   width: 100%;
   font-size: @font-size-base;
@@ -41,21 +41,21 @@
 }
 
 // Textarea specific
-.b-textarea {
+.textarea {
   min-height: 4rem;
   resize: vertical;
 }
 
 // Size variants
-.b-input-sm,
-.b-textarea-sm {
+.input-sm,
+.textarea-sm {
   font-size: @font-size-sm;
   padding: @space-xxs @space-xs;
   min-height: 2rem;
 }
 
-.b-input-lg,
-.b-textarea-lg {
+.input-lg,
+.textarea-lg {
   font-size: @font-size-lg;
   padding: @space-sm @space-md;
   min-height: 3rem;
@@ -63,9 +63,9 @@
 
 // Dark mode support
 html[data-theme="dark"],
-.b-dark {
-  .b-input,
-  .b-textarea {
+.dark {
+  .input,
+  .textarea {
     background-color: @color-neutral-900;
     color: @color-neutral-100;
     border-color: @color-neutral-700;
