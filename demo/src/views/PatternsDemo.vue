@@ -1,6 +1,6 @@
 <template lang="pug">
 // Documentation Header
-section.section
+section.section.prose
   h1.t-text-2xl.t-font-bold.t-mb-4 Layout Patterns Demo
   p.t-mb-4 This demo showcases the composable layout patterns available in the design system.
 
@@ -24,7 +24,7 @@ section.section
       h2.t-text-xl.t-font-bold.t-mb-4 Fixed Header Layout
       .layout.layout--fixed-header.t-bg-gray-200.t-min-h-screen
         header.t-bg-gray-100.t-p-4.t-xs-hide.t-opacity-70.t-pointer-events-none
-          .col.t-gap-1.text-dark
+          .col.t-gap-1.text-dark.no-prose
             h3.t-font-semibold Fixed Header (4.5rem/72px height)
             p.t-text-sm This header stays fixed at the top
         main.layout-main.t-bg-gray-100.t-p-4.text-dark.t-border

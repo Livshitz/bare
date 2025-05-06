@@ -1,6 +1,6 @@
 <template lang="pug">
 // Documentation Header
-section.section
+section.section.prose
 	h1.t-text-2xl.t-font-bold.t-mb-4 Layout Atoms Demo
 	p.t-mb-4 This demo showcases the layout atoms available in the design system.
 

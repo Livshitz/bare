@@ -1,10 +1,10 @@
 <template lang="pug">
 //- Page wrapper, full‑screen dark layout with left sidebar
 div.layout.layout--sidebar-left.layout--fullscreen.b
-	//- Sidebar (thread list + “New Chat” + login)
+	//- Sidebar (thread list + "New Chat" + login)
 	aside.layout-sidebar
 		.col.full
-			//- “New Chat” button
+			//- "New Chat" button
 			.block
 				.btn-ghost.caption(type="button") New Chat
 
@@ -19,6 +19,11 @@ div.layout.layout--sidebar-left.layout--fullscreen.b
 			.block
 				.row.gap
 					a.btn.flex(href="/#123") Login
+					button.btn-ghost.btn-circle(@click="$app.helpers.toggleDarkMode")
+						.t-w-5.t-h-5(v-if="$app.helpers.getIsDark().value")
+							i.fa-solid.fa-sun
+						.t-w-5.t-h-5(v-else)
+							i.fa-solid.fa-moon
 
 	//- Main content area
 	main.layout-main.col.between.layout-max-sm
@@ -28,17 +33,17 @@ div.layout.layout--sidebar-left.layout--fullscreen.b
 				span &larr;  
 
 		//- Chat messages container
-		section.col.gap.full-x
+		section.col.gap.full-x.prose
 			.row.block-no-bg.end
 				h1 What is T3 Chat?
 			//- System / intro messages
-			.block-no-bg.prose
+			.block-no-bg
 				h2 T3 Chat is the best AI Chat ever made.
 				h3.text LLMs have gotten great. Their apps have not.
-				p It’s hard to overstate how powerful…
-				p That’s why we built T3 Chat.
+				p It's hard to overstate how powerful…
+				p That's why we built T3 Chat.
 				h4 Every AI chat app felt like Slack. This one feels like Linear.
-				p You’ve never used a faster, more reliable chat app than T3 Chat…
+				p You've never used a faster, more reliable chat app than T3 Chat…
 
 		//- Input area
 		footer.col.gap.block-no-bg.end-y.full-x.center-x

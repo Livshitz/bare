@@ -3,6 +3,7 @@ import AtomsDemo from './views/AtomsDemo.vue';
 import PatternsDemo from './views/PatternsDemo.vue';
 import Test from './views/Test.vue';
 import PrimitivesDemo from './views/PrimitivesDemo.vue';
+import IconsDemo from './views/IconsDemo.vue';
 
 const router = createRouter({
 	history: createWebHistory(),
@@ -29,6 +30,11 @@ const router = createRouter({
 			path: '/demo/primitives',
 			name: 'primitives-demo',
 			component: PrimitivesDemo,
+		},
+		{
+			path: '/demo/icons',
+			name: 'icons-demo',
+			component: IconsDemo,
 		},
 		{
 			path: '/',

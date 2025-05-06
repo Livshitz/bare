@@ -1,6 +1,6 @@
 <template lang="pug">
 // Documentation Header
-section.section
+section.section.prose
 	h1.text-2xl.font-bold.mb-4 Primitives Demo
 	p.mb-4 This demo showcases the core primitives (Button, Badge) available in the design system.
 

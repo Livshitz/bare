@@ -8,6 +8,7 @@
 				router-link.btn-ghost(to="/demo/atoms") Atoms
 				router-link.btn-ghost(to="/demo/patterns") Patterns
 				router-link.btn-ghost(to="/demo/primitives") Primitives
+				router-link.btn-ghost(to="/demo/icons") Icons
 				router-link.btn-ghost(to="/demo/test") Test
 				button.btn-ghost.btn-circle(@click="toggleDarkMode")
 					svg.t-w-5.t-h-5(v-if="isDark" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor")

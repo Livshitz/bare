@@ -2,10 +2,13 @@
 // Based on scientific principles of perception and reading research
 @import '../variables';
 
+.prose-layout {
+  max-width: @content-width-optimal;
+}
+
 // Main prose container with optimal typography settings
 .prose {
   // Set optimal line length for readability
-  max-width: @content-width-optimal;
   line-height: @line-height-normal;
   
   // Typography with mathematical ratio scale
@@ -231,4 +234,29 @@ html[dir="rtl"] .prose {
   p, ul, ol, blockquote {
     margin-bottom: @space-md * 1.2;
   }
-} 
+}
+
+.no-prose {
+  // Hard reset (removes all inherited styles, including display, so use with care)
+//   all: unset !important;
+//   display: block !important;
+  box-sizing: border-box !important;
+  font-size: @font-size-base !important;
+  line-height: @line-height-normal !important;
+//   color: @color-text !important;
+  font-family: @font-family-base !important;
+//   margin: 0 !important;
+//   padding: 0 !important;
+
+  * {
+    // all: unset !important;
+    // display: revert !important;
+    box-sizing: border-box !important;
+    font-size: inherit !important;
+    line-height: inherit !important;
+    // color: inherit !important;
+    // font-family: inherit !important;
+    // margin: 0 !important;
+    // padding: 0 !important;
+  }
+}
