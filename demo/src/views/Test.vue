@@ -1,15 +1,17 @@
 <template lang="pug">
 div.layout.layout--fullscreen.layout--fixed-header
+	.overlay(v-if="isSidebarOpen && $helpers.breakpoints.isLtXS", @click="isSidebarOpen = false") {{ isSidebarOpen && $helpers.breakpoints.isLtXS }}
+
 	header.layout-header-fixed.t-bg-zinc-600.row.between.center-y.t-px-4.t-text-white
-			.row.center-y.gap
-				.btn-ghost.caption(@click="isSidebarOpen = !isSidebarOpen")
-					i.fa-solid.fa-bars.t-text-white.text-md
-					//- i.fa-solid.fa-ellipsis-vertical.t-text-white.text-xl
-					//- i.fa-solid.fa-equals.t-text-white.text-xl
-				.title.lighter Test
+		.row.center-y.gap
+			.btn-ghost.caption(@click="isSidebarOpen = !isSidebarOpen")
+				i.fa-solid.fa-bars.t-text-white.text-md
+				//- i.fa-solid.fa-ellipsis-vertical.t-text-white.text-xl
+				//- i.fa-solid.fa-equals.t-text-white.text-xl
+			.title.lighter Test
 
 	.row
-		aside.layout-sidebar#sidebar(:class="{ 'sidebar-collapsed': !isSidebarOpen }").layout--header-padding
+		aside.layout-sidebar.bg#sidebar(:class="{ 'sidebar-collapsed': !isSidebarOpen }")
 			.col.full
 				.block
 					.row.between
@@ -26,17 +28,15 @@ div.layout.layout--fullscreen.layout--fixed-header
 					.row.gap
 						a.btn.flex(href="/#123") Login
 						button.btn-ghost.btn-circle(@click="$app.helpers.toggleDarkMode")
-							.t-w-5.t-h-5(v-if="$app.helpers.getIsDark().value")
+							.t-w-5.t-h-5(v-if="$app.helpers.isDark.value")
 								i.fa-solid.fa-sun
 							.t-w-5.t-h-5(v-else)
 								i.fa-solid.fa-moon
 
-		main.layout-main.col.between.layout-max-sm#main-content(:class="{ 'main-content-shifted': isSidebarOpen }").layout--header-padding
+		main.layout-main.col.between.layout-max-sm#main-content.layout--header-padding
 			section.col.gap.full-x.prose
 				.row.block-no-bg.end
 					h1 What is T3 Chat?
-					button.btn-ghost.caption(@click="isSidebarOpen = !isSidebarOpen")
-						i.fa-solid.fa-angle-right
 
 				.block-no-bg
 					h2 T3 Chat is the best AI Chat ever made.
@@ -57,7 +57,7 @@ div.layout.layout--fullscreen.layout--fixed-header
 <script setup lang="ts">
 import { ref } from 'vue';
 
-const isSidebarOpen = ref(true);
+const isSidebarOpen = ref(false);
 
 // Component logic here
 </script>
@@ -72,20 +72,33 @@ const isSidebarOpen = ref(true);
 
 // Styles for the sidebar itself
 #sidebar {
-  transition: width @delay, padding @delay, opacity @delay;
-  overflow: hidden; // Hide content when collapsing positioning the toggle button when collapsed
+  position: fixed; // Make sidebar fixed to overlay content
+  top: 0;
+  left: 0;
+  height: 100vh;
+  z-index: 1001; // Ensure sidebar is above overlay
+  // Assuming a default width, adjust as needed
+  width: 280px; // Example width, adjust to your preference
+  transform: translateX(0);
+  opacity: 1;
+  transition: transform @delay, opacity @delay;
+  overflow-y: auto; // Allow scrolling within the sidebar if content overflows
 }
 
 #sidebar.sidebar-collapsed {
-  position: fixed; // Take out of document flow
-  top: 0;
-  width: 0px;
-  height: 100vh;
-  min-width: 0px;
-  padding-left: 0;
-  padding-right: 0;
-  opacity: 0; // Make fully transparent
-  transition: width @delay, padding @delay, opacity @delay;
+  transform: translateX(-100%);
+  opacity: 0;
+  // No need for width, padding changes here anymore
 }
 
+
+// Ensure main content is not shifted by default.
+// If there were global styles for .main-content-shifted, they might need adjustment
+// or removal if no longer used elsewhere.
+#main-content {
+  // Reset any potential margin-left if it was applied by .main-content-shifted
+  // margin-left: 0 !important; // Or ensure no rule is adding margin-left
+  position: relative; // Establish a stacking context if needed, though z-index on overlay should suffice
+  z-index: 1; // Default stacking context
+}
 </style>

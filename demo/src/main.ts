@@ -3,7 +3,7 @@ import App from './App.vue';
 import router from './router';
 import '../../src/index.less';
 import './main.less';
-import { Helpers } from './helpers';
+import { Helpers } from './helpers/index';
 
 const app = createApp(App);
 app.use(router);

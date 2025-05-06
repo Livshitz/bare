@@ -24,7 +24,7 @@ import { helpers } from './main'
 import { useRoute } from 'vue-router'
 
 const { isDark, toggleDarkMode } = {
-	isDark: helpers.getIsDark(),
+	isDark: helpers.isDark,
 	toggleDarkMode: () => helpers.toggleDarkMode()
 }
 const route = useRoute()
