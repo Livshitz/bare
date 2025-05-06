@@ -6,6 +6,16 @@
 .flex-locked { flex: 0 0 auto; }
 .x-flex { display:flex; box-sizing:border-box; display:-webkit-box; display:-webkit-flex; display:-moz-box; display:-ms-flexbox; }
 
+.hidden { display: none; }
+.vanish { .hidden; position: absolute; opacity: 0; width: 0; height: 0; }
+
+.lighter { font-weight:100 !important; }
+.light { font-weight:200 !important; }
+.normal { font-weight:normal !important; }
+.bold { font-weight:bold !important; }
+.bolder { font-weight:bolder !important; }  
+.heavy { font-weight:900 !important; }
+
 // Display utilities
 .xs-hide {
   @media (max-width: @breakpoint-xs) {

@@ -7,13 +7,26 @@
   @apply t-min-h-screen t-gap-0;
 }
 
+.layout--full-height {
+  @apply t-overflow-auto t-max-h-screen;
+}
+
 // Layout components
 .layout-header {
   @apply t-w-full;
 }
 
+.layout--header-padding {
+  @apply ~"t-pt-[4.5rem]";
+}
+
+.layout-header-fixed {
+  @apply ~"t-fixed t-top-0 t-left-0 t-right-0 t-z-10 t-w-full t-h-[4.5rem]";
+}
+
 .layout-main {
-  @apply t-flex-1;
+  .layout--full-height;
+  @apply ~"t-min-w-full t-flex-1 t-max-h-full";
 }
 
 .layout-footer {
@@ -22,6 +35,8 @@
 
 .layout-sidebar {
   @apply t-w-64 t-flex-shrink-0;
+  .layout--full-height;
+  position: sticky; top: 0;
 }
 
 .layout-nav {
@@ -39,11 +54,12 @@
 
 .layout--fixed-header {
   > header {
-    @apply ~"t-fixed t-top-0 t-left-0 t-right-0 t-z-10 t-w-full t-h-[4.5rem]";
+    .layout-header-fixed;
   }
   
   > main {
-    @apply ~"t-pt-[4.5rem] t-flex-1"; // Adjust based on header height
+    @apply ~"t-flex-1"; // Adjust based on header height
+    .layout--header-padding;
   }
 }
 
@@ -71,19 +87,19 @@
 
 // Max width classes per breakpoint
 .layout-max-xs {
-  @apply ~"t-max-w-[@{breakpoint-xs}] t-w-full t-mx-auto";
+  @apply ~"t-max-w-[@{breakpoint-xs}] t-min-w-[@{breakpoint-xs}] t-w-full t-mx-auto";
 }
 
 .layout-max-sm {
-  @apply ~"t-max-w-[@{breakpoint-sm}] t-w-full t-mx-auto";
+  @apply ~"t-max-w-[@{breakpoint-sm}] t-min-w-[@{breakpoint-xs}] t-w-full t-mx-auto";
 }
 
 .layout-max-md {
-  @apply ~"t-max-w-[@{breakpoint-md}] t-w-full t-mx-auto";
+  @apply ~"t-max-w-[@{breakpoint-md}] t-min-w-[@{breakpoint-xs}] t-w-full t-mx-auto";
 }
 
 .layout-max-lg {
-  @apply ~"t-max-w-[@{breakpoint-lg}] t-w-full t-mx-auto";
+  @apply ~"t-max-w-[@{breakpoint-lg}] t-min-w-[@{breakpoint-xs}] t-w-full t-mx-auto";
 }
 
 .layout-max-xl {
