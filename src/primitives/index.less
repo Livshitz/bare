@@ -16,9 +16,14 @@ body { background-color: #eee; .text-dark; }
 	// Default light mode: light bg, dark text
 	.bg;
 	.stack;
-	.text-dark;
 	@apply t-p-4 t-rounded bg t-gap-2;
 }
+
+.block-no-bg {
+	.block;
+	background: transparent;
+}
+
 
 // Section primitive with larger spacing and container-like styling
 .section {
@@ -33,8 +38,6 @@ body { background-color: #eee; .text-dark; }
 
 .toc {
 	@apply section;
-	ol { @apply t-list-decimal t-list-inside; }
-	ul { @apply t-list-disc t-list-inside; }
 	.bg-light;
 	.text-dark;
 }
@@ -58,3 +61,11 @@ body { background-color: #eee; .text-dark; }
 
 
 }
+
+ol { @apply t-list-decimal t-list-inside; }
+ul { @apply t-list-disc t-list-inside; }
+
+dl { @apply t-list-inside t-divide-y t-divide-gray-200; }
+dr, .dr { @apply t-px-4 t-py-2 sm:t-grid sm:t-grid-cols-3 sm:t-gap-4 sm:t-px-0; }
+dt { @apply t-text-sm/6 t-font-medium t-text-gray-900; }
+dd { @apply t-mt-1 t-text-sm/6 t-text-gray-700 sm:t-col-span-2 sm:t-mt-0; }

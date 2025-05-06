@@ -25,11 +25,6 @@
 	@apply t-flex t-items-center t-justify-center;
 }
 
-// End alignments
-.end {
-	@apply t-flex t-items-end t-justify-end;
-}
-
 // Space distribution
 .between {
 	@apply t-flex t-items-center t-justify-between;
@@ -54,30 +49,4 @@
 .full {
 	.full-x;
 	.full-y;
-}
-
-@media (max-width: 599px) {
-	.xs-center {
-		@apply center;
-	}
-	
-	// End alignments
-	.xs-end {
-		@apply end;
-	}
-
-	// Space between
-	.xs-between {
-		@apply between;
-	}
-
-	// Space around
-	.xs-around {
-		@apply around;
-	}
-
-	// Space evenly
-	.xs-evenly {
-		@apply evenly;
-	}
 }

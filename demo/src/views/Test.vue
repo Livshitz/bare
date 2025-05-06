@@ -3,7 +3,7 @@
 div.layout.layout--sidebar-left.layout--fullscreen.b
 	//- Sidebar (thread list + “New Chat” + login)
 	aside.layout-sidebar
-		.col.start.full
+		.col.full
 			//- “New Chat” button
 			.block
 				.btn-ghost.caption(type="button") New Chat
@@ -11,14 +11,14 @@ div.layout.layout--sidebar-left.layout--fullscreen.b
 			//- Recent Threads
 			nav.block.col.bg
 				.label.t-mb-2 Recent Threads
-				ul.col
-					li.row.between
-						span Welcome to T3 Chat
-					li.row Why T3 Chat?
-					li.row FAQ
+				ul
+					li.btn-ghost.row.start Welcome to T3 Chat
+					li.btn-ghost.row.start Why T3 Chat?
+					li.btn-ghost.row.start FAQ
 
 			.block
-				a.btn(href="#") Login
+				.row.gap
+					a.btn.flex(href="/#123") Login
 
 	//- Main content area
 	main.layout-main.col.between.layout-max-sm
@@ -29,10 +29,10 @@ div.layout.layout--sidebar-left.layout--fullscreen.b
 
 		//- Chat messages container
 		section.col.gap.full-x
-			.block.end
+			.row.block-no-bg.end
 				h1 What is T3 Chat?
 			//- System / intro messages
-			.block.prose
+			.block-no-bg.prose
 				h2 T3 Chat is the best AI Chat ever made.
 				h3.text LLMs have gotten great. Their apps have not.
 				p It’s hard to overstate how powerful…
@@ -41,11 +41,11 @@ div.layout.layout--sidebar-left.layout--fullscreen.b
 				p You’ve never used a faster, more reliable chat app than T3 Chat…
 
 		//- Input area
-		footer.col.gap.block.end-y.full-x.center-x
-			p.text.center Make sure you agree to our Terms and our Privacy Policy
+		footer.col.gap.block-no-bg.end-y.full-x.center-x
+			p.text-xs.center Make sure you agree to our Terms and our Privacy Policy
 			form.row.between
 				textarea.textarea(placeholder="Type your message here…")
-				button.btn.btn-primary(type="submit") Send
+				button.btn.btn-primary.full-y(type="submit") Send
 
 </template>
 

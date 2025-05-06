@@ -1,17 +1,19 @@
 // @bod.ee/bare - Main Entry Point
 
+// Use @tailwind directives for Tailwind's layers
+// These are processed by the Tailwind PostCSS plugin
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
 // Import Layers
 @import "variables.less";
 @import "atoms/index.less";
 @import "primitives/index.less";
 @import "patterns/index.less";
 @import "utilities/index.less";
-
-// Use @tailwind directives for Tailwind's layers
-// These are processed by the Tailwind PostCSS plugin
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
 
 // @import "patterns/index.less";

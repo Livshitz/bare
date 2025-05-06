@@ -169,6 +169,31 @@ section.section
 						| textarea.textarea(:hover)
 						| textarea.textarea(:focus)
 						| textarea.textarea(disabled)
+
+	// Definition List Primitive Demo
+	section#dl-demo
+		.section
+			h2.text-xl.font-bold.mb-4 Definition List Primitives
+			.stack.gap-4
+				// Simple dl example
+				.stack.gap-2
+					span.font-semibold Simple Definition List
+					dl
+						dr
+							dt Coffee
+							dd Black hot drink
+						dr
+							dt Milk
+							dd White cold drink
+					pre.
+						| dl
+						|   dr
+						|     dt Coffee
+						|     dd Black hot drink
+						|   dr
+						|     dt Milk
+						|     dd White cold drink
+				
 </template>
 
 <script setup lang="ts">

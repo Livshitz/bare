@@ -2,24 +2,26 @@
 
 .col {
   @apply t-flex-1 t-flex t-flex-col t-gap-4;
+  &.center-x { @apply t-items-center; }
+  &.center-y { @apply t-justify-center; }
+  &.center { .center-x; .center-y; }
+  &.start-x { @apply t-items-start; }
+  &.start-y { @apply t-justify-start; }
+  &.start { .start-x; .start-y; }
+  &.end-x { @apply t-items-end; }
+  &.end-y { @apply t-justify-end; }
+  &.end { .end-x; .end-y; }
+  &.between-x { @apply t-items-start; }
+  &.between { .between-x; .center-y; }
+  &.around-x { @apply t-items-start; }
+  &.around { .around-x; .center-y; }
+  &.evenly-x { @apply t-items-start; }
+  &.evenly { .evenly-x; .center-y; }
 }
 
 .col-reverse {
   @apply col t-flex-col-reverse;
 }
-
-.col {
-  @apply t-flex-1 t-flex t-flex-col t-gap-4;
-  &.center-x { @apply t-items-center; }
-  &.center-y { @apply t-justify-center; }
-  &.start-x { @apply t-items-start; }
-  &.start-y { @apply t-justify-start; }
-  &.end-x { @apply t-items-end; }
-  &.end-y { @apply t-justify-end; }
-  &.between-x { @apply t-items-start; }
-  &.around-x { @apply t-items-start; }
-  &.evenly-x { @apply t-items-start; }
-} 
 
 // Responsive variants
 @media (max-width: 599px) {

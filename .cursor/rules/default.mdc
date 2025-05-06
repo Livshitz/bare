@@ -1,6 +1,6 @@
 ---
-description: 
+description: always
 globs: 
-alwaysApply: true
+alwaysApply: false
 ---
 avoid asking for comfirmation before executing your changes.

@@ -5,13 +5,19 @@
   
   &.center-x { @apply t-justify-center; }
   &.center-y { @apply t-items-center; }
+  &.center { .center-x; .center-y; }
   &.start-x { @apply t-justify-start; }
   &.start-y { @apply t-items-start; }
+  &.start { .start-x; .start-y; }
   &.end-x { @apply t-justify-end; }
   &.end-y { @apply t-items-end; }
+  &.end { .end-x; .end-y; }
   &.between-x { @apply t-justify-between; }
+  &.between { .between-x; .center-y; }
   &.around-x { @apply t-justify-around; }
+  &.around { .around-x; .center-y; }
   &.evenly-x { @apply t-justify-evenly; }
+  &.evenly { .evenly-x; .center-y; }
 }
 
 .row-reverse {
