@@ -20,6 +20,35 @@
 .text-light { color: @primary-text-dark; }
 .bg-dark { background-color: @primary-bg-dark; }
 
+.bg-50 { .dark-mode(background-color, --primary-50); }
+.bg-100 { .dark-mode(background-color, --primary-100); }
+.bg-200 { .dark-mode(background-color, --primary-200); }
+.bg-300 { .dark-mode(background-color, --primary-300); }
+.bg-400 { .dark-mode(background-color, --primary-400); }
+.bg-500 { .dark-mode(background-color, --primary-500); }
+.bg-600 { .dark-mode(background-color, --primary-600); }
+.bg-700 { .dark-mode(background-color, --primary-700); }
+.bg-800 { .dark-mode(background-color, --primary-800); }
+.bg-900 { .dark-mode(background-color, --primary-900); }
+.bg-950 { .dark-mode(background-color, --primary-950); }
+.text-50 { .dark-mode(color, --primary-50); }
+.text-100 { .dark-mode(color, --primary-100); }
+.text-200 { .dark-mode(color, --primary-200); }
+.text-300 { .dark-mode(color, --primary-300); }
+.text-400 { .dark-mode(color, --primary-400); }
+.text-500 { .dark-mode(color, --primary-500); }
+.text-600 { .dark-mode(color, --primary-600); }
+.text-700 { .dark-mode(color, --primary-700); }
+.text-800 { .dark-mode(color, --primary-800); }
+.text-900 { .dark-mode(color, --primary-900); }
+.text-950 { .dark-mode(color, --primary-950); }
+
+.bg { .bg-100; }
+.text { .text-900; }
+.accent-text { color: @accent-light; }
+.accent-bg { background-color: @accent-light; }
+.test { background-color: var(--primary-100); }
+
 // Alignment utilities
 .center {
 	@apply t-flex t-items-center t-justify-center;
@@ -49,4 +78,9 @@
 .full {
 	.full-x;
 	.full-y;
+}
+
+html[data-theme="dark"], .dark {
+	.accent-text { color: @accent-dark; }
+	.accent-bg { background-color: @accent-dark; }
 }

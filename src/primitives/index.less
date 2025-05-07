@@ -8,9 +8,6 @@
 
 body { background-color: #eee; .text-dark; }
 
-.text { .text-dark; }
-.bg { .bg-light; }
-
 // Add back the .block definition
 .block {
 	// Default light mode: light bg, dark text
@@ -44,7 +41,7 @@ body { background-color: #eee; .text-dark; }
 
 // Forced dark mode via ancestor: dark bg, light text
 .dark {
-	body { background-color: #111; .text-light; }
+	body { .bg-900; .text-light; }
 	
 	.text { .text-light; }
 	.bg { .bg-dark; }

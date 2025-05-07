@@ -36,7 +36,31 @@
 .layout-sidebar {
   @apply t-w-64 t-flex-shrink-0;
   .layout--full-height;
-  position: sticky; top: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100dvh;
+  z-index: 1001;
+  width: 280px;
+  transform: translateX(0);
+  opacity: 1;
+  transition: transform @sidebar-delay, opacity @sidebar-delay;
+  overflow-y: auto;
+}
+
+.layout-sidebar--collapsed {
+  transform: translateX(-100%);
+  opacity: 0;
+}
+
+.layout-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
 }
 
 .layout-nav {
@@ -121,4 +145,33 @@
       @apply t-hidden;
     }
   }
-} 
+}
+
+// Added from Test.vue and PageWithSidebar.vue
+@sidebar-delay: 0.3s ease;
+
+.layout-sidebar.sidebar-collapsed {
+  opacity: 0;
+  transform: translateX(-100%);
+}
+
+// Styles for main content when sidebar is present
+.layout-main {
+  position: relative;
+  z-index: 1;
+}
+
+// Example of how main content might be shifted if sidebar is always visible and not an overlay
+// .layout-main--sidebar-visible {
+//   margin-left: 280px; // Same as sidebar width
+//   transition: margin-left @sidebar-delay;
+// }
+
+// .layout-main--sidebar-collapsed { // When sidebar is collapsed, main content takes full width
+//   margin-left: 0;
+// } 
+
+:global(.rtl) #sidebar.sidebar-collapsed,
+:global([dir="rtl"]) #sidebar.sidebar-collapsed {
+  transform: translateX(100%);
+}
