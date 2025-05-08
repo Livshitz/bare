@@ -16,8 +16,8 @@ PageWithSidebar
 		.block
 			.row.gap
 				a.btn.flex(href="/#123") Login
-				button.btn-ghost.btn-circle(@click="$app.helpers.toggleDarkMode")
-					.t-w-5.t-h-5(v-if="$app.helpers.isDark.value")
+				button.btn-ghost.btn-circle(@click="$app.helpers.darkMode.toggleDarkMode")
+					.t-w-5.t-h-5(v-if="$app.helpers.darkMode.isDark")
 						i.fa-solid.fa-sun
 					.t-w-5.t-h-5(v-else)
 						i.fa-solid.fa-moon
