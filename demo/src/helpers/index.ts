@@ -6,7 +6,7 @@ import { DevtoolsHelper } from './DevtoolsHelper';
 import { DarkModeManager } from './DarkMode';
 
 export class Helpers {
-	public darkMode: DarkModeManager | null = null;
+	public darkMode: DarkModeManager = null;
 
 	public breakpoints = new Breakpoints();
 
