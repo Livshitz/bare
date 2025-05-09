@@ -1,19 +1,23 @@
 <template lang="pug">
-div.layout.layout--fullscreen.layout--fixed-header
-  header.layout-header-fixed.t-bg-zinc-900.t-text-white.row.center-y.full-y
+div.layout.layout--fullscreen(:class="{ 'layout--fixed-header': fixedHeader }")
+  header.t-bg-zinc-900.t-text-white.t-border-b.t-border-zinc-800.row.center-y.full-y.layout-header(:class="{ 'layout-header-fixed': fixedHeader }")
     slot(name="header")
       .default-header
         .title.lighter Default Title
   .layout-content
     .row
       slot(name="sidebar")
-      main.layout-main.col.between.layout-max-sm.layout--header-padding#main-content
+      main.layout-main.col.between.layout-max-sm(:class="{ 'layout--header-padding': fixedHeader }")#main-content
         slot(name="main")
         slot(name="footer")
 </template>
 
 <script setup lang="ts">
 // No props needed - header is customizable via slot
+const props = defineProps<{
+  fixedHeader?: boolean;
+}>();
+const fixedHeader = props.fixedHeader !== false;
 </script>
 
 <style lang="less" scoped>

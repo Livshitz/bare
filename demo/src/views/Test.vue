@@ -1,5 +1,5 @@
 <template lang="pug">
-PageWithSidebar
+PageWithSidebar(:fixedHeader="true" :collapsible="false || $app.helpers.breakpoints.isLtSM.value")
 	template(#header)
 		.title.lighter Test
 	template(#sidebar)
@@ -24,6 +24,18 @@ PageWithSidebar
 
 	template(#main)
 		section.col.gap.full-x.prose
+			.row.block-no-bg.end
+				h1.accent-text What is T3 Chat?
+
+			.block-no-bg
+				h2 T3 Chat is the best AI Chat ever made.
+				h3.text LLMs have gotten great. Their apps have not.
+				p It's hard to overstate how powerful…
+				p That's why we built T3 Chat.
+				h4 Every AI chat app felt like Slack. This one feels like Linear.
+				p You've never used a faster, more reliable chat app than T3 Chat…
+			
+		//- section.col.gap.full-x.prose
 			.row.block-no-bg.end
 				h1.accent-text What is T3 Chat?
 

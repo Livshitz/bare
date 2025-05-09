@@ -13,7 +13,7 @@
 
 // Layout components
 .layout-header {
-  @apply t-w-full;
+  @apply ~"t-w-full t-h-[4.5rem] t-relative";
 }
 
 .layout--header-padding {
@@ -21,7 +21,7 @@
 }
 
 .layout-header-fixed {
-  @apply ~"t-fixed t-top-0 t-left-0 t-right-0 t-z-10 t-w-full t-h-[4.5rem]";
+  @apply ~"t-fixed t-top-0 t-left-0 t-right-0"; z-index: 800;
 }
 
 .layout-main {
@@ -36,16 +36,21 @@
 .layout-sidebar {
   @apply t-w-64 t-flex-shrink-0;
   .layout--full-height;
-  position: fixed;
+  position: sticky;
   top: 0;
   left: 0;
   height: 100dvh;
-  z-index: 1001;
+  z-index: 950;
   width: 280px;
   transform: translateX(0);
   opacity: 1;
   transition: transform @sidebar-delay, opacity @sidebar-delay;
   overflow-y: auto;
+}
+
+.layout-sidebar-collapsable { @apply t-fixed; }
+.layout-has-fixed-header {
+  .layout-sidebar-not-collapsable { @apply ~"t-mt-[4.5rem] t-top-[4.5rem]"; max-height: calc(100dvh - 4.5rem); z-index:700; }
 }
 
 .layout-sidebar--collapsed {
@@ -60,7 +65,7 @@
   right: 0;
   bottom: 0;
   background: rgba(0, 0, 0, 0.5);
-  z-index: 1000;
+  z-index: 900;
 }
 
 .layout-nav {
