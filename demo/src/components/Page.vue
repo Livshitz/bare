@@ -7,7 +7,7 @@ div.layout.layout--fullscreen(:class="{ 'layout--fixed-header': fixedHeader }")
   .layout-content
     .row
       slot(name="sidebar")
-      main.layout-main.col.between.layout-max-sm(:class="{ 'layout--header-padding': fixedHeader }")#main-content
+      main.layout-main.col.between.layout-max-sm(:class="{ 'layout--header-padding': fixedHeader }")#main-content.bg-100
         slot(name="main")
         slot(name="footer")
 </template>

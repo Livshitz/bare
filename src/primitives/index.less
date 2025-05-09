@@ -6,14 +6,14 @@
 // src/primitives/index.less
 // Import primitive styles here 
 
-body { background-color: #eee; .text-dark; }
+body { .bg-100; .text-dark; }
 
 // Add back the .block definition
 .block {
 	// Default light mode: light bg, dark text
-	.bg;
 	.stack;
 	@apply t-p-4 t-rounded bg t-gap-2;
+	.bg-200;
 }
 
 .block-no-bg {
@@ -48,7 +48,7 @@ body { background-color: #eee; .text-dark; }
 
 	.block {
 		.text-light;
-		.bg-dark;
+		.bg-800;
 	}
 
 	.block-no-bg { background: transparent; }
