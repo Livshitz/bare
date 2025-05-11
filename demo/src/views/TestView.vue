@@ -9,6 +9,9 @@ PageWithSidebar(:fixedHeader="true" :collapsible="false || $app.helpers.breakpoi
 		nav.block.col.bg
 			.label.t-mb-2 Recent Threads
 			.stack-sm
+				router-link.btn-ghost.row.start(to="/demo/login") Login
+				router-link.btn-ghost.row.start(to="/demo/signup") Sign Up
+				router-link.btn-ghost.row.start(to="/demo/payment") Payment
 				.btn-ghost.row.start Welcome to T3 Chat
 				.btn-ghost.row.start Why T3 Chat?
 				.btn-ghost.row.start FAQ

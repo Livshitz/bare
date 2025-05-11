@@ -1,11 +1,12 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import AtomsDemo from './views/AtomsDemo.vue';
 import PatternsDemo from './views/PatternsDemo.vue';
-import Test from './views/Test.vue';
+import Test from './views/TestView.vue';
 import PrimitivesDemo from './views/PrimitivesDemo.vue';
 import IconsDemo from './views/IconsDemo.vue';
 import LoginView from './views/LoginView.vue';
 import Signup from './views/SignupView.vue';
+import PaymentView from './views/PaymentView.vue';
 
 const router = createRouter({
 	history: createWebHistory(),
@@ -48,6 +49,11 @@ const router = createRouter({
 			name: 'signup-demo',
 			component: Signup,
 			meta: { hideHeader: true },
+		},
+		{
+			path: '/demo/payment',
+			name: 'payment',
+			component: PaymentView,
 		},
 		{
 			path: '/',
