@@ -9,6 +9,7 @@
 
 .hidden { display: none; }
 .vanish { .hidden; position: absolute; opacity: 0; width: 0; height: 0; }
+.contents { display: contents; }
 
 .lighter { font-weight:100 !important; }
 .light { font-weight:200 !important; }
@@ -18,52 +19,3 @@
 .heavy { font-weight:900 !important; }
 
 .overlay { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background-color: rgba(0, 0, 0, 0.5); z-index: 900; opacity: 1; transition: opacity @delay; }
-// Display utilities
-.xs-hide {
-  @media (max-width: @breakpoint-xs) {
-    display: none !important;
-  }
-}
-
-.sm-hide {
-  @media (min-width: @breakpoint-sm) and (max-width: @breakpoint-md) {
-    display: none !important;
-  }
-}
-
-.md-hide {
-  @media (min-width: @breakpoint-md) and (max-width: @breakpoint-lg) {
-    display: none !important;
-  }
-}
-
-.lg-hide {
-  @media (min-width: @breakpoint-lg) {
-    display: none !important;
-  }
-}
-
-// Show utilities
-.xs-show {
-  @media (max-width: @breakpoint-xs) {
-    display: block !important;
-  }
-}
-
-.sm-show {
-  @media (min-width: @breakpoint-sm) and (max-width: @breakpoint-md) {
-    display: block !important;
-  }
-}
-
-.md-show {
-  @media (min-width: @breakpoint-md) and (max-width: @breakpoint-lg) {
-    display: block !important;
-  }
-}
-
-.lg-show {
-  @media (min-width: @breakpoint-lg) {
-    display: block !important;
-  }
-} 

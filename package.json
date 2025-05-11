@@ -24,14 +24,20 @@
 	"scripts": {
 		"dev": "vite --host",
 		"demo": "vite --config vite-demo.config.ts",
+		"watch:lib": "concurrently \"bun run watch:scss\" \"bun run watch:components\"",
+		"watch:scss": "bunx postcss src/index.scss --parser postcss-scss --use tailwindcss autoprefixer -o dist/bare.css --watch",
+		"watch:components": "vite build --watch",
 		"build": "vite build",
-		"build-scss": "bunx postcss src/index.scss --parser postcss-scss --use tailwindcss autoprefixer -o dist/bare.css",
+		"build:lib": "concurrently \"bun run build-scss\" \"bun run build:components\"",
+		"build:components": "vite build",
+		"build-scss": "bunx postcss src/theme/index.scss --parser postcss-scss --use tailwindcss autoprefixer -o dist/bare.css",
 		"build:demo": "vite build",
 		"test": "bun test",
 		"release:patch": "npm version patch -m \"chore(release): bump version to %s\" && npm publish",
 		"webify": "bun run webify.libx.js webify/index.ts -o demo/public/lib/webify.js -f umd",
 		"build-readme": "node scripts/build-readme.js",
-		"format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md,scss,css}\""
+		"format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md,scss,css}\"",
+		"lint": "eslint . --ext .js,.jsx,.ts,.tsx,.vue"
 	},
 	"dependencies": {
 		"@types/dompurify": "^3.2.0",
@@ -53,6 +59,7 @@
 		"@vue/language-plugin-pug": "^2.2.10",
 		"ajv": "latest",
 		"autoprefixer": "^10.4.21",
+		"concurrently": "^9.1.2",
 		"esbuild": "^0.25.3",
 		"eslint": "latest",
 		"eslint-plugin-vue": "latest",

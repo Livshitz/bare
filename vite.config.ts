@@ -42,6 +42,7 @@ export default defineConfig({
 			'@': fileURLToPath(new URL('./src', import.meta.url)),
 			'~': fileURLToPath(new URL('./node_modules', import.meta.url)),
 			'@assets': resolve(__dirname, "src/assets"),
+			'@bod.ee/bare': resolve(__dirname, "src"),
 		},
 		extensions: ['.js', '.json', '.jsx', '.mjs', '.ts', '.tsx', '.vue'],
 	},

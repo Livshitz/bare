@@ -4,6 +4,7 @@ import PatternsDemo from './views/PatternsDemo.vue';
 import Test from './views/Test.vue';
 import PrimitivesDemo from './views/PrimitivesDemo.vue';
 import IconsDemo from './views/IconsDemo.vue';
+import LoginView from './views/LoginView.vue';
 
 const router = createRouter({
 	history: createWebHistory(),
@@ -24,7 +25,6 @@ const router = createRouter({
 			name: 'test',
 			component: Test,
 			meta: { hideHeader: true, isWide: true },
-
 		},
 		{
 			path: '/demo/primitives',
@@ -35,6 +35,12 @@ const router = createRouter({
 			path: '/demo/icons',
 			name: 'icons-demo',
 			component: IconsDemo,
+		},
+		{
+			path: '/demo/login',
+			name: 'login-demo',
+			component: LoginView,
+			meta: { hideHeader: true },
 		},
 		{
 			path: '/',

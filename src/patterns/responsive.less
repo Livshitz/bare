@@ -1,0 +1,71 @@
+// Max width classes per breakpoint
+.layout-max-xs {
+	@apply ~"t-max-w-[@{breakpoint-xs}] t-w-full t-mx-auto";
+}
+
+.layout-max-sm {
+	@apply ~"t-max-w-[@{breakpoint-sm}] t-w-full t-mx-auto";
+}
+
+.layout-max-md {
+	@apply ~"t-max-w-[@{breakpoint-md}] t-w-full t-mx-auto";
+}
+
+.layout-max-lg {
+	@apply ~"t-max-w-[@{breakpoint-lg}] t-w-full t-mx-auto";
+}
+
+.layout-max-xl {
+	@apply ~"t-max-w-[@{breakpoint-xl}] t-w-full t-mx-auto";
+}
+
+
+// Display utilities
+.xs-hide {
+	@media (max-width: @breakpoint-xs) {
+		display: none !important;
+	}
+}
+
+.sm-hide {
+	@media (min-width: @breakpoint-sm) and (max-width: @breakpoint-md) {
+		display: none !important;
+	}
+}
+
+.md-hide {
+	@media (min-width: @breakpoint-md) and (max-width: @breakpoint-lg) {
+		display: none !important;
+	}
+}
+
+.lg-hide {
+	@media (min-width: @breakpoint-lg) {
+		display: none !important;
+	}
+}
+
+// Show utilities
+.xs-show {
+	@media (max-width: @breakpoint-xs) {
+		display: block !important;
+	}
+}
+
+.sm-show {
+	@media (min-width: @breakpoint-sm) and (max-width: @breakpoint-md) {
+		display: block !important;
+	}
+}
+
+.md-show {
+	@media (min-width: @breakpoint-md) and (max-width: @breakpoint-lg) {
+		display: block !important;
+	}
+}
+
+.lg-show {
+	@media (min-width: @breakpoint-lg) {
+		display: block !important;
+	}
+}

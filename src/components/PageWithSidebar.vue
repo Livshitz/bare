@@ -1,13 +1,13 @@
 <template lang="pug">
 Page(:fixedHeader="props.fixedHeader", :class="{ 'layout-has-fixed-header': props.fixedHeader }")
-	template(#header)
+	template(#header, v-if="$slots.header")
 		.row.center-y.t-px-4.full-y
-			.btn-ghost.caption(v-if="props.collapsible", @click="isSidebarOpen = !isSidebarOpen")
+			.btn-ghost.caption(v-if="props.collapsible && $slots.sidebar", @click="isSidebarOpen = !isSidebarOpen")
 				i.fa-solid.fa-bars.t-text-white.text-md
 			slot(name="header")
 
 	// Sidebar
-	template(#sidebar)
+	template(#sidebar, v-if="$slots.sidebar")
 		.overlay(v-if="props.collapsible && isSidebarOpen", @click="isSidebarOpen = false")
 		aside.layout-sidebar.bg-200#sidebar(:class="{ 'sidebar-collapsed': props.collapsible && !isSidebarOpen, 'layout-sidebar-collapsable': props.collapsible, 'layout-sidebar-not-collapsable': !props.collapsible  }")
 			.col.full
@@ -16,7 +16,7 @@ Page(:fixedHeader="props.fixedHeader", :class="{ 'layout-has-fixed-header': prop
 	// Main and footer
 	template(#main)
 		slot(name="main")
-	template(#footer)
+	template(#footer, v-if="$slots.footer")
 		slot(name="footer")
 </template>
 

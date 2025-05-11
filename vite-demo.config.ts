@@ -23,8 +23,12 @@ export default defineConfig({
       '~': fileURLToPath(new URL('./node_modules', import.meta.url)),
       '@assets': resolve(__dirname, "src/assets"),
       '@lib': resolve(__dirname, "src"),
+      '@bod.ee/bare': resolve(__dirname, "src"),
     },
     extensions: ['.js', '.json', '.jsx', '.mjs', '.ts', '.tsx', '.vue'],
+  },
+  optimizeDeps: {
+    include: ['vue', 'vue-router'],
   },
   server: {
     host: '0.0.0.0',
