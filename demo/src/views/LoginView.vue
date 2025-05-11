@@ -42,10 +42,9 @@ PageWithSidebar(:fixedHeader="false" :collapsible="false")
 
 						button.btn.btn-primary.full-x(type="submit") Sign In
 
-						.block-no-bg.text-center
-							p.text-600
-								| Don't have an account?
-								a.accent-text(href="#")  Sign up
+						.row.center
+							p.text-sm.text-600 Don't have an account?
+							a.text-sm.accent-text.ml-2(href="/demo/signup")  Sign up
 
 			div
 				p.text-xs.center Make sure you agree to our Terms and Privacy Policy

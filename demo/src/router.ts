@@ -5,6 +5,7 @@ import Test from './views/Test.vue';
 import PrimitivesDemo from './views/PrimitivesDemo.vue';
 import IconsDemo from './views/IconsDemo.vue';
 import LoginView from './views/LoginView.vue';
+import Signup from './views/Signup.vue';
 
 const router = createRouter({
 	history: createWebHistory(),
@@ -40,6 +41,12 @@ const router = createRouter({
 			path: '/demo/login',
 			name: 'login-demo',
 			component: LoginView,
+			meta: { hideHeader: true },
+		},
+		{
+			path: '/demo/signup',
+			name: 'signup-demo',
+			component: Signup,
 			meta: { hideHeader: true },
 		},
 		{
