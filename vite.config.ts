@@ -1,84 +1,48 @@
-import { defineConfig, Rollup } from 'vite';
+import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import { fileURLToPath, URL } from 'node:url';
 import { resolve } from 'path';
 
-export default defineConfig(({ command }) => {
-	if (command === 'serve') (global as any).isDev = true;
-
-	return {
-		plugins: [
-			vue(),
-			// dts({
-			//   insertTypesEntry: true,
-			// }),
-		],
-		root: command === 'serve' ? 'demo' : './',
-		build: {
-			outDir: 'dist',
-			rollupOptions: {
-				input: {
-					main: resolve(__dirname, 'demo/index.html'),
-					lib: resolve(__dirname, 'src/index.scss'),
+export default defineConfig({
+	plugins: [vue()],
+	build: {
+		outDir: 'dist',
+		lib: {
+			entry: {
+				index: resolve(__dirname, 'src/index.ts'),
+				components: resolve(__dirname, 'src/components/index.ts')
+			},
+			name: 'bare',
+			fileName: (format, entryName) => `${entryName}.${format}.js`,
+		},
+		rollupOptions: {
+			// Externalize deps that shouldn't be bundled into the library
+			external: ['vue'],
+			output: {
+				// Global variables to use in UMD build for externalized deps
+				globals: {
+					vue: 'Vue',
 				},
-				output: <Rollup.OutputOptions>{
-					entryFileNames: (chunkInfo) => {
-						return chunkInfo.name === 'lib' ? 'x-css.css' : '[name].js';
-					},
+				// Generate CSS as a separate file
+				assetFileNames: (assetInfo) => {
+					return assetInfo.name === 'style.css' ? 'bare.css' : `assets/${assetInfo.name}`;
 				},
 			},
-			// cssCodeSplit: false,
-			// lib: {
-			//   entry: resolve(__dirname, 'src/index.css'),
-			//   fileName: () => 'x-css.css',
-			// },
-			// rollupOptions: {
-			//   input: resolve(__dirname, 'src/index.css'),
-			// },
 		},
-		// css: {
-		// 	// preprocessorOptions: {
-		// 	//   less: {
-		// 	//     javascriptEnabled: true,
-		// 	//   },
-		// 	// },
-		// 	postcss: {
-		// 		plugins: [
-		// 			tailwindcssPostcss, // Use the new plugin
-		// 			// autoprefixer, // Remove autoprefixer
-		// 		],
-		// 	},
-		// },
-		css: {
-			preprocessorOptions: {
-				scss: {
-					api: 'modern', // or "modern"
-					// silenceDeprecations: [
-					// 	'mixed-decls',
-					// 	'color-functions',
-					// 	'global-builtin',
-					// 	'import',
-					// 	'legacy-js-api',
-					// ],
-				}
+	},
+	css: {
+		preprocessorOptions: {
+			scss: {
+				api: 'modern',
 			}
+		}
+	},
+	resolve: {
+		alias: {
+			'@': fileURLToPath(new URL('./src', import.meta.url)),
+			'~': fileURLToPath(new URL('./node_modules', import.meta.url)),
+			'@assets': resolve(__dirname, "src/assets"),
 		},
-
-		resolve: {
-			alias: {
-				'@': fileURLToPath(new URL('./src', import.meta.url)),
-				'~': fileURLToPath(new URL('./node_modules', import.meta.url)),
-				'@assets': resolve(__dirname, "src/assets"),
-				// "/src": path.resolve(process.cwd(), "src"),
-			},
-			extensions: ['.js', '.json', '.jsx', '.mjs', '.ts', '.tsx', '.vue'],
-		},
-
-		server: {
-			host: '0.0.0.0', 
-			allowedHosts: true,
-			// port: 3000,
-
-		},
-	}
+		extensions: ['.js', '.json', '.jsx', '.mjs', '.ts', '.tsx', '.vue'],
+	},
 });

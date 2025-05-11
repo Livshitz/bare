@@ -1,7 +1,32 @@
 @import (reference) "../variables.less";
 
-.stack {
+.stack-md {
+  .stack;
   @apply t-flex t-flex-col t-gap-2;
+}
+
+.stack {
+  .stack-md;
+}
+
+.stack-sm {
+  .stack;
+  @apply t-gap-1;
+}
+
+.stack-xs {
+  .stack;
+  @apply t-gap-0;
+}
+
+.stack-lg {
+  .stack;
+  @apply t-gap-4;
+}
+
+.stack-xl {
+  .stack;
+  @apply t-gap-5;
 }
 
 // Not xs variants

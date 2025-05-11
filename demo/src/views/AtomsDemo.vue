@@ -243,7 +243,7 @@ section.section.prose
 			.block Item 1
 			.block Item 2
 			.block Item 3
-		pre .stack-gap-4
+		pre .stack
 
 		h2.t-text-xl.t-font-bold.t-mb-4 Stack Only on Larger Screens
 		.gt-xs-stack.t-gap-2.t-mb-4.t-bg-gray-200.t-p-4

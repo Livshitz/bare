@@ -8,10 +8,10 @@ PageWithSidebar(:fixedHeader="true" :collapsible="false || $app.helpers.breakpoi
 
 		nav.block.col.bg
 			.label.t-mb-2 Recent Threads
-			ul
-				li.btn-ghost.row.start Welcome to T3 Chat
-				li.btn-ghost.row.start Why T3 Chat?
-				li.btn-ghost.row.start FAQ
+			.stack-sm
+				.btn-ghost.row.start Welcome to T3 Chat
+				.btn-ghost.row.start Why T3 Chat?
+				.btn-ghost.row.start FAQ
 
 		.block
 			.row.gap
@@ -56,7 +56,7 @@ PageWithSidebar(:fixedHeader="true" :collapsible="false || $app.helpers.breakpoi
 </template>
 
 <script setup lang="ts">
-import PageWithSidebar from '../components/PageWithSidebar.vue';
+import { PageWithSidebar } from '@bod.ee/bare/components';
 </script>
 
 <style lang="less" scoped>

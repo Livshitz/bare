@@ -11,10 +11,21 @@
 		"src",
 		"README.md"
 	],
+	"exports": {
+		".": {
+			"import": "./dist/index.es.js",
+			"require": "./dist/index.umd.js"
+		},
+		"./components": {
+			"import": "./dist/components.es.js",
+			"require": "./dist/components.umd.js"
+		}
+	},
 	"scripts": {
 		"dev": "vite --host",
-		"demo": "vite",
-		"build": "bunx postcss src/index.scss --parser postcss-scss --use tailwindcss autoprefixer -o dist/bare.css",
+		"demo": "vite --config vite-demo.config.ts",
+		"build": "vite build",
+		"build-scss": "bunx postcss src/index.scss --parser postcss-scss --use tailwindcss autoprefixer -o dist/bare.css",
 		"build:demo": "vite build",
 		"test": "bun test",
 		"release:patch": "npm version patch -m \"chore(release): bump version to %s\" && npm publish",

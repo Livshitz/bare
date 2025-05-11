@@ -30,18 +30,8 @@ const props = defineProps<{
 }>();
 
 const isSidebarOpen = ref(false);
-
-// Slots for users to inject content into the header sections
-// alongside the sidebar toggle
-// defineSlots<{ 
-//   'header-start': any,
-//   'header-center': any,
-//   'header-end': any
-// }>()
-
 </script>
 
 <style lang="less" scoped>
 @delay: 0.3s ease;
-
-</style>
+</style> 
