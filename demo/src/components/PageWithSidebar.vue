@@ -29,7 +29,7 @@ const props = defineProps<{
   fixedHeader?: boolean;
 }>();
 
-const isSidebarOpen = ref(!props.collapsible);
+const isSidebarOpen = ref(false);
 
 // Slots for users to inject content into the header sections
 // alongside the sidebar toggle
