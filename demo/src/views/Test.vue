@@ -25,7 +25,7 @@ PageWithSidebar(:fixedHeader="true" :collapsible="false || $app.helpers.breakpoi
 	template(#main)
 		section.col.gap.full-x.prose
 			.row.block-no-bg.end
-				h1.accent-text What is T3 Chat?
+				h1.text-accent What is T3 Chat?
 
 			.block-no-bg
 				h2 T3 Chat is the best AI Chat ever made.
@@ -37,7 +37,7 @@ PageWithSidebar(:fixedHeader="true" :collapsible="false || $app.helpers.breakpoi
 			
 		//- section.col.gap.full-x.prose
 			.row.block-no-bg.end
-				h1.accent-text What is T3 Chat?
+				h1.text-accent What is T3 Chat?
 
 			.block-no-bg
 				h2 T3 Chat is the best AI Chat ever made.

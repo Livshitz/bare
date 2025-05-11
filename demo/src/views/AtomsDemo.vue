@@ -95,14 +95,14 @@ section.section.prose
 	section#responsive-layout
 		.section
 			.title Responsive Layout
-			.row.xs-col.t-mb-4.t-bg-gray-200.t-p-4
+			.row.col-xs.t-mb-4.t-bg-gray-200.t-p-4
 				.col(class="t-w-full md:t-w-1/2 lg:t-w-1/3").block
 					p Content 1
 				.col(class="t-w-full md:t-w-1/2 lg:t-w-1/3").block
 					p Content 2
 				.col(class="t-w-full md:t-w-1/2 lg:t-w-1/3").block
 					p Content 3
-			pre .row.xs-col
+			pre .row.col-xs
 			pre .w-full.md:w-1/2.lg:w-1/3
 
 	// Center Alignment Examples
@@ -285,14 +285,14 @@ section.section.prose
 	// Responsive Examples
 	section#responsive-examples.section
 		.title Responsive Examples
-		.row.xs-col.t-mb-4.t-bg-gray-200.t-p-4
+		.row.col-xs.t-mb-4.t-bg-gray-200.t-p-4
 			.col(class="t-w-full md:t-w-1/2 lg:t-w-1/3").block
 				p Content 1
 			.col(class="t-w-full md:t-w-1/2 lg:t-w-1/3").block
 				p Content 2
 			.col(class="t-w-full md:t-w-1/2 lg:t-w-1/3").block
 				p Content 3
-		pre .row.xs-col
+		pre .row.col-xs
 
 	// Typography Examples
 	section#typography-examples

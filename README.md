@@ -138,8 +138,8 @@ The library provides a set of utility classes for common needs:
 - `bg-light`: Light background color
 - `text-light`: Light text color
 - `bg-dark`: Dark background color
-- `accent-text`: Accent text color
-- `accent-bg`: Accent background color
+- `text-accent`: Accent text color
+- `bg-accent`: Accent background color
 
 ### Layout Utilities
 

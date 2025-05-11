@@ -1,5 +1,5 @@
 <template lang="pug">
-PageWithSidebar(:fixedHeader="false" :collapsible="false")
+Page(:fixedHeader="false" :collapsible="false")
 	//- template(#header)
 		.title.lighter Login
 
@@ -16,12 +16,12 @@ PageWithSidebar(:fixedHeader="false" :collapsible="false")
 			div.layout-max-xs
 				.block-no-bg.col.gap
 					.prose
-						h1.accent-text Welcome Back
+						h1.text-accent Welcome Back
 						p.text-600 Please sign in to continue
 
 					form.col.gap(@submit.prevent="handleSubmit")
 						.block.col.gap
-							label.label(for="email") Email
+							label(for="email") Email
 							input#email.input(
 								type="email"
 								placeholder="Enter your email"
@@ -31,8 +31,9 @@ PageWithSidebar(:fixedHeader="false" :collapsible="false")
 
 						.block.col.gap
 							.row.between
-								label.label(for="password") Password
-								a.text-600.text-sm(href="#") Forgot password?
+								label(for="password") Password
+								label
+									a.text-600.text-sm(href="#") Forgot password?
 							input#password.input(
 								type="password"
 								placeholder="Enter your password"
@@ -42,18 +43,16 @@ PageWithSidebar(:fixedHeader="false" :collapsible="false")
 
 						button.btn.btn-primary.full-x(type="submit") Sign In
 
-						.row.center
+						.row.center.t-gap-2
 							p.text-sm.text-600 Don't have an account?
-							a.text-sm.accent-text.ml-2(href="/demo/signup")  Sign up
+							router-link.text-sm.text-accent.ml-2(to="/demo/signup")  Sign up
 
-			div
-				p.text-xs.center Make sure you agree to our Terms and Privacy Policy
 	//- template(#footer)
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue';
-import { PageWithSidebar } from '@bod.ee/bare/components';
+import Page from '@/components/Page.vue'
 
 const email = ref('')
 const password = ref('')
