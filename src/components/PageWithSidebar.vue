@@ -9,7 +9,7 @@ Page(:fixedHeader="props.fixedHeader", :class="{ 'layout-has-fixed-header': prop
 	// Sidebar
 	template(#sidebar, v-if="$slots.sidebar")
 		.overlay(v-if="props.collapsible && isSidebarOpen", @click="isSidebarOpen = false")
-		aside.layout-sidebar.bg-200#sidebar(:class="{ 'sidebar-collapsed': props.collapsible && !isSidebarOpen, 'layout-sidebar-collapsable': props.collapsible, 'layout-sidebar-not-collapsable': !props.collapsible  }")
+		aside.layout-sidebar.bg#sidebar(:class="{ 'sidebar-collapsed': props.collapsible && !isSidebarOpen, 'layout-sidebar-collapsable': props.collapsible, 'layout-sidebar-not-collapsable': !props.collapsible  }")
 			.col.full
 				slot(name="sidebar")
 
