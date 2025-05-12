@@ -6,19 +6,20 @@ PageWithSidebar(:fixedHeader="true" :collapsible="false || $app.helpers.breakpoi
 		.block.row.between
 			.btn-ghost.caption.full(type="button") New Chat
 
-		nav.block.col.bg
+		nav.block.col
 			.label.t-mb-2 Recent Threads
 			.stack-sm
 				router-link.btn-ghost.row.start(to="/demo/login") Login
 				router-link.btn-ghost.row.start(to="/demo/signup") Sign Up
 				router-link.btn-ghost.row.start(to="/demo/payment") Payment
+				router-link.btn-ghost.row.start(to="/demo/calculator") Calculator
 				.btn-ghost.row.start Welcome to T3 Chat
 				.btn-ghost.row.start Why T3 Chat?
 				.btn-ghost.row.start FAQ
 
 		.block
 			.row.gap
-				a.btn.flex(href="/#123") Login
+				router-link.btn.flex(to="/demo/login") Login
 				button.btn-ghost.btn-circle(@click="$app.helpers.darkMode.toggleDarkMode")
 					.t-w-5.t-h-5(v-if="$app.helpers.darkMode.isDark")
 						i.fa-solid.fa-sun

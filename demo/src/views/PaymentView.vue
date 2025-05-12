@@ -1,7 +1,7 @@
 <template lang="pug">
 Page
 	template(#main)
-		.col.center.full.layout--fullscreen
+		.col.center.full
 			div.layout-max-xs
 				.block-no-bg.col.gap
 					.prose

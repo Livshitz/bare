@@ -7,10 +7,6 @@
   @apply t-min-h-screen t-gap-0;
 }
 
-.layout--full-height {
-  @apply t-overflow-auto t-max-h-screen;
-}
-
 // Layout components
 .layout-header {
   @apply ~"t-w-full t-h-[4.5rem] t-relative";
@@ -75,6 +71,10 @@
 // Layout modifiers
 .layout--centered {
   .center;
+}
+
+.layout--full-height {
+  @apply t-overflow-auto t-max-h-screen;
 }
 
 .layout--fullscreen {

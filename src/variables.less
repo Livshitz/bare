@@ -53,9 +53,9 @@
 
 // Smart dark mode mixin
 .dark-mode(@property, @css-var-name) {
-	@{property}: var(@css-var-name);
+	@{property}: var(@css-var-name) !important;
 	.dark & {
-		@{property}: var(~"@{css-var-name}-dark");
+		@{property}: var(~"@{css-var-name}-dark") !important;
 	}
 }
 

@@ -7,6 +7,7 @@ import IconsDemo from './views/IconsDemo.vue';
 import LoginView from './views/LoginView.vue';
 import Signup from './views/SignupView.vue';
 import PaymentView from './views/PaymentView.vue';
+import CalculatorView from './views/CalculatorView.vue';
 
 const router = createRouter({
 	history: createWebHistory(),
@@ -54,6 +55,11 @@ const router = createRouter({
 			path: '/demo/payment',
 			name: 'payment',
 			component: PaymentView,
+		},
+		{
+			path: '/demo/calculator',
+			name: 'calculator',
+			component: CalculatorView,
 		},
 		{
 			path: '/',
