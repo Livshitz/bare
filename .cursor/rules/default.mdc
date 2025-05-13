@@ -3,5 +3,7 @@ description: always
 globs: 
 alwaysApply: false
 ---
-If you propose a fix, please make it concise. avoid asking for comfirmation before executing your changes.
+- If you propose a fix, please make it concise. avoid asking for comfirmation before executing your changes.
 follow programming style of the project.
+- always create checklist .md file for the required task in .tmp folder, and update it as you progress.
+- always check for existing tests for changed files.

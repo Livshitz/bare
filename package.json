@@ -32,7 +32,8 @@
 		"build:components": "vite build",
 		"build-scss": "bunx postcss src/theme/index.scss --parser postcss-scss --use tailwindcss autoprefixer -o dist/bare.css",
 		"build:demo": "vite build",
-		"test": "bun test",
+		"test": "jest",
+		"test:debug": "node --inspect node_modules/.bin/jest",
 		"release:patch": "npm version patch -m \"chore(release): bump version to %s\" && npm publish",
 		"webify": "bun run webify.libx.js webify/index.ts -o demo/public/lib/webify.js -f umd",
 		"build-readme": "node scripts/build-readme.js",
@@ -50,6 +51,7 @@
 		"webify.libx.js": "^1.0.7"
 	},
 	"devDependencies": {
+		"@types/jest": "^29.5.14",
 		"@types/node": "latest",
 		"@types/pug": "^2.0.10",
 		"@typescript-eslint/eslint-plugin": "latest",
@@ -64,6 +66,7 @@
 		"eslint": "latest",
 		"eslint-plugin-vue": "latest",
 		"html2jade": "^0.8.6",
+		"jest": "^29.7.0",
 		"libx.js": "^5.0.1",
 		"postcss": "^8.5.3",
 		"postcss-cli": "^11.0.1",
@@ -72,6 +75,7 @@
 		"pug": "^3.0.3",
 		"sass": "^1.87.0",
 		"tailwindcss": "^3.4.1",
+		"ts-jest": "^29.3.2",
 		"typescript": "latest",
 		"vite": "^6.3.4",
 		"vue": "^3.5.13"

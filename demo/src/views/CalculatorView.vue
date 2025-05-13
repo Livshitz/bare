@@ -58,28 +58,13 @@ Page
 </template>
 
 <script setup lang="ts">
-import { reactive, ref } from 'vue';
+import { reactive, ref, onMounted } from 'vue';
 import Page from '@/components/Page.vue';
+import { createCalculatorCodeletOrchestrator, type CalcState, type CalcEvent } from './codelets/CalculatorModule';
+import { EVENT_ID, TRIGGER_EVENT_ID, type WithEventMetadata } from '../../../src/modules/Orchestrator';
 
-// Event types
-type CalcEvent =
-	| { type: 'digit'; value: string }
-	| { type: 'operator'; value: string }
-	| { type: 'clear' }
-	| { type: 'equals' }
-	| { type: 'result'; value: string }
-	| { type: 'error'; error: string };
+const events = ref<any[]>([]);
 
-// State
-type CalcState = {
-	display: string;
-	operator: string;
-	operand: number | null;
-	justCalculated: boolean;
-	loading: boolean;
-};
-
-const events = ref<CalcEvent[]>([]);
 const state = reactive<CalcState>({
 	display: '',
 	operator: '',
@@ -88,69 +73,38 @@ const state = reactive<CalcState>({
 	loading: false,
 });
 
-function pushEvent(event: CalcEvent) {
-	events.value.push(event);
-	processEvent(event);
+const orchestrator = createCalculatorCodeletOrchestrator(state as CalcState);
+
+function extractEventMetadata(event: any) {
+	return {
+		...event,
+		__eventId: (event as WithEventMetadata<any>)[EVENT_ID],
+		__triggerEventId: (event as WithEventMetadata<any>)[TRIGGER_EVENT_ID],
+	};
 }
 
-function processEvent(event: CalcEvent) {
-	switch (event.type) {
-		case 'digit':
-			if (state.justCalculated) {
-				state.display = '';
-				state.justCalculated = false;
-			}
-			state.display += event.value;
-			break;
-		case 'clear':
-			state.display = '';
-			state.operator = '';
-			state.operand = null;
-			state.justCalculated = false;
-			state.loading = false;
-			break;
-		case 'operator':
-			if (state.display === '') return;
-			if (state.operator) processEvent({ type: 'equals' });
-			state.operand = parseFloat(state.display);
-			state.operator = event.value;
-			state.display = '';
-			break;
-		case 'equals':
-			if (!state.operator || state.operand === null || state.display === '' || state.loading) return;
-			state.loading = true;
-			// Simulate async operation
-			setTimeout(() => {
-				const a = state.operand!;
-				const b = parseFloat(state.display);
-				let result = 0;
-				switch (state.operator) {
-					case '+': result = a + b; break;
-					case '-': result = a - b; break;
-					case '*': result = a * b; break;
-					case '/': result = b !== 0 ? a / b : NaN; break;
-				}
-				if (isNaN(result)) {
-					pushEvent({ type: 'error', error: 'Error' });
-				} else {
-					pushEvent({ type: 'result', value: result.toString() });
-				}
-			}, 1000); // 1 second delay
-			break;
-		case 'result':
-			state.display = event.value;
-			state.operator = '';
-			state.operand = null;
-			state.justCalculated = true;
-			state.loading = false;
-			break;
-		case 'error':
-			state.display = event.error;
-			state.operator = '';
-			state.operand = null;
-			state.justCalculated = true;
-			state.loading = false;
-			break;
+onMounted(() => {
+	orchestrator.onStateChange(() => {
+		Object.assign(state, orchestrator.getState());
+	});
+
+	// Listen to all processed events (including generated/internal events)
+	orchestrator.onEventProcessed((event, result) => {
+		events.value.push({
+			...extractEventMetadata(event),
+			result,
+		});
+	});
+});
+
+async function pushEvent(event: CalcEvent) {
+	state.loading = true;
+	try {
+		await orchestrator.dispatchWithPromise(event);
+	} catch (error) {
+		console.error('Error processing calculator event:', error);
+	} finally {
+		state.loading = false;
 	}
 }
 </script>
