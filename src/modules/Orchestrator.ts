@@ -1,4 +1,4 @@
-// LLM NOTE: When updating this file, also update the corresponding unit tests in 'src/modules/__tests__/Orchestrator.test.ts'.
+// LLM NOTE: When updating this file, also update the corresponding unit tests in '/tests/Codelet.test.ts'.
 import { State, Event, Codelet, CodeletResult } from './Codelet';
 
 function generateEventId() {

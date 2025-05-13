@@ -75,6 +75,18 @@ const state = reactive<CalcState>({
 
 const orchestrator = createCalculatorCodeletOrchestrator(state as CalcState);
 
+orchestrator.onStateChange(() => {
+	Object.assign(state, orchestrator.getState());
+});
+
+// Listen to all processed events (including generated/internal events)
+orchestrator.onEventProcessed((event, result) => {
+	events.value.push({
+		...extractEventMetadata(event),
+		result,
+	});
+});
+
 function extractEventMetadata(event: any) {
 	return {
 		...event,
@@ -84,17 +96,7 @@ function extractEventMetadata(event: any) {
 }
 
 onMounted(() => {
-	orchestrator.onStateChange(() => {
-		Object.assign(state, orchestrator.getState());
-	});
-
-	// Listen to all processed events (including generated/internal events)
-	orchestrator.onEventProcessed((event, result) => {
-		events.value.push({
-			...extractEventMetadata(event),
-			result,
-		});
-	});
+	
 });
 
 async function pushEvent(event: CalcEvent) {

@@ -1,4 +1,4 @@
-// LLM NOTE: When updating this file, also update the corresponding unit tests in 'src/modules/__tests__/Codelet.test.ts'.
+// LLM NOTE: When updating this file, also update the corresponding unit tests in '/tests/Codelet.test.ts'.
 
 // Codelet Framework v0 - Core Implementation
 
