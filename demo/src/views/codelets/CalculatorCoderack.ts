@@ -1,5 +1,4 @@
-import { Codelet } from '../../../../src/modules/Codelet';
-import { Orchestrator, createNewEvent, WithEventMetadata } from '../../../../src/modules/Orchestrator';
+import { Codelet, Coderack, newEvent, WithEventMetadata } from 'codelet';
 
 // State type matching the Vue component
 export interface CalcState {
@@ -12,18 +11,18 @@ export interface CalcState {
 
 // Event type matching the Vue component
 export type CalcEvent =
-  | { type: 'digit'; value: string }
-  | { type: 'operator'; value: string }
-  | { type: 'clear' }
-  | { type: 'equals' }
-  | { type: 'result'; value: string }
-  | { type: 'error'; error: string };
+  | { name: 'digit'; value: string }
+  | { name: 'operator'; value: string }
+  | { name: 'clear' }
+  | { name: 'equals' }
+  | { name: 'result'; value: string }
+  | { name: 'error'; error: string };
 
 // Codelets
 const DigitCodelet = Codelet.create<CalcState, CalcEvent>([
   'digit'],
   async (event, state) => {
-    if (event.type !== 'digit') return Codelet.noopResult();
+    if (event.name !== 'digit') return Codelet.noopResult();
     let display = state.justCalculated ? '' : state.display;
     display += event.value;
     return Codelet.stateChange({ display, justCalculated: false });
@@ -33,7 +32,7 @@ const DigitCodelet = Codelet.create<CalcState, CalcEvent>([
 const ClearCodelet = Codelet.create<CalcState, CalcEvent>([
   'clear'],
   async (event, state) => {
-    if (event.type !== 'clear') return Codelet.noopResult();
+    if (event.name !== 'clear') return Codelet.noopResult();
     return Codelet.stateChange({ display: '', operator: '', operand: null, justCalculated: false, loading: false });
   }
 );
@@ -41,14 +40,14 @@ const ClearCodelet = Codelet.create<CalcState, CalcEvent>([
 const OperatorCodelet = Codelet.create<CalcState, CalcEvent>([
   'operator'],
   async (event, state) => {
-    if (event.type !== 'operator') return Codelet.noopResult();
+    if (event.name !== 'operator') return Codelet.noopResult();
     if (state.display === '') return Codelet.noopResult();
     let operand = state.operand;
     let operator = state.operator;
     let display = state.display;
     if (operator) {
       // If operator already set, calculate previous
-      return Codelet.newEventResult(createNewEvent({ type: 'equals' }, event as WithEventMetadata<CalcEvent>));
+      return Codelet.newEventResult(newEvent('equals', {}, event as WithEventMetadata<CalcEvent>));
     }
     operand = parseFloat(display);
     operator = event.value;
@@ -60,8 +59,8 @@ const OperatorCodelet = Codelet.create<CalcState, CalcEvent>([
 const EqualsCodelet = Codelet.create<CalcState, CalcEvent>([
   'equals'],
   async (event, state) => {
-    if (event.type !== 'equals') return Codelet.noopResult();
-    if (!state.operator || state.operand === null || state.display === '' || state.loading) return Codelet.noopResult();
+    if (event.name !== 'equals') return Codelet.noopResult();
+    if (!state.operator || state.operand === null || state.display === '') return Codelet.noopResult();
     // Simulate async
     return new Promise((resolve) => {
       setTimeout(() => {
@@ -75,9 +74,9 @@ const EqualsCodelet = Codelet.create<CalcState, CalcEvent>([
           case '/': result = b !== 0 ? a / b : NaN; break;
         }
         if (isNaN(result)) {
-          resolve(Codelet.newEventResult(createNewEvent({ type: 'error', error: 'Error' }, event as WithEventMetadata<CalcEvent>)));
+          resolve(Codelet.newEventResult(newEvent('error', { error: 'Error' }, event as WithEventMetadata<CalcEvent>)));
         } else {
-          resolve(Codelet.newEventResult(createNewEvent({ type: 'result', value: result.toString() }, event as WithEventMetadata<CalcEvent>)));
+          resolve(Codelet.newEventResult(newEvent('result', { value: result.toString() }, event as WithEventMetadata<CalcEvent>)));
         }
       }, 1000);
     });
@@ -87,7 +86,7 @@ const EqualsCodelet = Codelet.create<CalcState, CalcEvent>([
 const ResultCodelet = Codelet.create<CalcState, CalcEvent>([
   'result'],
   async (event, state) => {
-    if (event.type === 'result') {
+    if (event.name === 'result') {
       return Codelet.stateChange({ display: event.value, operator: '', operand: null, justCalculated: true, loading: false });
     }
     return Codelet.noopResult();
@@ -97,21 +96,21 @@ const ResultCodelet = Codelet.create<CalcState, CalcEvent>([
 const ErrorCodelet = Codelet.create<CalcState, CalcEvent>([
   'error'],
   async (event, state) => {
-    if (event.type === 'error') {
+    if (event.name === 'error') {
       return Codelet.stateChange({ display: event.error, operator: '', operand: null, justCalculated: true, loading: false });
     }
     return Codelet.noopResult();
   }
 );
 
-// Factory to create orchestrator and register codelets
-export function createCalculatorCodeletOrchestrator(initialState: CalcState) {
-  const orchestrator = new Orchestrator<CalcState>(initialState);
-  orchestrator.register(DigitCodelet);
-  orchestrator.register(ClearCodelet);
-  orchestrator.register(OperatorCodelet);
-  orchestrator.register(EqualsCodelet);
-  orchestrator.register(ResultCodelet);
-  orchestrator.register(ErrorCodelet);
-  return orchestrator;
+// Factory to create coderack and register codelets
+export function createCalculatorCoderack(initialState: CalcState) {
+  const coderack = new Coderack<CalcState>(initialState);
+  coderack.addCodelet(DigitCodelet);
+  coderack.addCodelet(ClearCodelet);
+  coderack.addCodelet(OperatorCodelet);
+  coderack.addCodelet(EqualsCodelet);
+  coderack.addCodelet(ResultCodelet);
+  coderack.addCodelet(ErrorCodelet);
+  return coderack;
 } 

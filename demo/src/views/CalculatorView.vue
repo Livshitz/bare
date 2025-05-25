@@ -21,26 +21,26 @@ Page
 
 						// Calculator buttons
 						.grid(style="grid-template-columns: repeat(4, 1fr); gap: 0.5rem;")
-							button.btn-secondary(:disabled="state.loading" @click="pushEvent({ type: 'digit', value: '7' })") 7
-							button.btn-secondary(:disabled="state.loading" @click="pushEvent({ type: 'digit', value: '8' })") 8
-							button.btn-secondary(:disabled="state.loading" @click="pushEvent({ type: 'digit', value: '9' })") 9
-							button.btn-ghost(:disabled="state.loading" @click="pushEvent({ type: 'operator', value: '/' })") ÷
+							button.btn-secondary(:disabled="state.loading" @click="pushEvent({ name: 'digit', value: '7' })") 7
+							button.btn-secondary(:disabled="state.loading" @click="pushEvent({ name: 'digit', value: '8' })") 8
+							button.btn-secondary(:disabled="state.loading" @click="pushEvent({ name: 'digit', value: '9' })") 9
+							button.btn-ghost(:disabled="state.loading" @click="pushEvent({ name: 'operator', value: '/' })") ÷
 
-							button.btn-secondary(:disabled="state.loading" @click="pushEvent({ type: 'digit', value: '4' })") 4
-							button.btn-secondary(:disabled="state.loading" @click="pushEvent({ type: 'digit', value: '5' })") 5
-							button.btn-secondary(:disabled="state.loading" @click="pushEvent({ type: 'digit', value: '6' })") 6
-							button.btn-ghost(:disabled="state.loading" @click="pushEvent({ type: 'operator', value: '*' })") ×
+							button.btn-secondary(:disabled="state.loading" @click="pushEvent({ name: 'digit', value: '4' })") 4
+							button.btn-secondary(:disabled="state.loading" @click="pushEvent({ name: 'digit', value: '5' })") 5
+							button.btn-secondary(:disabled="state.loading" @click="pushEvent({ name: 'digit', value: '6' })") 6
+							button.btn-ghost(:disabled="state.loading" @click="pushEvent({ name: 'operator', value: '*' })") ×
 
-							button.btn-secondary(:disabled="state.loading" @click="pushEvent({ type: 'digit', value: '1' })") 1
-							button.btn-secondary(:disabled="state.loading" @click="pushEvent({ type: 'digit', value: '2' })") 2
-							button.btn-secondary(:disabled="state.loading" @click="pushEvent({ type: 'digit', value: '3' })") 3
-							button.btn-ghost(:disabled="state.loading" @click="pushEvent({ type: 'operator', value: '-' })") −
+							button.btn-secondary(:disabled="state.loading" @click="pushEvent({ name: 'digit', value: '1' })") 1
+							button.btn-secondary(:disabled="state.loading" @click="pushEvent({ name: 'digit', value: '2' })") 2
+							button.btn-secondary(:disabled="state.loading" @click="pushEvent({ name: 'digit', value: '3' })") 3
+							button.btn-ghost(:disabled="state.loading" @click="pushEvent({ name: 'operator', value: '-' })") −
 
-							button.btn-secondary(:disabled="state.loading" @click="pushEvent({ type: 'digit', value: '0' })" style="grid-column: span 2;") 0
-							button.btn-ghost(:disabled="state.loading" @click="pushEvent({ type: 'clear' })") C
-							button.btn-ghost(:disabled="state.loading" @click="pushEvent({ type: 'operator', value: '+' })") +
+							button.btn-secondary(:disabled="state.loading" @click="pushEvent({ name: 'digit', value: '0' })" style="grid-column: span 2;") 0
+							button.btn-ghost(:disabled="state.loading" @click="pushEvent({ name: 'clear' })") C
+							button.btn-ghost(:disabled="state.loading" @click="pushEvent({ name: 'operator', value: '+' })") +
 
-							button.btn-primary.full.text-white(:disabled="state.loading" @click="pushEvent({ type: 'equals' })" style="grid-column: span 4;") =
+							button.btn-primary.full.text-white(:disabled="state.loading" @click="pushEvent({ name: 'equals' })" style="grid-column: span 4;") =
 
 					// Event stream debug view
 					.block-no-bg.col.gap
@@ -60,8 +60,9 @@ Page
 <script setup lang="ts">
 import { reactive, ref, onMounted } from 'vue';
 import Page from '@/components/Page.vue';
-import { createCalculatorCodeletOrchestrator, type CalcState, type CalcEvent } from './codelets/CalculatorModule';
-import { EVENT_ID, TRIGGER_EVENT_ID, type WithEventMetadata } from '../../../src/modules/Orchestrator';
+import { createCalculatorCoderack, type CalcState, type CalcEvent } from './codelets/CalculatorCoderack';
+import { EVENT_ID, TRIGGER_EVENT_ID, type WithEventMetadata } from 'codelet';
+import { createSingleCodeletCalculatorCoderack } from './codelets/SingleBigCodeletCalculatorModule';
 
 const events = ref<any[]>([]);
 
@@ -73,17 +74,18 @@ const state = reactive<CalcState>({
 	loading: false,
 });
 
-const orchestrator = createCalculatorCodeletOrchestrator(state as CalcState);
+// const coderack = createCalculatorCoderack(state as CalcState);
+const coderack = createSingleCodeletCalculatorCoderack(state as CalcState);
 
-orchestrator.onStateChange(() => {
-	Object.assign(state, orchestrator.getState());
+coderack.onStateChange(() => {
+	Object.assign(state, coderack.getState());
 });
 
 // Listen to all processed events (including generated/internal events)
-orchestrator.onEventProcessed((event, result) => {
+coderack.onEventProcessed((event, result) => {
 	events.value.push({
 		...extractEventMetadata(event),
-		result,
+		// result,
 	});
 });
 
@@ -102,7 +104,7 @@ onMounted(() => {
 async function pushEvent(event: CalcEvent) {
 	state.loading = true;
 	try {
-		await orchestrator.dispatchWithPromise(event);
+		await coderack.dispatchWithPromise(event);
 	} catch (error) {
 		console.error('Error processing calculator event:', error);
 	} finally {
