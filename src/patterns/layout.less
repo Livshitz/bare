@@ -4,16 +4,18 @@
 // Base layout component - uses stack for vertical layout
 .layout {
   .stack;
-  @apply t-min-h-screen t-gap-0;
+  @apply t-gap-0; // t-min-h-screen
 }
+
+@header-height: 4.5rem;
 
 // Layout components
 .layout-header {
-  @apply ~"t-w-full t-h-[4.5rem] t-relative";
+  @apply ~"t-w-full t-h-[@{header-height}] t-relative";
 }
 
 .layout--header-padding {
-  @apply ~"t-pt-[4.5rem]";
+  @apply ~"t-pt-[@{header-height}]";
 }
 
 .layout-header-fixed {
@@ -21,8 +23,8 @@
 }
 
 .layout-main {
-  .layout--full-height;
-  @apply ~"t-flex-1 t-max-h-full";
+  // .layout--full-height;
+  @apply ~"t-flex-1";
 }
 
 .layout-footer {
@@ -77,8 +79,14 @@
   @apply t-overflow-auto t-max-h-screen;
 }
 
+.layout--full-height-header {
+  @apply t-overflow-auto;
+  max-height: calc(100dvh - @header-height);
+  height: calc(100dvh - @header-height);
+}
+
 .layout--fullscreen {
-  @apply t-min-h-screen;
+  @apply t-max-h-screen;
 }
 
 .layout--fixed-header {

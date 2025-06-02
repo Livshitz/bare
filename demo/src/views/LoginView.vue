@@ -52,13 +52,13 @@ Page(:fixedHeader="false" :collapsible="false")
 
 <script setup lang="ts">
 import { ref } from 'vue';
-import Page from '@/components/Page.vue'
+import Page from '@/components/Page.vue';
 
-const email = ref('')
-const password = ref('')
+const email = ref('');
+const password = ref('');
 
 const handleSubmit = () => {
 	// Handle login logic here
-	console.log('Login attempt:', { email: email.value, password: password.value })
-}
+	console.log('Login attempt:', { email: email.value, password: password.value });
+};
 </script>

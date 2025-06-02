@@ -13,6 +13,8 @@ PageWithSidebar(:fixedHeader="true" :collapsible="false || $app.helpers.breakpoi
 				router-link.btn-ghost.row.start(to="/demo/signup") Sign Up
 				router-link.btn-ghost.row.start(to="/demo/payment") Payment
 				router-link.btn-ghost.row.start(to="/demo/calculator") Calculator
+				router-link.btn-ghost.row.start(to="/demo/liv") Liv
+				router-link.btn-ghost.row.start(to="/demo/playground") Playground
 				.btn-ghost.row.start Welcome to T3 Chat
 				.btn-ghost.row.start Why T3 Chat?
 				.btn-ghost.row.start FAQ

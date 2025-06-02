@@ -28,8 +28,12 @@
 	--primary-900-dark: ~"var(--color-@{primary-color}-100)";
 	--primary-950-dark: ~"var(--color-@{primary-color}-50)";
 	
-	--accent: ~"var(@{accent-color})";
-	--accent-dark: ~"var(@{accent-color})";
+	--accent: var(--color-purple-500);
+	--accent-dark: var(--color-purple-400);
+	--accent-hover: var(--color-purple-600);
+	--accent-active: var(--color-purple-700);
+	--accent-hover-dark: var(--color-purple-300);
+	--accent-active-dark: var(--color-purple-600);
 }
 
 @gray-light: ~"@{color-@{primary-color}-100}"; // Dynamic color based on @primary-color

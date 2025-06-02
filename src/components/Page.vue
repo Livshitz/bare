@@ -7,17 +7,20 @@ div.layout.layout--fullscreen(:class="{ 'layout--fixed-header': fixedHeader }")
 	.layout-content
 		.row
 			slot(name="sidebar", v-if="$slots.sidebar")
-			main.layout-main.col.between.layout-max-sm(:class="{ 'layout--header-padding': fixedHeader }")#main-content.bg-100
+			main.layout-main.col.between(:class="{ 'layout--header-padding': fixedHeader && $slots.header, 'layout-max-sm': !route.meta?.isWide }")#main-content.bg-100.full-screen-y
 				slot(name="main")
 				slot(name="footer", v-if="$slots.footer")
 </template>
 
 <script setup lang="ts">
+import { useRoute } from 'vue-router';
+
 // No props needed - header is customizable via slot
 const props = defineProps<{
 	fixedHeader?: boolean;
 }>();
 const fixedHeader = props.fixedHeader !== false;
+const route = useRoute();
 </script>
 
 <style lang="less" scoped>

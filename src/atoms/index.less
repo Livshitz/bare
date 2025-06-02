@@ -75,6 +75,10 @@
 	@apply t-h-full;
 }
 
+.full-screen-y {
+	@apply t-min-h-screen;
+}
+
 .full {
 	.full-x;
 	.full-y;
@@ -83,4 +87,9 @@
 html[data-theme="dark"], .dark {
 	.text-accent { color: @accent-dark; }
 	.bg-accent { background-color: @accent-dark; }
+}
+
+.centered {
+	margin-left: auto;
+	margin-right: auto;
 }

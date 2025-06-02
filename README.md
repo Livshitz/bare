@@ -62,33 +62,63 @@ The library is organized into several layers, each building upon the previous on
 
 The most fundamental building blocks for layout and spacing:
 
-- `row`: Horizontal flex container with default spacing
-- `col`: Vertical flex container with default spacing
-- `grid`: Grid container with default settings
-- `stack`: Vertical stack with consistent spacing
-- `spacer`: Utility for adding consistent spacing between elements
+- `.row`: Horizontal flex container with default spacing
+- `.row-nowrap`: Flex row without wrapping
+- `.row-xs`: Row layout for extra small screens
+- `.row-xs-nowrap`: Non-wrapping row for extra small screens
+- `.col`: Vertical flex container with default spacing
+- `.col-xs`: Column layout for extra small screens
+- `.center`: Center both horizontally and vertically
+- `.center-x`: Center horizontally
+- `.center-y`: Center vertically
+- `.start`: Align to start both horizontally and vertically
+- `.start-x`: Align to start horizontally
+- `.start-y`: Align to start vertically
+- `.end`: Align to end both horizontally and vertically
+- `.end-x`: Align to end horizontally
+- `.end-y`: Align to end vertically
+- `.between`: Space between with center alignment
+- `.between-x`: Space between horizontally
+- `.around`: Space around with center alignment
+- `.around-x`: Space around horizontally
+- `.evenly`: Space evenly with center alignment
+- `.evenly-x`: Space evenly horizontally
+- Responsive variants: `.xs-center`, `.xs-center-x`, `.xs-center-y`, `.xs-start`, `.xs-start-x`, `.xs-start-y`, `.xs-end`, `.xs-end-x`, `.xs-end-y`, `.xs-between`, `.xs-between-x`, `.xs-around`, `.xs-around-x`, `.xs-evenly`, `.xs-evenly-x`
 
 ### 2. Patterns (Layout Structures)
 
 Predefined layout patterns that combine atoms:
 
-- `layout`: Common page layouts including:
+- `.layout`: Common page layouts including:
   - Centered content
   - Sidebar layouts
   - Grid-based layouts
   - Responsive layouts
+- `.layout-header`: Page header with specific height
+- `.layout-main`: Main content area
+- `.layout-footer`: Footer area
+- `.layout-sidebar`: Sidebar navigation
+- `.layout-nav`: Navigation bar
+- Layout modifiers:
+  - `.layout--centered`: Center content
+  - `.layout--fullscreen`: Full viewport height
+  - `.layout--fixed-header`: Fixed header with adjusted main content
+  - `.layout--sidebar-left`: Sidebar on the left
+  - `.layout--sidebar-right`: Sidebar on the right
+  - `.layout--stack`: Stack layout on small screens
+  - `.layout--hide-sidebar`: Hide sidebar on small screens
+  - `.narrow`: Centered container with max width
 
 ### 3. Primitives (Styled Elements)
 
 Basic UI elements with default styling:
 
-- `button`: Button component with variants:
-  - Primary
-  - Secondary
-  - Ghost
-  - Sizes: sm, md, lg
-- `input`: Form input with default styling
-- `badge`: Badge component for labels and status indicators
+- `.block`: Content block with padding, rounded corners, and stack layout
+- `.section`: Section element with larger spacing and container-like styling
+- `.toc`: Table of contents with list styling
+- `.button`: Button element (see utility classes for variants)
+- `.input`: Form input
+- `.badge`: Badge indicator
 
 ### 4. Components (Complex UI Units)
 
@@ -97,59 +127,45 @@ Higher-level Vue components that combine multiple primitives:
 - `Page`: Basic page layout with header, content, and footer sections
 - `PageWithSidebar`: Extended page layout with a collapsible sidebar
 
-## Utility Classes
+### 4. Utility Classes (Quick Reference)
 
-The library provides a set of utility classes for common needs:
-
-### Display Utilities
-
-- `hidden`: Hide element
-- `vanish`: Hide element and remove from layout
-- `flex`: Set flex-grow to 1
-- `flex-locked`: Set flex to 0 0 auto
-- `x-flex`: Display flex with cross-browser support
-- `overlay`: Full-screen overlay with semi-transparent background
-
-### Text Utilities
-
-- `lighter`: Font weight 100
-- `light`: Font weight 200
-- `normal`: Font weight normal
-- `bold`: Font weight bold
-- `bolder`: Font weight bolder
-- `heavy`: Font weight 900
-
-### Responsive Utilities
-
-- `xs-hide`: Hide on extra small screens
-- `sm-hide`: Hide on small screens
-- `md-hide`: Hide on medium screens
-- `lg-hide`: Hide on large screens
-- `xs-show`: Show on extra small screens
-- `sm-show`: Show on small screens
-- `md-show`: Show on medium screens
-- `lg-show`: Show on large screens
-
-### Color Utilities
-
-- `text-{50-950}`: Text colors from 50 to 950
-- `bg-{50-950}`: Background colors from 50 to 950
-- `text-dark`: Dark text color
-- `bg-light`: Light background color
-- `text-light`: Light text color
-- `bg-dark`: Dark background color
-- `text-accent`: Accent text color
-- `bg-accent`: Accent background color
-
-### Layout Utilities
-
-- `center`: Center content both horizontally and vertically
-- `between`: Space items evenly with space between
-- `around`: Space items evenly with space around
-- `evenly`: Space items evenly
-- `full-x`: Full width
-- `full-y`: Full height
-- `full`: Full width and height
+| Class         | Purpose                                 |
+|-------------- |-----------------------------------------|
+| `hidden`      | Hide element                            |
+| `vanish`      | Hide and remove from layout             |
+| `flex`        | Set flex-grow to 1                      |
+| `flex-locked` | Set flex to 0 0 auto                    |
+| `x-flex`      | Display flex (cross-browser)            |
+| `overlay`     | Full-screen overlay                     |
+| `lighter`     | Font weight 100                         |
+| `light`       | Font weight 200                         |
+| `normal`      | Font weight normal                      |
+| `bold`        | Font weight bold                        |
+| `bolder`      | Font weight bolder                      |
+| `heavy`       | Font weight 900                         |
+| `xs-hide`     | Hide on extra small screens             |
+| `sm-hide`     | Hide on small screens                   |
+| `md-hide`     | Hide on medium screens                  |
+| `lg-hide`     | Hide on large screens                   |
+| `xs-show`     | Show on extra small screens             |
+| `sm-show`     | Show on small screens                   |
+| `md-show`     | Show on medium screens                  |
+| `lg-show`     | Show on large screens                   |
+| `text-{50-950}` | Text colors from 50 to 950            |
+| `bg-{50-950}`   | Background colors from 50 to 950      |
+| `text-dark`     | Dark text color                       |
+| `bg-light`      | Light background                      |
+| `text-light`    | Light text color                      |
+| `bg-dark`       | Dark background                       |
+| `text-accent`   | Accent text color                     |
+| `bg-accent`     | Accent background                     |
+| `center`        | Center content both axes              |
+| `between`       | Space items evenly with space between |
+| `around`        | Space items evenly with space around  |
+| `evenly`        | Space items evenly                    |
+| `full-x`        | Full width                            |
+| `full-y`        | Full height                           |
+| `full`          | Full width and height                 |
 
 ## Example Usage
 

@@ -2,6 +2,12 @@
 .section.prose
 	h1 Font Awesome Icons Demo
 	p Easily preview and copy icon class names. Click an icon to copy its class name!
+	h2 Icon Sizing Utilities
+	.row
+		span(v-for="size in ['xs','sm','md','lg','xl','2xl','3xl','4xl']" :key="size" style="margin-right:2.5rem; display:inline-flex; flex-direction:column; align-items:center;")
+			i(:class="'fa-solid fa-star icon-' + size")
+			span(style="margin-top:0.5rem; font-size:1.1em; font-weight:500;") {{ 'icon-' + size.toUpperCase() }}
+			span(style="font-size:0.9em; color:#888; margin-top:0.2rem;") .icon-{{size}}
 	.row.center
 		input.input(type="text" v-model="filter" placeholder="Filter icons..." class="full t-max-w-md")
 	.icon-group(v-for="group in filteredIconGroups" :key="group.style")

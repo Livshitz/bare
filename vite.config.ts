@@ -25,7 +25,7 @@ export default defineConfig({
 				},
 				// Generate CSS as a separate file
 				assetFileNames: (assetInfo) => {
-					return assetInfo.name === 'style.css' ? 'bare.css' : `assets/${assetInfo.name}`;
+					return assetInfo.name === 'style.css' ? 'bare.css' : `${assetInfo.name}`;
 				},
 			},
 		},

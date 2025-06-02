@@ -1,26 +1,11 @@
 {
 	"name": "@bod.ee/bare",
-	"version": "2.0.0",
+	"version": "2.0.3",
 	"type": "module",
 	"style": "dist/bare.css",
 	"unpkg": "dist/bare.css",
 	"jsdelivr": "dist/bare.css",
 	"private": false,
-	"files": [
-		"dist",
-		"src",
-		"README.md"
-	],
-	"exports": {
-		".": {
-			"import": "./dist/index.es.js",
-			"require": "./dist/index.umd.js"
-		},
-		"./components": {
-			"import": "./dist/components.es.js",
-			"require": "./dist/components.umd.js"
-		}
-	},
 	"scripts": {
 		"dev": "vite --host",
 		"demo": "vite --config vite-demo.config.ts",
@@ -40,6 +25,23 @@
 		"format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md,scss,css}\"",
 		"lint": "eslint . --ext .js,.jsx,.ts,.tsx,.vue"
 	},
+	"files": [
+		"dist",
+		"src",
+		"meta",
+		"LLMs.md",
+		"README.md"
+	],
+	"exports": {
+		".": {
+			"import": "./dist/index.es.js",
+			"require": "./dist/index.umd.js"
+		},
+		"./components": {
+			"import": "./dist/components.es.js",
+			"require": "./dist/components.umd.js"
+		}
+	},
 	"dependencies": {
 		"@types/dompurify": "^3.2.0",
 		"@types/markdown-it": "^14.1.2",
@@ -51,8 +53,9 @@
 		"webify.libx.js": "^1.0.7"
 	},
 	"devDependencies": {
+		"@types/bun": "^1.2.15",
 		"@types/jest": "^29.5.14",
-		"@types/node": "latest",
+		"@types/node": "^22.15.29",
 		"@types/pug": "^2.0.10",
 		"@typescript-eslint/eslint-plugin": "latest",
 		"@typescript-eslint/parser": "latest",

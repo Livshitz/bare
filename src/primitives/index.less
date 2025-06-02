@@ -3,17 +3,29 @@
 @import "./badge.less";
 @import "./button.less";
 @import "./input.less";
+@import "icon.less";
 // src/primitives/index.less
 // Import primitive styles here 
 
 body { .bg-100; .text-dark; }
 
 // Add back the .block definition
+.block--base {
+	.stack;
+	@apply t-p-4 t-rounded t-gap-2;
+	.bg;
+	.bg-200;
+}
+
 .block {
 	// Default light mode: light bg, dark text
-	.stack;
-	@apply t-p-4 t-rounded bg t-gap-2;
-	.bg-200;
+	.block--base;
+}
+
+.block-dark {
+	.block--base;
+	.text-light;
+	.bg-800;
 }
 
 .block-no-bg {
@@ -46,9 +58,9 @@ body { .bg-100; .text-dark; }
 	.text { .text-light; }
 	.bg { .bg-dark; }
 
+	.block-dark { .text-dark; .bg; }
 	.block {
-		.text-light;
-		.bg-800;
+		.block-dark; // Default light mode: light bg, dark text
 	}
 
 	.block-no-bg { background: transparent !important; }

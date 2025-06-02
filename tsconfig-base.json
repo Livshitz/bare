@@ -16,6 +16,7 @@
 		"declaration": true,
 		"declarationDir": "dist",
 		"baseUrl": ".",
+    	"types": ["bun", "node"],
 		"paths": {
 			"@/*": ["src/*"],
 			"@bod.ee/bare/*": ["src/*"]

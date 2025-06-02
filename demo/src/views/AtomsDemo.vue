@@ -9,31 +9,31 @@ section.section.prose
 		h2.t-text-xl.t-font-bold.t-mb-4 Table of Contents
 		ol.stack.t-gap-2
 			li
-				a(class="t-text-blue-600 hover:t-text-blue-800" href="#basic-row") Basic Row Examples
+				a(href="#basic-row") Basic Row Examples
 			li
-				a(class="t-text-blue-600 hover:t-text-blue-800" href="#row-alignments") Row Alignments
+				a(href="#row-alignments") Row Alignments
 			li
-				a(class="t-text-blue-600 hover:t-text-blue-800" href="#nested-structure") Nested Structure
+				a(href="#nested-structure") Nested Structure
 			li
-				a(class="t-text-blue-600 hover:t-text-blue-800" href="#responsive-layout") Responsive Layout
+				a(href="#responsive-layout") Responsive Layout
 			li
-				a(class="t-text-blue-600 hover:t-text-blue-800" href="#row-centering") Row Centering
+				a(href="#row-centering") Row Centering
 			li
-				a(class="t-text-blue-600 hover:t-text-blue-800" href="#start-alignments") Start Alignments
+				a(href="#start-alignments") Start Alignments
 			li
-				a(class="t-text-blue-600 hover:t-text-blue-800" href="#end-alignments") End Alignments
+				a(href="#end-alignments") End Alignments
 			li
-				a(class="t-text-blue-600 hover:t-text-blue-800" href="#space-distribution") Space Distribution
+				a(href="#space-distribution") Space Distribution
 			li
-				a(class="t-text-blue-600 hover:t-text-blue-800" href="#grid-layout") Grid Layout
+				a(href="#grid-layout") Grid Layout
 			li
-				a(class="t-text-blue-600 hover:t-text-blue-800" href="#stack-layout") Stack Layout
+				a(href="#stack-layout") Stack Layout
 			li
-				a(class="t-text-blue-600 hover:t-text-blue-800" href="#spacer-examples") Spacer Examples
+				a(href="#spacer-examples") Spacer Examples
 			li
-				a(class="t-text-blue-600 hover:t-text-blue-800" href="#alignment-examples") Alignment Examples
+				a(href="#alignment-examples") Alignment Examples
 			li
-				a(class="t-text-blue-600 hover:t-text-blue-800" href="#responsive-examples") Responsive Examples
+				a(href="#responsive-examples") Responsive Examples
 
 .stack.t-gap-8
 	// Basic Row Example
@@ -351,6 +351,106 @@ section.section.prose
 					.block.t-w-48
 						.caption Left Column
 						.text Some content here
+			
+			pre.
+				.block
+					.caption Left Column
+					.text Some content here
+
+		.section
+			.title Text Alignment Utilities
+			.stack.t-gap-2.t-mb-8
+				p.text-left This text is left aligned
+				p.text-center This text is center aligned
+				p.text-right This text is right aligned
+				p.text-justify This text is justified. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, nisi eu consectetur consectetur, nisl nisi consectetur nisi, eu consectetur nisl nisi euismod nisi.
+				p.text-start This text is start aligned (LTR: left, RTL: right)
+				p.text-end This text is end aligned (LTR: right, RTL: left)
+			pre .text-left, .text-center, .text-right, .text-justify, .text-start, .text-end
+
+	// Utility Classes Demo
+	section#utility-classes-demo.section
+		.title Utility Classes Demo
+		.stack.t-gap-4
+			// .hidden
+			.block
+				span.hidden This text is hidden (should not be visible)
+				span This text is visible
+				pre .hidden
+
+			// .vanish
+			.block
+				span.vanish This text is vanished (should not be visible)
+				span This text is visible
+				pre .vanish
+
+			// .contents
+			.block.contents(style="background: #eee; padding: 8px;")
+				span This block uses .contents (should behave as contents)
+				pre .contents
+
+			// .light, .bolder, .heavy
+			.block
+				span.light Light
+				span.normal Normal
+				span.bold Bold
+				span.bolder Bolder
+				span.heavy Heavy
+				pre .light, .normal, .bold, .bolder, .heavy
+
+			// .overlay
+			.block(style="position:relative; height:60px;")
+				span This block has an overlay
+				span.overlay(style="background:rgba(0,0,0,0.3); color:#fff; position:absolute; top:0; left:0; width:100%; height:100%; display:flex; align-items:center; justify-content:center;") Overlay
+				pre .overlay
+
+			// .glass
+			.block(style="background:url('https://picsum.photos/200/60?blur=2'); padding:0; width:200px; height:60px; position:relative;")
+				span.glass(style="display:block; width:100%; height:100%; padding:12px; color:#222;") Glassmorphism
+				pre .glass
+
+			// .tooltip
+			.block(style="position:relative; display:inline-block;")
+				span Tooltip target
+				span.tooltip(style="position:absolute; left:100%; top:0; margin-left:8px;") Tooltip text
+				pre .tooltip
+
+			// .divider
+			.block
+				span Above divider
+				.divider
+				span Below divider
+				pre .divider
+
+			// .skeleton
+			.block
+				div.skeleton(style="width:120px; height:24px;")
+				pre .skeleton
+
+			// .loader
+			.block
+				span Loader:
+				span.loader(style="vertical-align:middle; margin-left:8px;")
+				pre .loader
+
+			// .scroll, .scroll-x, .scroll-y
+			.block(style="height:60px; width:200px;")
+				div.scroll(style="height:100%; width:100%; background:#f5f5f5;")
+					span(style="white-space:nowrap;") Scrollable content. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod.
+				pre .scroll
+			.block(style="height:40px; width:120px;")
+				div.scroll-x(style="width:100%; background:#f5f5f5;")
+					span(style="white-space:nowrap;") Horizontal scroll. Lorem ipsum dolor sit amet.
+				pre .scroll-x
+			.block(style="height:80px; width:60px;")
+				div.scroll-y(style="height:100%; background:#f5f5f5;")
+					span(style="display:block; height:120px;") Vertical scroll. Lorem ipsum dolor sit amet.
+				pre .scroll-y
+
+			// .centered
+			.block(style="background:#e0f7fa; width:120px;")
+				span.centered(style="display:block;") This block is centered
+				pre .centered
 
 </template>
 

@@ -8,13 +8,13 @@
 @import "patterns/index.less";
 @import "utilities/index.less";
 
-
 // Use @tailwind directives for Tailwind's layers
 // These are processed by the Tailwind PostCSS plugin
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+@import "atoms/overrides.less";
 
 // @import "patterns/index.less";
 // @import "theme/index.less"; 
@@ -23,12 +23,3 @@
 // @media (prefers-color-scheme: dark) {
 // 	@apply @dark-bg; // Use variable from imported file
 // }
-
-// Icon utility class for Font Awesome
-.icon {
-  display: inline-block;
-  font-size: 1.25em;
-  line-height: 1;
-  vertical-align: middle;
-  color: inherit;
-}

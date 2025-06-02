@@ -1,0 +1,15 @@
+@import (reference) "../variables.less";
+
+a {
+    .text-accent;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.15em;
+    transition: color @time-instant @ease-standard;
+    &:hover { color: var(--accent-hover); cursor: pointer; }
+    &:active { color: var(--accent-active); cursor: pointer; }
+    html[data-theme="dark"] &,
+    .dark & {
+        &:hover { color: var(--accent-hover-dark); }
+        &:active { color: var(--accent-active-dark); }
+    }
+}

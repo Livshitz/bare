@@ -8,10 +8,32 @@ import LoginView from './views/LoginView.vue';
 import Signup from './views/SignupView.vue';
 import PaymentView from './views/PaymentView.vue';
 import CalculatorView from './views/CalculatorView.vue';
+import LivView from './views/LivView.vue';
+import Liv2View from './views/Liv2View.vue';
+import PlaygroundView from './views/PlaygroundView.vue';
+import MakerView from './views/MakerView.vue';
 
 const router = createRouter({
 	history: createWebHistory(),
 	routes: [
+		{
+			path: '/demo/maker',
+			name: 'Bare Maker',
+			component: MakerView,
+			meta: { hideHeader: true, isWide: true },
+		},
+		{
+			path: '/demo/liv',
+			name: 'Elya Livshitz',
+			component: Liv2View,
+			meta: { hideHeader: true, isWide: true },
+		},
+		{
+			path: '/demo/playground',
+			name: 'playground',
+			component: PlaygroundView,
+			meta: { hideHeader: true, isWide: true },
+		},
 		{
 			path: '/demo/atoms',
 			name: 'atoms-demo',

@@ -1,0 +1,318 @@
+{
+	"showMore_blogs": false,
+	"showMore_libraries": false,
+	"showMore_utilities": false,
+	"showCount_blogs": 2,
+	"showCount_libraries": 2,
+	"showCount_utilities": 2,
+	"libraries": [
+		{
+			"title": "🛠 libx.js",
+			"desc": "A powerful toolbelt full of useful modules and helpers for node & web apps",
+			"url": "https://github.com/Livshitz/libx.js",
+			"tags": ["browser", "nodeJs"],
+			"enabled": true
+		},
+		{
+			"title": "💉 di.libx.js",
+			"desc": "Lightweight & non intrusive Dependency Injection module that supports async/deferred resolution and uglified support",
+			"url": "https://github.com/Livshitz/di.libx.js",
+			"tags": ["browser", "nodeJs"]
+		},
+		{
+			"title": "⛩ Dojo-SDK",
+			"desc": "Create simulated and deterministic environments with system components such as DB, MQ, Orchestrated MicroServices to practice and solve system-design challenges",
+			"url": "https://github.com/Livshitz/Dojo-SDK",
+			"tags": ["browser", "nodeJs"]
+		},
+		{
+			"title": "🏗 ts-scaffold",
+			"desc": "Scaffold project for Typescript projects, with Unit Tests and basic dependencies set up",
+			"url": "https://github.com/Livshitz/ts-scaffold",
+			"tags": ["browser", "nodeJs"]
+		},
+		{
+			"title": "᭟ concurrency.libx.js",
+			"desc": "Helper functions to deal better with multicuncurrency, parallelism and promises",
+			"url": "https://github.com/Livshitz/concurrency.libx.js",
+			"tags": ["browser", "nodeJs"]
+		},
+		{
+			"title": "📦 pax.libx.js",
+			"desc": "Packaging, bundling and building tool for modern web technologies",
+			"url": "https://github.com/Livshitz/pax.libx.js",
+			"tags": ["NodeJs"]
+		},
+		{
+			"title": "postman2swagger",
+			"desc": "CLI tool to convert Postman collection to swagger (OpenAPI)",
+			"url": "https://github.com/Livshitz/postman2swagger",
+			"tags": ["NodeJs"]
+		},
+		{
+			"title": "NpmDependencyMapper",
+			"desc": "NPM Package Dependency Mapper.",
+			"url": "https://github.com/Livshitz/NpmDependencyMapper",
+			"tags": ["nodeJs"]
+		},
+		{
+			"title": "Liv.RegExp",
+			"desc": "Lightweight Regular Expression Library",
+			"url": "https://github.com/Livshitz/Liv.RegExp",
+			"tags": ["c#"]
+		},
+		{
+			"title": "Liv.Grep",
+			"desc": "Grep utility written in c#. Makes it easy to query command line outputs",
+			"url": "https://github.com/Livshitz/Liv.Grep",
+			"tags": ["c#"]
+		},
+		{
+			"title": "Liv.Logging Public",
+			"desc": "Lightweight logging library",
+			"url": "https://github.com/Livshitz/Liv.Logging",
+			"tags": ["c#"]
+		}
+	],
+	"blogs": [
+		{
+			"title": "Hello World",
+			"desc": "",
+			"url": "/content/blog/hello_world",
+			"tags": ["wip"],
+			"date": "",
+			"enabled": false
+		},
+		{
+			"title": "What Kind of Leader are you - \"Chef\" or \"Salesman",
+			"desc": "It just recently stroke me that those kinds essentially boil down into 2 types: the \"Chef\" and the \"Salesman\" leaders. Read more...",
+			"url": "/content/blog/chef-vs-salesman",
+			"tags": ["r&d", "management", "leadership"],
+			"date": "Feb 14, 2021",
+			"enabled": false
+		},
+		{
+			"title": "Introducing ObjectId utility",
+			"desc": "A tool to convert ObjectId to timestamp and vice versa",
+			"url": "/content/blog/objectid",
+			"tags": ["r&d", "tools", "databse", "indexes"],
+			"date": "Jul 30, 2022"
+		},
+		{
+			"title": "Introducing Sheet2Timeline",
+			"desc": "A tool that converts Google sheet into timeline / gantt charts",
+			"url": "/content/blog/sheet2timeline",
+			"tags": ["r&d", "tools", "project management", "leadership"],
+			"date": "Feb 10, 2021"
+		},
+		{
+			"title": "Introducing my new Dependency Injection Container for TS/JS projects",
+			"desc": "Introducing di.libx.js",
+			"url": "https://medium.com/livshitz/di-libx-js-c2e07a9e919?source=user_profile---------0-------------------------------",
+			"tags": ["r&d", "opensource"],
+			"date": "Jan 23, 2021"
+		},
+		{
+			"title": "Fill the missing piece of asynchronous programming in JS/TS with concurrency.libx.js",
+			"desc": "Introducing concurrency.libx.js",
+			"url": "https://livshitz.medium.com/fill-the-missing-piece-of-asynchronous-programming-in-js-ts-with-concurrency-libx-js-9e0156256b45?source=user_profile---------1-------------------------------",
+			"tags": ["r&d", "opensource"],
+			"date": "Jun 6, 2020"
+		},
+		{
+			"title": "Tools every Indie Maker needs to know",
+			"desc": "",
+			"url": "https://medium.com/indie-makers/tools-every-indie-maker-need-to-know-c3b18990f3e6?source=user_profile---------2-------------------------------",
+			"tags": ["entrepreneurship"],
+			"date": "Nov 3, 2019"
+		},
+		{
+			"title": "Don't Document, Automate!",
+			"desc": "Thoughts about documentation vs automation",
+			"url": "https://livshitz.medium.com/dont-document-automate-d14120ceefc5?source=user_profile---------3-------------------------------",
+			"tags": ["r&d"],
+			"date": "Aug 6, 2019"
+		},
+		{
+			"title": "Blockchain Blockchain — Definition Needed!",
+			"desc": "Clarifying the terms",
+			"url": "https://livshitz.medium.com/blockchain-blockchain-proxy-proxy-eab8a53f0de3?source=user_profile---------4-------------------------------",
+			"tags": ["crypto"],
+			"date": "Oct 19, 2018"
+		},
+		{
+			"title": "Exciting times — We're in the middle of a revolution — The invention of Digital Asset",
+			"desc": "No, Bitcoin is not the revolution. The masterpiece behind it is.",
+			"url": "https://medium.com/livshitz/exciting-times-were-in-the-middle-of-a-revolution-the-invention-of-digital-asset-3d083fc1c1fd?source=user_profile---------5-------------------------------",
+			"tags": ["crypto"],
+			"date": "Jan 18, 2018"
+		},
+		{
+			"title": "Bitcoin - Why Bitcoin is not a currency, it's rather a digital asset",
+			"desc": null,
+			"url": "https://medium.com/livshitz/bitcoin-cryptocurrency-e63a978a3a03?source=user_profile---------6-------------------------------",
+			"tags": ["crypto"],
+			"date": "Jan 11, 2018"
+		},
+		{
+			"title": "What do they really want?",
+			"desc": "A quest for product-market-fit",
+			"url": "https://medium.com/livshitz/what-do-they-really-want-b801e32d00d6?source=user_profile---------7-------------------------------",
+			"tags": ["entrepreneurship"],
+			"date": "Jan 9, 2018"
+		},
+		{
+			"title": "Liv.RegExp – Easy matching complex regular expression with groups",
+			"desc": "",
+			"url": "https://livshitz.wordpress.com/2015/05/21/opensource-liv-regexp-easy-matching-complex-regular-expression-with-groups/",
+			"tags": ["r&d", "opensource"],
+			"date": "May 21, 2015"
+		},
+		{
+			"title": "MDIExplorer – Consolidate your explorer windows efficinaly",
+			"desc": "",
+			"url": "https://livshitz.wordpress.com/2014/11/25/download-mdiexplorer-consolidate-your-explorer-windows-efficinaly/",
+			"tags": ["r&d", "opensource"],
+			"date": "November 25, 2014"
+		},
+		{
+			"title": "Liv.Grep – Grep utility written in c#. Makes it easy to query command line outputs",
+			"desc": "",
+			"url": "https://livshitz.wordpress.com/2014/11/19/opensource-liv-grep-grep-utility-written-in-c-makes-it-easy-to-query-command-line-outputs/",
+			"tags": ["r&d", "opensource"],
+			"date": "November 19, 2014"
+		},
+		{
+			"title": "Bring your wallpaper to life! LivingWallpaper is a great relaxing/inspiring wallpaper replacment",
+			"desc": "",
+			"url": "https://livshitz.wordpress.com/2014/11/12/download-bring-your-wallpaper-to-life-livingwallpaper-is-a-great-relaxinginspiring-wallpaper-replacment/",
+			"tags": ["r&d"],
+			"date": "November 12, 2014"
+		},
+		{
+			"title": "Liv.Logging – Easy logging library",
+			"desc": "",
+			"url": "https://livshitz.wordpress.com/2014/11/11/opensource-liv-log-easy-logging-library/",
+			"tags": ["r&d", "opensource"],
+			"date": "November 11, 2014"
+		},
+		{
+			"title": "Liv.CommandlineArguments – A lightweight library to implement options/switches support in your console app",
+			"desc": "",
+			"url": "https://livshitz.wordpress.com/2014/11/11/new-opensource-library-liv-commandlinearguments-a-lightweight-library-to-implement-optionsswitches-support-in-your-console-app/",
+			"tags": ["r&d", "opensource"],
+			"date": "November 11, 2014"
+		},
+		{
+			"title": "[Remote Debugging – Visual Studio] Unable to connect to the Microsoft Visual Studio Remote Debugging Monitor…",
+			"desc": "",
+			"url": "https://livshitz.wordpress.com/2013/02/26/remote-debugging-visual-studio-unable-to-connect-to-the-microsoft-visual-studio-remote-debugging-monitor/",
+			"tags": ["r&d"],
+			"enabled": false
+		},
+		{
+			"title": "WCF – Serialization – DataContract runtime error – Type 'myType' cannot be serialized",
+			"desc": "",
+			"url": "https://livshitz.wordpress.com/2012/11/06/wcf-serialization-datacontract-runtime-error-type-mytype-cannot-be-serialized/",
+			"tags": ["r&d"],
+			"enabled": false
+		}
+	],
+	"utilities": [
+		{
+			"title": "🗺 Sheet2Timeline",
+			"desc": "Convert Google Sheet into beautiful timeline gantt",
+			"url": "https://liv.zuz.to/utilities/timeline/demo",
+			"tags": [],
+			"date": ""
+		},
+		{
+			"title": "📞 Whatsapp Launcher",
+			"desc": "Open Whatsapp mobile/web app direct conversation with someone without adding as a contact",
+			"url": "/utilities/whatsapp",
+			"tags": [],
+			"date": ""
+		},
+		{
+			"title": "🂠 QR Code Generator",
+			"desc": "Generate QR Code for varios types such as VCard, wifi and more",
+			"url": "https://liv.zuz.to/utilities/qr-code-generator",
+			"tags": [],
+			"date": ""
+		},
+		{
+			"title": "🖋 Markdown Editor",
+			"desc": "Side-by-side Markdown preview editor",
+			"url": "https://liv.zuz.to/utilities/markdown",
+			"tags": [],
+			"date": ""
+		},
+		{
+			"title": "🗜 CssSqueezer",
+			"desc": "Squeeze css rules into single-line",
+			"url": "https://liv.zuz.to/utilities/cssSqueezer",
+			"tags": [],
+			"date": ""
+		},
+		{
+			"title": "🕐 ObjectID",
+			"desc": "Convert MongoDB's ObjectID into date & time (timestamp)",
+			"url": "https://liv.zuz.to/utilities/objectId",
+			"tags": [],
+			"date": ""
+		},
+		{
+			"title": "🐶 Html2Pug",
+			"desc": "Convert HTML 2 Pug/Jade",
+			"url": "https://liv.zuz.to/utilities/html2pug",
+			"tags": [],
+			"date": ""
+		},
+		{
+			"title": "🧽 YAML2JSON",
+			"desc": "Convert YAML to JSON",
+			"url": "https://liv.zuz.to/utilities/yaml2json",
+			"tags": [],
+			"date": ""
+		},
+		{
+			"title": "🐷 PiggyMeter",
+			"desc": "House rent price prediction",
+			"url": "https://liv.zuz.to/utilities/piggy",
+			"tags": [],
+			"date": ""
+		},
+		{
+			"title": "🪄 Nakdan",
+			"desc": "Hebrew words utility that helps pefrome \"נִיֽקּוּד\"",
+			"url": "https://liv.zuz.to/utilities/nakdan",
+			"tags": [],
+			"date": "",
+			"enabled": false
+		},
+		{
+			"title": "PokerVoter",
+			"desc": "",
+			"url": "https://liv.zuz.to/poker-voter",
+			"tags": [],
+			"date": "",
+			"enabled": false
+		},
+		{
+			"title": "MasterPlan",
+			"desc": "",
+			"url": "https://liv.zuz.to/gantt",
+			"tags": [],
+			"date": "",
+			"enabled": false
+		},
+		{
+			"title": "Jira",
+			"desc": "",
+			"url": "https://liv.zuz.to/jira",
+			"tags": [],
+			"date": "",
+			"enabled": false
+		}
+	]
+}

@@ -4,6 +4,7 @@
 		"outDir": "dist"
 	},
 	"include": [
+		"maker/**/*.ts",
 		"src/**/*.ts",
 		"src/**/*.d.ts",
 		"src/**/*.tsx",
