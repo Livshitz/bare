@@ -1,6 +1,6 @@
-# @bod.ee/bare
+# @livz/bare
 
-@bod.ee/bare is a minimalist, semantic CSS library designed specifically for LLM-friendly UI generation. It provides a set of basic, expressive styles that focus primarily on layouts and structure, with additional utility classes for common needs.
+@livz/bare is a minimalist, semantic CSS library designed specifically for LLM-friendly UI generation. It provides a set of basic, expressive styles that focus primarily on layouts and structure, with additional utility classes for common needs.
 
 The library aims to be:
 
@@ -12,11 +12,11 @@ The library aims to be:
 ## Installation
 
 ```bash
-npm install @bod.ee/bare
+npm install @livz/bare
 # or
-yarn add @bod.ee/bare
+yarn add @livz/bare
 # or
-bun add @bod.ee/bare
+bun add @livz/bare
 ```
 
 ## Usage
@@ -27,19 +27,19 @@ Import the CSS file into your project:
 
 ```css
 /* In your main CSS/Less/Sass file */
-@import '@bod.ee/bare/dist/bare.css';
+@import '@livz/bare/dist/bare.css';
 ```
 
 Or via a link tag in your HTML:
 
 ```html
-<link rel="stylesheet" href="path/to/node_modules/@bod.ee/bare/dist/bare.css" />
+<link rel="stylesheet" href="path/to/node_modules/@livz/bare/dist/bare.css" />
 ```
 
 Or via CDN (unpkg):
 
 ```html
-<link rel="stylesheet" href="https://unpkg.com/@bod.ee/bare@latest/dist/bare.css" />
+<link rel="stylesheet" href="https://unpkg.com/@livz/bare@latest/dist/bare.css" />
 ```
 
 ### Vue Component Usage
@@ -48,10 +48,10 @@ If you're using Vue, you can import components:
 
 ```javascript
 // Import the CSS
-import '@bod.ee/bare/dist/bare.css';
+import '@livz/bare/dist/bare.css';
 
 // Import specific components
-import { Page, PageWithSidebar } from '@bod.ee/bare/components';
+import { Page, PageWithSidebar } from '@livz/bare/components';
 ```
 
 ## Library Structure
@@ -188,7 +188,7 @@ Higher-level Vue components that combine multiple primitives:
       <div class="col gap">
         <div class="block">
           <h2>Welcome</h2>
-          <p>This is a sample page using @bod.ee/bare components and styles.</p>
+          <p>This is a sample page using @livz/bare components and styles.</p>
         </div>
       </div>
     </template>
@@ -196,7 +196,7 @@ Higher-level Vue components that combine multiple primitives:
 </template>
 
 <script setup lang="ts">
-import { Page } from '@bod.ee/bare/components';
+import { Page } from '@livz/bare/components';
 </script>
 ```
 
@@ -227,7 +227,7 @@ import { Page } from '@bod.ee/bare/components';
       <div class="col gap">
         <div class="block">
           <h2>Welcome</h2>
-          <p>This is a sample page with sidebar using @bod.ee/bare components.</p>
+          <p>This is a sample page with sidebar using @livz/bare components.</p>
         </div>
       </div>
     </template>
@@ -235,6 +235,6 @@ import { Page } from '@bod.ee/bare/components';
 </template>
 
 <script setup lang="ts">
-import { PageWithSidebar } from '@bod.ee/bare/components';
+import { PageWithSidebar } from '@livz/bare/components';
 </script>
 ```

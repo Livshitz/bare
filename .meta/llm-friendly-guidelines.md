@@ -1,24 +1,24 @@
-# @bod.ee/bare — LLM-Friendly Guidelines
+# @livz/bare — LLM-Friendly Guidelines
 
 ## Purpose
 
-@bod.ee/bare is a minimalist, semantic CSS library and Vue component set designed for LLM-friendly UI generation. It provides expressive, composable building blocks for layouts, structure, and common UI needs, with a focus on clarity, simplicity, and automation-readiness.
+@livz/bare is a minimalist, semantic CSS library and Vue component set designed for LLM-friendly UI generation. It provides expressive, composable building blocks for layouts, structure, and common UI needs, with a focus on clarity, simplicity, and automation-readiness.
 
 ---
 
 ## Installation
 
 ```bash
-bun add @bod.ee/bare
+bun add @livz/bare
 # or
-yarn add @bod.ee/bare
+yarn add @livz/bare
 # or
-npm install @bod.ee/bare
+npm install @livz/bare
 ```
 
 **CDN:**
 ```html
-<link rel="stylesheet" href="https://unpkg.com/@bod.ee/bare@latest/dist/bare.css" />
+<link rel="stylesheet" href="https://unpkg.com/@livz/bare@latest/dist/bare.css" />
 ```
 
 ---
@@ -28,15 +28,15 @@ npm install @bod.ee/bare
 ### CSS
 - Import in your main CSS/LESS/Sass file:
   ```css
-  @import '@bod.ee/bare/dist/bare.css';
+  @import '@livz/bare/dist/bare.css';
   ```
 - Or use a `<link>` tag in HTML (see CDN above).
 
 ### Vue Components
 - Import CSS and components:
   ```ts
-  import '@bod.ee/bare/dist/bare.css';
-  import { Page, PageWithSidebar } from '@bod.ee/bare/components';
+  import '@livz/bare/dist/bare.css';
+  import { Page, PageWithSidebar } from '@livz/bare/components';
   ```
 
 ---

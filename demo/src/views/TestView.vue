@@ -62,7 +62,7 @@ PageWithSidebar(:fixedHeader="true" :collapsible="false || $app.helpers.breakpoi
 </template>
 
 <script setup lang="ts">
-import { PageWithSidebar } from '@bod.ee/bare/components';
+import { PageWithSidebar } from '@livz/bare/components';
 </script>
 
 <style lang="less" scoped>

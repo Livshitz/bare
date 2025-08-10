@@ -63,7 +63,7 @@ PageWithSidebar(:fixedHeader="true", :collapsible="true").narrow
 	
 <script setup lang="ts">
 import { ref, type Ref, onMounted, nextTick } from 'vue';
-import { PageWithSidebar } from '@bod.ee/bare/components';
+import { PageWithSidebar } from '@livz/bare/components';
 
 interface Message {
 	id: number;

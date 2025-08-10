@@ -1,6 +1,6 @@
-# @bod.ee/bare: LLM-Friendly Reference
+# @livz/bare: LLM-Friendly Reference
 
-@bod.ee/bare is a minimalist, semantic CSS and Vue component library designed for LLM-friendly UI generation. It provides expressive, composable classes and components for rapid, accessible, and maintainable UI development.
+@livz/bare is a minimalist, semantic CSS and Vue component library designed for LLM-friendly UI generation. It provides expressive, composable classes and components for rapid, accessible, and maintainable UI development.
 
 ## Library Context
 - **Simple**: Easy to use and understand.
@@ -120,7 +120,7 @@
       <div class="col gap">
         <div class="block">
           <h2>Welcome</h2>
-          <p>This is a sample page using @bod.ee/bare components and styles.</p>
+          <p>This is a sample page using @livz/bare components and styles.</p>
         </div>
       </div>
     </template>
@@ -128,7 +128,7 @@
 </template>
 
 <script setup lang="ts">
-import { Page } from '@bod.ee/bare/components';
+import { Page } from '@livz/bare/components';
 </script>
 ```
 
@@ -156,7 +156,7 @@ import { Page } from '@bod.ee/bare/components';
       <div class="col gap">
         <div class="block">
           <h2>Welcome</h2>
-          <p>This is a sample page with sidebar using @bod.ee/bare components.</p>
+          <p>This is a sample page with sidebar using @livz/bare components.</p>
         </div>
       </div>
     </template>
@@ -164,7 +164,7 @@ import { Page } from '@bod.ee/bare/components';
 </template>
 
 <script setup lang="ts">
-import { PageWithSidebar } from '@bod.ee/bare/components';
+import { PageWithSidebar } from '@livz/bare/components';
 </script>
 ```
 

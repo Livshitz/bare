@@ -1,5 +1,5 @@
 /**
- * @bod.ee/bare
+ * @livz/bare
  * Main entry point for the library
  */
 

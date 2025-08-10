@@ -97,7 +97,7 @@ PageWithSidebar(:fixedHeader="true", :collapsible="true").narrow
 <script setup lang="ts">
 // @ts-ignore: Allow importing JSON modules
 import { ref, onMounted } from 'vue';
-import { PageWithSidebar } from '@bod.ee/bare/components';
+import { PageWithSidebar } from '@livz/bare/components';
 
 const content = ref<any>(null);
 const showMore = ref({ blogs: false, libraries: false, utilities: false });

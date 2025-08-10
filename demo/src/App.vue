@@ -3,7 +3,7 @@
 	//- .xx-spacer.t-p-4(v-if="!route.meta.hideHeader") &nbsp;
 	header.t-p-4.bg.t-opacity-90(v-if="!route.meta.hideHeader")
 		.row.col-xs.between
-			h1.t-text-4xl.t-font-bold @bod.ee/bare Demo
+			h1.t-text-4xl.t-font-bold @livz/bare Demo
 			.t-flex.t-gap-4
 				router-link.btn-ghost(to="/demo/atoms") Atoms
 				router-link.btn-ghost(to="/demo/patterns") Patterns

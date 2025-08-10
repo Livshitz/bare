@@ -14,11 +14,11 @@ x-css serves as a foundation for AI-assisted UI development, allowing LLMs to ef
 ## Installation
 
 ```bash
-npm install @bod.ee/x-css
+npm install @livz/x-css
 # or
-yarn add @bod.ee/x-css
+yarn add @livz/x-css
 # or
-bun add @bod.ee/x-css
+bun add @livz/x-css
 ```
 
 ## Usage
@@ -27,19 +27,19 @@ Import the CSS file into your project:
 
 ```css
 /* In your main CSS/Less/Sass file */
-@import '@bod.ee/x-css';
+@import '@livz/x-css';
 ```
 
 Or via a link tag in your HTML:
 
 ```html
-<link rel="stylesheet" href="path/to/node_modules/@bod.ee/x-css" />
+<link rel="stylesheet" href="path/to/node_modules/@livz/x-css" />
 ```
 
 Or via CDN (unpkg):
 
 ```html
-<link rel="stylesheet" href="https://unpkg.com/@bod.ee/x-css@latest" />
+<link rel="stylesheet" href="https://unpkg.com/@livz/x-css@latest" />
 ```
 
 ## Available Classes
