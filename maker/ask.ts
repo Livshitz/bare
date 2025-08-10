@@ -6,7 +6,7 @@ import fs from "fs";
 
 const ai = new AiModule();
 
-const bodPromptAsk = 'c3c104ef57cdcdf0790b69d69bdc2011';
+const bodPromptAsk = '631b38ac783609bf8bb5f412d24aa61d';
 
 const executePrompt = async (input: string, context?: string, config?: any) => {
 	libx.log.d('execute prompt', { input, context });
