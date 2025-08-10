@@ -70,7 +70,7 @@
 		"eslint-plugin-vue": "latest",
 		"html2jade": "^0.8.6",
 		"jest": "^29.7.0",
-		"less": "^4.4.0",
+		"less": "3",
 		"libx.js": "^5.0.1",
 		"postcss": "^8.5.3",
 		"postcss-cli": "^11.0.1",
